@@ -52,3 +52,9 @@ Strictly preserve the existing wide canvas, all scene frames, all fixed green da
 ### Precise scene correction
 
 User-approved vector editing preserved the generated right-hand neural-network pipeline and redrew only the example panels and their input connectors. The shared T template, poses and contact geometry are encoded directly in the SVG. No image-generation prompt was used for this final geometry correction. The diagram is a conceptual explanation of expert/recovery data and limited fine-tuning, not an architecture specification or an experimental result.
+
+The recovery panel was subsequently extended downward, with more space between the scene panels, selection bracket and outer border. This SVG spacing adjustment preserves all scene geometry and the neural-network illustration.
+
+## Presentation style reference
+
+The green-and-gold palette, header bands and University of Alberta wordmark are adapted from the user-provided `uofa_presentation_template.pptx`. The cover follows Qihang's selected split green-and-gold reference, with the template's patterned A artwork and unmodified white wordmark. The closing slide retains the green wordmark. The method illustrations remain unchanged; no new illustrations were generated for this styling revision.

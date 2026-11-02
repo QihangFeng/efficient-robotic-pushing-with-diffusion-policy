@@ -5,6 +5,8 @@ course-materials/
 # Editable course deliverables stay local; publish their PDFs
 /course-deliverables/project-proposal.docx
 /course-deliverables/proposal-presentation.pptx
+/course-deliverables/proposal_script.docx
+/course-deliverables/uofa_presentation_template.pptx
 /course-deliverables/~$*
 
 # Local environment variants; retain shareable templates
