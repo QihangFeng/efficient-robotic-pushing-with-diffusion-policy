@@ -71,8 +71,8 @@ The workflow is verified on **Python 3.11.9**, an **NVIDIA GTX 1650 with 4 GB VR
 From PowerShell:
 
 ```powershell
-git clone https://github.com/QihangFeng/pusht-prediction-utilization.git
-cd pusht-prediction-utilization
+git clone https://github.com/QihangFeng/efficient-robotic-pushing-with-diffusion-policy.git
+cd efficient-robotic-pushing-with-diffusion-policy
 py -3.11 -m venv .venv-robotics
 .\.venv-robotics\Scripts\python.exe -m pip install -r requirements-robotics.txt
 ```
