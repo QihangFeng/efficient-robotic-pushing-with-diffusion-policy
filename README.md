@@ -24,7 +24,7 @@ It considers camera-estimated target alignment, recent decline and recovery, and
 
 The model's prediction length and inference settings stay fixed. The controller changes how much of each prediction is executed.
 
-![Fixed-eight and adaptive eight/twelve execution](course-deliverables/assets/action-reuse.png)
+![Fixed-eight execution discards remaining predictions; adaptive eight/twelve execution can reuse them](course-deliverables/assets/action-reuse-with-discard.png)
 
 ### Self-imitation-based fine-tuning
 
