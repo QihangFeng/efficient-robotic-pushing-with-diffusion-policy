@@ -2,6 +2,11 @@
 AGENTS.md
 course-materials/
 
+# Editable course deliverables stay local; publish their PDFs
+/course-deliverables/project-proposal.docx
+/course-deliverables/proposal-presentation.pptx
+/course-deliverables/~$*
+
 # Local environment variants; retain shareable templates
 .env.*
 !.env.example

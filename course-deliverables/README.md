@@ -2,9 +2,11 @@
 
 This folder holds the ECE 730 proposal, proposal presentation and future final-report materials.
 
-- `project-proposal.docx`: one-page proposal using Times New Roman, 12-point text and 1.5 line spacing.
-- `proposal-presentation.pptx`: seven slides, including a closing thank-you slide, with an approximately five-minute speaking outline in the speaker notes.
+- `project-proposal.pdf`: published one-page proposal.
+- `proposal-presentation.pdf`: published seven-slide proposal presentation, including the closing thank-you slide.
 - `assets/`: conceptual illustrations embedded in the presentation.
+
+The editable `project-proposal.docx` and `proposal-presentation.pptx` sources stay local and are ignored by Git. The local presentation includes an approximately five-minute speaking outline in its speaker notes.
 
 The proposal materials describe the research question, proposed method and evaluation plan. They intentionally omit completed experiment results. The research evidence remains in `reports/` and `results/` at the repository root.
 
