@@ -58,3 +58,26 @@ The recovery panel was subsequently extended downward, with more space between t
 ## Presentation style reference
 
 The green-and-gold palette, header bands and University of Alberta wordmark are adapted from the user-provided `uofa_presentation_template.pptx`. The cover follows Qihang's selected split green-and-gold reference, with the template's patterned A artwork and unmodified white wordmark. The closing slide retains the green wordmark. The method illustrations remain unchanged; no new illustrations were generated for this styling revision.
+
+## Fixed-eight discarded predictions (2 November 2026)
+
+Output: `action-reuse-with-discard.png`. Generated with the built-in image tool as a separate version of the original image. The fixed-eight row now shows cached actions 9–15 as grey unexecuted predictions discarded after action 8. The accepted result was visually checked for the complete 1–8 sequences in both rows. This version replaces the illustration on presentation slide 2, with the matching PDF refreshed; the other six slides retain their existing appearance.
+
+### Initial edit prompt
+
+Use case: precise-object-edit / educational infographic.
+Edit target: the supplied two-row robotic action-execution diagram. Regenerate a polished updated version, retaining its white background, bold navy sans-serif headings, thin navy arrows, teal numbered executed actions, amber optional actions, camera icons, and connected-node action-model icons.
+
+Primary change: explicitly show the fixed-eight baseline DISCARDING the remaining predictions after executing action 8.
+Top section heading exactly "Fixed eight". Preserve the main executed sequence 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8, then camera icon → neural-network icon labeled "Action model". Add a clearly separate downward fork immediately after action 8. This fork must be a pale-grey DASHED connector to pale-grey unexecuted predicted-action circles labeled "9", "10", "…", "15". Add a visible muted-red X / cancellation mark over the grey predicted sequence, and label it exactly "Discard remaining predictions". This grey fork represents actions that were predicted but NEVER EXECUTED. The live replanning path remains navy. Do not color the discarded actions teal or amber. Do not suggest the robot executes them.
+
+Bottom section heading exactly "Adaptive eight or twelve". Preserve the executed teal sequence 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8. Then the diamond marked "?" with heading "Continue or replan", a straight continuation branch to amber circles 9 → 10 → 11 → 12, and a curved lower replanning branch to camera icon → neural-network icon labeled "Action model".
+
+Layout: expand the white canvas vertically as necessary so the new grey branch occupies generous whitespace BETWEEN sections, without crowding or overlapping either section. Keep all numbers, labels, arrows, and icons crisp and legible. Preserve the established professional minimalist slide-illustration appearance. No surrounding slide, no watermark, no extra text, no ornamental graphics.
+
+### Numbering correction prompt
+
+Edit the supplied diagram. Correct ONLY the numbered executed-action sequences: the current image accidentally omits the circle labeled 4 in BOTH rows. Each row MUST contain EXACTLY EIGHT TEAL CIRCLES before the camera or decision diamond, labeled in this exact left-to-right order:
+1, 2, 3, 4, 5, 6, 7, 8.
+Insert the missing 4 between 3 and 5 in BOTH rows. Redistribute the eight teal circles evenly over the current available horizontal space; shrink their diameter slightly if needed. Draw all eight, do not merge or omit any. Verify visually that each row reads 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8.
+Keep every other feature and exact text unchanged: fixed-eight live path to camera and Action model; grey dashed discard branch 9,10,…,15 and red X and "Discard remaining predictions"; adaptive diamond "Continue or replan" and amber9,10,11,12 and curved replan-camera-model branch. Preserve white backdrop, navy type/arrows/icons, teal and amber colors, spacious layout, and crisp infographic style. No additional decoration.
