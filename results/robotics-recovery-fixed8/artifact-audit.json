@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "scored_attempts": 320,
+  "new_attempts": 80,
+  "reused_attempts": 240,
+  "independent_scenes": 40,
+  "draws_per_scene": 2,
+  "movements_checked": 70797,
+  "new_trained_prefixes_checked": 80,
+  "model_identities_checked": 320,
+  "all_metrics_and_five_paired_comparisons_match": true,
+  "prior_evidence_and_frozen_sources_unchanged": true,
+  "auditor_sha256": "1ec6fd6d1ccdcc068a2c74dba87cfda1b338f5961f74da69aa68feb4fdcaf8b0",
+  "summary_sha256": "06a37d8da4100bd0ecd3ce24ca69fc9a43eb518edc0198843a991c7eb9b19e37",
+  "scope": "Separate CPU raw-artifact audit; no neural prediction or physics replay."
+}

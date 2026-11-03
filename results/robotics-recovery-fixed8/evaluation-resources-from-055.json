@@ -1,0 +1,9 @@
+{
+  "wall_seconds": 3615.521564900002,
+  "peak_process_rss_bytes": 2740850688,
+  "minimum_system_available_bytes": 3207315456,
+  "completed_attempts_before": 55,
+  "completed_attempts_after": 80,
+  "complete": true,
+  "scope": "This invocation including model load and verification; separate from attempt timing."
+}

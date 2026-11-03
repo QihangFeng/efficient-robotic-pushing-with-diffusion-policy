@@ -35,7 +35,7 @@ The model's own successful movements provide additional training examples:
 3. Retain trajectories that eventually complete the task.
 4. Mix these recovery trajectories with expert demonstrations and fine-tune only the final convolution block.
 
-All other model parameters remain frozen. Training takes place before evaluation; the saved model then runs with fixed weights and the same adaptive execution controller.
+All other model parameters remain frozen. Training takes place before evaluation; the saved model then runs with fixed weights under either fixed-eight or adaptive execution.
 
 ![Self-imitation-based fine-tuning with expert and successful recovery trajectories](course-deliverables/assets/policy-refinement.png)
 
@@ -50,19 +50,20 @@ The four main metrics are:
 
 Failed attempts remain in the averages. Comparisons use matching initial scenes, repeated prediction samples and equal movement limits, with separate fine-tuning and evaluation scenes.
 
-The completed confirmation tested **40 new scenes with two prediction samples per scene**, giving 80 attempts per method:
+The completed four-configuration comparison uses **40 initial scenes with two prediction samples per scene**, giving 80 attempts per method. Three conditions reuse the original confirmation records; the fine-tuned fixed-eight condition adds 80 attempts on the same scenes:
 
 | Method | Successful pushes | Mean final alignment | Mean predictions | Mean runtime |
 |---|---:|---:|---:|---:|
 | Original model with fixed-eight execution | 46/80 (57.5%) | 90.96% | 29.03 | 143.26 s |
 | Original model with adaptive 8/12 execution | 48/80 (60.0%) | 91.59% | 25.34 | 135.95 s |
-| Fine-tuned model with adaptive 8/12 execution | **60/80 (75.0%)** | **91.88%** | **22.51** | **120.92 s** |
+| Fine-tuned model with fixed-eight execution | 56/80 (70.0%) | 92.01% | 27.66 | 136.07 s |
+| Fine-tuned model with adaptive 8/12 execution | **60/80 (75.0%)** | 91.88% | **22.51** | **120.92 s** |
 
-Compared with adaptive execution alone, the fine-tuned version improved observed success by **15 percentage points** and used **11.15% fewer predictions**. Average alignment improvement remains uncertain, and some previously successful attempts still fail.
+Compared with adaptive execution on the original model, the combined method improved observed success by **15 percentage points** and used **11.15% fewer predictions**. Average alignment improvement remains uncertain, and some previously successful attempts still fail.
 
-These results concern one trained checkpoint in clean two-dimensional simulation. Runtime spans collection sessions and is descriptive. Simulation pauses during inference, so these measurements do not demonstrate real-time or physical-robot performance. See the [confirmation report](reports/2026-10-17-robotics-recovery-confirmation.md) for uncertainty, failure cases and reproduction details.
+Compared with fine-tuning alone, the combined method achieved four more observed successes and used **18.62% fewer predictions**. The additional success gain remains uncertain; the clearer additional benefit of adaptive execution is prediction efficiency.
 
-The proposal also includes a **fine-tuned model with fixed-eight execution**. That fourth configuration is planned and is not part of the confirmation table above.
+These results concern one trained checkpoint in clean two-dimensional simulation. Runtime spans collection sessions and is descriptive. Simulation pauses during inference, so these measurements do not demonstrate real-time or physical-robot performance. See the [four-configuration report](reports/2026-11-03-robotics-four-configuration-ablation.md) and the preserved [original confirmation](reports/2026-10-17-robotics-recovery-confirmation.md) for uncertainty, failure cases and reproduction details.
 
 ## Getting started
 
@@ -88,7 +89,7 @@ $env:HF_HOME = Join-Path (Get-Location) "data\raw\huggingface"
 
 The first run downloads the pinned public checkpoint, approximately 1 GB, into `data/raw/robotics/diffusion_pusht/`. Use a new output path for subsequent runs to preserve previous results.
 
-Prepared training data and fine-tuned weights stay local and are Git-ignored. Full preparation, training and evaluation workflows are documented in the [training report](reports/2026-10-16-robotics-recovery-pilot.md) and [confirmation report](reports/2026-10-17-robotics-recovery-confirmation.md).
+Prepared training data and fine-tuned weights stay local and are Git-ignored. Full preparation, training and evaluation workflows are documented in the [training report](reports/2026-10-16-robotics-recovery-pilot.md), [confirmation report](reports/2026-10-17-robotics-recovery-confirmation.md) and [ablation report](reports/2026-11-03-robotics-four-configuration-ablation.md).
 
 ## Repository structure
 
