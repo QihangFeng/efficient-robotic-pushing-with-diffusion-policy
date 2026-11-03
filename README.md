@@ -59,9 +59,13 @@ The completed four-configuration comparison uses **40 initial scenes with two pr
 | Fine-tuned model with fixed-eight execution | 56/80 (70.0%) | 92.01% | 27.66 | 136.07 s |
 | Fine-tuned model with adaptive 8/12 execution | **60/80 (75.0%)** | 91.88% | **22.51** | **120.92 s** |
 
-Compared with adaptive execution on the original model, the combined method improved observed success by **15 percentage points** and used **11.15% fewer predictions**. Average alignment improvement remains uncertain, and some previously successful attempts still fail.
+### What the comparison shows
 
-Compared with fine-tuning alone, the combined method achieved four more observed successes and used **18.62% fewer predictions**. The additional success gain remains uncertain; the clearer additional benefit of adaptive execution is prediction efficiency.
+- **Fine-tuning:** observed success increased from **57.5% to 70.0%** with fixed-eight execution, and from **60.0% to 75.0%** with adaptive execution. These are the larger observed success gains in the component comparisons.
+- **Adaptive execution:** average prediction calls fell by **12.70%** with the original model and **18.62%** with the fine-tuned model, compared with fixed-eight execution using the same respective weights. Prediction efficiency is its clearest additional benefit.
+- **Combined method:** compared with the original baseline, success increased by **17.5 percentage points**, prediction calls fell by **22.44%**, and recorded average runtime fell by **15.60%**. It achieved the highest observed success count and lowest prediction/runtime averages among the four configurations.
+
+The additional four successes from adaptive execution after fine-tuning remain uncertain, as does the fixed-eight fine-tuning success gain. Fine-tuning alone has slightly higher average final alignment than the combined method, but alignment differences are also uncertain. Some previously successful attempts still fail, so the results do not establish an improvement for every scene.
 
 These results concern one trained checkpoint in clean two-dimensional simulation. Runtime spans collection sessions and is descriptive. Simulation pauses during inference, so these measurements do not demonstrate real-time or physical-robot performance. See the [four-configuration report](reports/2026-11-03-robotics-four-configuration-ablation.md) and the preserved [original confirmation](reports/2026-10-17-robotics-recovery-confirmation.md) for uncertainty, failure cases and reproduction details.
 
