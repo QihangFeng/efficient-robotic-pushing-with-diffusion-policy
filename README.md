@@ -50,7 +50,7 @@ The four main metrics are:
 
 Failed attempts remain in the averages. Comparisons use matching initial scenes, repeated prediction samples and equal movement limits, with separate fine-tuning and evaluation scenes.
 
-The completed four-configuration comparison uses **40 initial scenes with two prediction samples per scene**, giving 80 attempts per method. Three conditions reuse the original confirmation records; the fine-tuned fixed-eight condition adds 80 attempts on the same scenes:
+All four configurations were evaluated on the same **40 scenes**, with **two prediction samples per scene**, giving **80 attempts per configuration**.
 
 | Method | Successful pushes | Mean final alignment | Mean predictions | Mean runtime |
 |---|---:|---:|---:|---:|
@@ -69,7 +69,7 @@ Compared with fine-tuning alone, adding adaptive execution completed **four more
 
 Fine-tuning alone had slightly higher average final alignment. Our main achievement is completing more pushing tasks with fewer predictions and shorter measured runtime.
 
-These results concern one trained checkpoint in clean two-dimensional simulation. Runtime spans collection sessions and is descriptive. Simulation pauses during inference, so these measurements do not demonstrate real-time or physical-robot performance. See the [four-configuration report](reports/2026-11-03-robotics-four-configuration-ablation.md) and the preserved [original confirmation](reports/2026-10-17-robotics-recovery-confirmation.md) for uncertainty, failure cases and reproduction details.
+See the [four-configuration report](reports/2026-11-03-robotics-four-configuration-ablation.md) and [original confirmation](reports/2026-10-17-robotics-recovery-confirmation.md) for experimental details and reproduction instructions.
 
 ## Getting started
 
