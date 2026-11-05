@@ -1,0 +1,49 @@
+{
+  "source_sha256": "633e6ce4409e8a615660f653e690949541901b95d68f3c34f240cf04ecde40c5",
+  "frozen_pilot_source_sha256": "1128a0385a44fdebb29bea5ad48ba33b2471aa20ae8f532e63aac479bc7c92e8",
+  "frozen_pilot_summary_sha256": "96678970cc825918542a1d9f0e633e1fbc2c6adca3f7a7116cd4f02c036dce4a",
+  "packages": {
+    "stable-baselines3": "2.7.1",
+    "torch": "2.6.0+cu124",
+    "gymnasium": "0.29.1",
+    "gym-pusht": "0.1.5"
+  },
+  "gpu": "NVIDIA GeForce GTX 1650",
+  "training_seed": 20261105,
+  "training_scene_range_half_open": [
+    100000,
+    1000000
+  ],
+  "development_scenes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "method": "From-scratch online SB3 SAC MultiInputPolicy; no demonstrations",
+  "observation": "two RGB 96x96 frames and their pusher positions; no block pose",
+  "action": "one absolute x-y target per movement",
+  "reward": "unchanged Gym-PushT coverage reward",
+  "success": "true coverage > 0.95",
+  "max_episode_movements": 300,
+  "buffer_size": 20000,
+  "batch_size": 64,
+  "warmup": 1000,
+  "train_freq": 1,
+  "gradient_steps": 1,
+  "net_arch": [
+    256,
+    256
+  ],
+  "checkpoints": [
+    25000,
+    50000,
+    100000
+  ],
+  "max_elapsed_seconds_after_initial_evaluation": 4500,
+  "early_stop": "At 50000 if both intermediate checkpoints have zero successes and neither has mean final development coverage above initialization"
+}

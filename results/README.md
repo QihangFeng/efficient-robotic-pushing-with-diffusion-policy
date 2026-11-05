@@ -224,6 +224,7 @@ Trained/milestone/fixed-eight successes were **60/48/46 out of eighty**. Relativ
 
 - [Preflight](robotics-visual-sac-pilot/preflight/summary.json) and [pilot](robotics-visual-sac-pilot/pilot/summary.json): native visual observations, bounded training, resource measurements, and before/after scores on eight inspected scenes.
 - [Pilot report](../reports/2026-11-05-robotics-visual-sac-pilot.md): the laptop fit the run, but the short pilot did not produce a usable RL comparison policy.
+- [Longer training run](robotics-visual-sac-training/standard-01/summary.json) and [report](../reports/2026-11-05-robotics-visual-sac-training.md): one seed, 100,000 training movements, 0/8 development successes and 4.73% mean final coverage at the last checkpoint.
 
 Original fixed-eight/original adaptive/trained fixed-eight/trained adaptive successes were **46/48/56/60 out of eighty**. Adding adaptive execution to the trained model saved 18.62% of predictions and reduced observed runtime by 11.13%, with four more successes. The additional success gain remains uncertain (paired scene-bootstrap interval: -8.75 to +18.75 percentage points); the prediction-saving interval excludes zero. All 711 CPU tests and the separate raw-artifact audit passed. Preserve the exact checkpoint, milestone `0f40449` and existing evidence. These are the same inspected forty scenes, and runtime across sessions remains descriptive.
 

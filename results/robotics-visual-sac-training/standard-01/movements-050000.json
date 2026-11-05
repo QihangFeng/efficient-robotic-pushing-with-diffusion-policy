@@ -1,0 +1,101 @@
+{
+  "movements": 50000,
+  "updates": 49000,
+  "elapsed_before_evaluation_seconds": 2031.5012521000008,
+  "checkpoint": "tmp/visual-sac-training-models/standard-01/movements-050000.zip",
+  "checkpoint_sha256": "3ee8e769c1acb4d796c19519422c55d4f9ae193cd098f20190f50407c286aa70",
+  "losses": {
+    "actor_loss": -4.432145118713379,
+    "critic_loss": 0.005858908407390118
+  },
+  "mean_recent_training_return": 15.162205550000001,
+  "development": {
+    "successes": 0,
+    "episodes": [
+      {
+        "scene": 0,
+        "success": false,
+        "movements": 300,
+        "initial_coverage": 0.18078262177574944,
+        "final_coverage": 0.18078262177574944,
+        "peak_coverage": 0.18078262177574944,
+        "wall_seconds": 1.6327884000002086,
+        "inference_seconds": 0.7158669999971607
+      },
+      {
+        "scene": 1,
+        "success": false,
+        "movements": 300,
+        "initial_coverage": 0.0006417071607092789,
+        "final_coverage": 0.0006417071607092789,
+        "peak_coverage": 0.0006417071607092789,
+        "wall_seconds": 1.6082688999995298,
+        "inference_seconds": 0.6962169999933394
+      },
+      {
+        "scene": 2,
+        "success": false,
+        "movements": 300,
+        "initial_coverage": 0.0,
+        "final_coverage": 0.0,
+        "peak_coverage": 0.0,
+        "wall_seconds": 1.6962934999992285,
+        "inference_seconds": 0.8309994000137522
+      },
+      {
+        "scene": 3,
+        "success": false,
+        "movements": 300,
+        "initial_coverage": 0.005079459880528501,
+        "final_coverage": 0.005079459880528501,
+        "peak_coverage": 0.005079459880528501,
+        "wall_seconds": 1.7892580999996426,
+        "inference_seconds": 0.9193476000036753
+      },
+      {
+        "scene": 4,
+        "success": false,
+        "movements": 300,
+        "initial_coverage": 0.00902814219219289,
+        "final_coverage": 0.004119468331148546,
+        "peak_coverage": 0.00902814219219289,
+        "wall_seconds": 1.9038837999996758,
+        "inference_seconds": 1.038204600004974
+      },
+      {
+        "scene": 5,
+        "success": false,
+        "movements": 300,
+        "initial_coverage": 0.18333552139407797,
+        "final_coverage": 0.18333552139407797,
+        "peak_coverage": 0.18333552139407797,
+        "wall_seconds": 1.8916518000005453,
+        "inference_seconds": 1.0104489000113972
+      },
+      {
+        "scene": 6,
+        "success": false,
+        "movements": 300,
+        "initial_coverage": 0.0,
+        "final_coverage": 0.0,
+        "peak_coverage": 0.0,
+        "wall_seconds": 1.8847932000007859,
+        "inference_seconds": 1.011838099997476
+      },
+      {
+        "scene": 7,
+        "success": false,
+        "movements": 300,
+        "initial_coverage": 0.0,
+        "final_coverage": 0.0,
+        "peak_coverage": 0.0,
+        "wall_seconds": 1.9834276999990834,
+        "inference_seconds": 1.0647416000083467
+      }
+    ],
+    "mean_final_coverage": 0.046744847317776714,
+    "mean_peak_coverage": 0.047358431550407254,
+    "mean_wall_seconds": 1.7987956749998375,
+    "mean_movements": 300.0
+  }
+}
