@@ -1,0 +1,35 @@
+{
+  "stage": "preflight",
+  "source_sha256": "1128a0385a44fdebb29bea5ad48ba33b2471aa20ae8f532e63aac479bc7c92e8",
+  "preflight_id": null,
+  "sb3": "2.7.1",
+  "torch": "2.6.0+cu124",
+  "gymnasium": "0.29.1",
+  "gpu": "NVIDIA GeForce GTX 1650",
+  "train_seed": 20261105,
+  "train_scene_range": [
+    100000,
+    1000000
+  ],
+  "dev_scenes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "steps": 256,
+  "warmup": 64,
+  "max_training_seconds": 90,
+  "max_episode_movements": 300,
+  "buffer_size": 20000,
+  "batch_size": 64,
+  "observation": "two RGB 96x96 frames and their pusher x-y; no block pose",
+  "reward": "native Gym-PushT: min(coverage / 0.95, 1)",
+  "success": "true coverage > 0.95",
+  "action": "one absolute x-y target per movement",
+  "algorithm": "SB3 SAC MultiInputPolicy, default NatureCNN and SAC hyperparameters except recorded overrides"
+}

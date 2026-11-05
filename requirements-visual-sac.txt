@@ -1,0 +1,9 @@
+# Add to the existing robotics runtime using a separate --target directory and --no-deps.
+# The robotics runtime already provides CUDA Torch, Gymnasium, NumPy, pandas and cloudpickle.
+stable-baselines3==2.7.1
+matplotlib==3.10.7
+contourpy==1.3.3
+cycler==0.12.1
+fonttools==4.60.1
+kiwisolver==1.4.9
+pyparsing==3.2.5

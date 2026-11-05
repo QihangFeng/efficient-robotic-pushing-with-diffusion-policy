@@ -1,0 +1,205 @@
+{
+  "stage": "pilot",
+  "source_sha256": "1128a0385a44fdebb29bea5ad48ba33b2471aa20ae8f532e63aac479bc7c92e8",
+  "movements": 16589,
+  "updates": 15588,
+  "training_seconds": 600.0185252999995,
+  "movements_per_second": 27.64747970357377,
+  "stop_reason": "time_limit",
+  "passed_preflight": false,
+  "actor_and_critic_updated": true,
+  "finite_training": true,
+  "resource_guard_passed": true,
+  "replay_bytes": 2212880000,
+  "resources": {
+    "peak_rss_mib": 2906.88671875,
+    "minimum_available_ram_mib": 5348.87109375,
+    "minimum_free_vram_mib": 3120.75,
+    "peak_reserved_vram_mib": 144.0,
+    "peak_allocated_vram_mib": 124.443359375
+  },
+  "losses": {
+    "actor_loss": -11.011568069458008,
+    "critic_loss": 0.0010366607457399368
+  },
+  "initial_development": {
+    "successes": 0,
+    "episodes": [
+      {
+        "scene": 0,
+        "success": false,
+        "movements": 300,
+        "initial_coverage": 0.18078262177574944,
+        "final_coverage": 0.18078262177574944,
+        "peak_coverage": 0.18078262177574944,
+        "wall_seconds": 1.789532700000109,
+        "inference_seconds": 0.904221300003428
+      },
+      {
+        "scene": 1,
+        "success": false,
+        "movements": 300,
+        "initial_coverage": 0.0006417071607092789,
+        "final_coverage": 0.0006417071607092789,
+        "peak_coverage": 0.0006417071607092789,
+        "wall_seconds": 1.6001087999998163,
+        "inference_seconds": 0.7324747000034222
+      },
+      {
+        "scene": 2,
+        "success": false,
+        "movements": 300,
+        "initial_coverage": 0.0,
+        "final_coverage": 0.0,
+        "peak_coverage": 0.0,
+        "wall_seconds": 1.8038455999999314,
+        "inference_seconds": 0.9355410999992273
+      },
+      {
+        "scene": 3,
+        "success": false,
+        "movements": 300,
+        "initial_coverage": 0.005079459880528501,
+        "final_coverage": 0.011802362732900055,
+        "peak_coverage": 0.11789042377512124,
+        "wall_seconds": 1.810471900000266,
+        "inference_seconds": 0.9455982999975276
+      },
+      {
+        "scene": 4,
+        "success": false,
+        "movements": 300,
+        "initial_coverage": 0.00902814219219289,
+        "final_coverage": 0.00902814219219289,
+        "peak_coverage": 0.00902814219219289,
+        "wall_seconds": 1.8773160000000644,
+        "inference_seconds": 0.97134959999903
+      },
+      {
+        "scene": 5,
+        "success": false,
+        "movements": 300,
+        "initial_coverage": 0.18333552139407797,
+        "final_coverage": 0.636906909111272,
+        "peak_coverage": 0.636906909111272,
+        "wall_seconds": 1.8779076000000714,
+        "inference_seconds": 0.9980623000028572
+      },
+      {
+        "scene": 6,
+        "success": false,
+        "movements": 300,
+        "initial_coverage": 0.0,
+        "final_coverage": 0.16713143393245547,
+        "peak_coverage": 0.16932986741769987,
+        "wall_seconds": 1.934054699999706,
+        "inference_seconds": 1.010421700003917
+      },
+      {
+        "scene": 7,
+        "success": false,
+        "movements": 300,
+        "initial_coverage": 0.0,
+        "final_coverage": 0.0,
+        "peak_coverage": 0.0,
+        "wall_seconds": 2.025040600000011,
+        "inference_seconds": 1.0801222000013695
+      }
+    ],
+    "mean_final_coverage": 0.1257866471131599,
+    "mean_peak_coverage": 0.1393224589290931,
+    "mean_wall_seconds": 1.839784737499997,
+    "mean_movements": 300.0
+  },
+  "checkpoint": "tmp/visual-sac-models/pilot.zip",
+  "checkpoint_sha256": "e475a887ae536d5cfc71732af91bbbffef0f3fd1cef0551d633ed0d575b6b3cb",
+  "final_development": {
+    "successes": 0,
+    "episodes": [
+      {
+        "scene": 0,
+        "success": false,
+        "movements": 300,
+        "initial_coverage": 0.18078262177574944,
+        "final_coverage": 0.18078262177574944,
+        "peak_coverage": 0.18078262177574944,
+        "wall_seconds": 1.7407326000002286,
+        "inference_seconds": 0.7628711999977895
+      },
+      {
+        "scene": 1,
+        "success": false,
+        "movements": 300,
+        "initial_coverage": 0.0006417071607092789,
+        "final_coverage": 0.0006417071607092789,
+        "peak_coverage": 0.0006417071607092789,
+        "wall_seconds": 1.7991535000001022,
+        "inference_seconds": 0.8001325999930486
+      },
+      {
+        "scene": 2,
+        "success": false,
+        "movements": 300,
+        "initial_coverage": 0.0,
+        "final_coverage": 0.0,
+        "peak_coverage": 0.0,
+        "wall_seconds": 2.1152169000006324,
+        "inference_seconds": 1.0584953999932623
+      },
+      {
+        "scene": 3,
+        "success": false,
+        "movements": 300,
+        "initial_coverage": 0.005079459880528501,
+        "final_coverage": 0.0,
+        "peak_coverage": 0.12068333286404624,
+        "wall_seconds": 1.8666731000002983,
+        "inference_seconds": 0.994402500002252
+      },
+      {
+        "scene": 4,
+        "success": false,
+        "movements": 300,
+        "initial_coverage": 0.00902814219219289,
+        "final_coverage": 0.0,
+        "peak_coverage": 0.00902814219219289,
+        "wall_seconds": 1.9648256000000401,
+        "inference_seconds": 1.0649065000116025
+      },
+      {
+        "scene": 5,
+        "success": false,
+        "movements": 300,
+        "initial_coverage": 0.18333552139407797,
+        "final_coverage": 0.4480503090256848,
+        "peak_coverage": 0.44831806768518634,
+        "wall_seconds": 2.0160987999997815,
+        "inference_seconds": 1.0669572000042535
+      },
+      {
+        "scene": 6,
+        "success": false,
+        "movements": 300,
+        "initial_coverage": 0.0,
+        "final_coverage": 0.03426966678707621,
+        "peak_coverage": 0.03426966678707621,
+        "wall_seconds": 1.9782851999998456,
+        "inference_seconds": 1.0690229000028921
+      },
+      {
+        "scene": 7,
+        "success": false,
+        "movements": 300,
+        "initial_coverage": 0.0,
+        "final_coverage": 0.0,
+        "peak_coverage": 0.0,
+        "wall_seconds": 1.911735100000442,
+        "inference_seconds": 1.0018127000093955
+      }
+    ],
+    "mean_final_coverage": 0.08296803809365247,
+    "mean_peak_coverage": 0.09921544230812004,
+    "mean_wall_seconds": 1.9240901000001713,
+    "mean_movements": 300.0
+  }
+}

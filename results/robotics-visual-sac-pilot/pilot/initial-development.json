@@ -1,0 +1,89 @@
+{
+  "successes": 0,
+  "episodes": [
+    {
+      "scene": 0,
+      "success": false,
+      "movements": 300,
+      "initial_coverage": 0.18078262177574944,
+      "final_coverage": 0.18078262177574944,
+      "peak_coverage": 0.18078262177574944,
+      "wall_seconds": 1.789532700000109,
+      "inference_seconds": 0.904221300003428
+    },
+    {
+      "scene": 1,
+      "success": false,
+      "movements": 300,
+      "initial_coverage": 0.0006417071607092789,
+      "final_coverage": 0.0006417071607092789,
+      "peak_coverage": 0.0006417071607092789,
+      "wall_seconds": 1.6001087999998163,
+      "inference_seconds": 0.7324747000034222
+    },
+    {
+      "scene": 2,
+      "success": false,
+      "movements": 300,
+      "initial_coverage": 0.0,
+      "final_coverage": 0.0,
+      "peak_coverage": 0.0,
+      "wall_seconds": 1.8038455999999314,
+      "inference_seconds": 0.9355410999992273
+    },
+    {
+      "scene": 3,
+      "success": false,
+      "movements": 300,
+      "initial_coverage": 0.005079459880528501,
+      "final_coverage": 0.011802362732900055,
+      "peak_coverage": 0.11789042377512124,
+      "wall_seconds": 1.810471900000266,
+      "inference_seconds": 0.9455982999975276
+    },
+    {
+      "scene": 4,
+      "success": false,
+      "movements": 300,
+      "initial_coverage": 0.00902814219219289,
+      "final_coverage": 0.00902814219219289,
+      "peak_coverage": 0.00902814219219289,
+      "wall_seconds": 1.8773160000000644,
+      "inference_seconds": 0.97134959999903
+    },
+    {
+      "scene": 5,
+      "success": false,
+      "movements": 300,
+      "initial_coverage": 0.18333552139407797,
+      "final_coverage": 0.636906909111272,
+      "peak_coverage": 0.636906909111272,
+      "wall_seconds": 1.8779076000000714,
+      "inference_seconds": 0.9980623000028572
+    },
+    {
+      "scene": 6,
+      "success": false,
+      "movements": 300,
+      "initial_coverage": 0.0,
+      "final_coverage": 0.16713143393245547,
+      "peak_coverage": 0.16932986741769987,
+      "wall_seconds": 1.934054699999706,
+      "inference_seconds": 1.010421700003917
+    },
+    {
+      "scene": 7,
+      "success": false,
+      "movements": 300,
+      "initial_coverage": 0.0,
+      "final_coverage": 0.0,
+      "peak_coverage": 0.0,
+      "wall_seconds": 2.025040600000011,
+      "inference_seconds": 1.0801222000013695
+    }
+  ],
+  "mean_final_coverage": 0.1257866471131599,
+  "mean_peak_coverage": 0.1393224589290931,
+  "mean_wall_seconds": 1.839784737499997,
+  "mean_movements": 300.0
+}

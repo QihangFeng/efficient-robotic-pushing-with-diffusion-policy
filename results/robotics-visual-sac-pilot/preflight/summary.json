@@ -1,0 +1,26 @@
+{
+  "stage": "preflight",
+  "source_sha256": "1128a0385a44fdebb29bea5ad48ba33b2471aa20ae8f532e63aac479bc7c92e8",
+  "movements": 256,
+  "updates": 192,
+  "training_seconds": 9.437009600000238,
+  "movements_per_second": 27.127237424871705,
+  "stop_reason": "interaction_limit",
+  "passed_preflight": true,
+  "actor_and_critic_updated": true,
+  "finite_training": true,
+  "resource_guard_passed": true,
+  "replay_bytes": 2212880000,
+  "resources": {
+    "peak_rss_mib": 1165.0,
+    "minimum_available_ram_mib": 6373.90234375,
+    "minimum_free_vram_mib": 3120.75,
+    "peak_reserved_vram_mib": 144.0,
+    "peak_allocated_vram_mib": 124.443359375
+  },
+  "losses": {
+    "actor_loss": -3.0495920181274414,
+    "critic_loss": 0.043561168015003204
+  },
+  "initial_development": null
+}

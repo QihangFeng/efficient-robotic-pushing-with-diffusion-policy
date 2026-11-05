@@ -220,6 +220,11 @@ Trained/milestone/fixed-eight successes were **60/48/46 out of eighty**. Relativ
 - [evaluation-resources-from-055.json](robotics-recovery-fixed8/evaluation-resources-from-055.json): the resumed invocation for the last twenty-five attempts. The first fifty-five completed attempts were preserved; the first invocation left no resource record.
 - [Four-configuration report](../reports/2026-11-03-robotics-four-configuration-ablation.md): complete results, component comparisons, uncertainty, resources and reproduction instructions.
 
+## Visual SAC development pilot
+
+- [Preflight](robotics-visual-sac-pilot/preflight/summary.json) and [pilot](robotics-visual-sac-pilot/pilot/summary.json): native visual observations, bounded training, resource measurements, and before/after scores on eight inspected scenes.
+- [Pilot report](../reports/2026-11-05-robotics-visual-sac-pilot.md): the laptop fit the run, but the short pilot did not produce a usable RL comparison policy.
+
 Original fixed-eight/original adaptive/trained fixed-eight/trained adaptive successes were **46/48/56/60 out of eighty**. Adding adaptive execution to the trained model saved 18.62% of predictions and reduced observed runtime by 11.13%, with four more successes. The additional success gain remains uncertain (paired scene-bootstrap interval: -8.75 to +18.75 percentage points); the prediction-saving interval excludes zero. All 711 CPU tests and the separate raw-artifact audit passed. Preserve the exact checkpoint, milestone `0f40449` and existing evidence. These are the same inspected forty scenes, and runtime across sessions remains descriptive.
 
 The current tracked results cover the robotic manipulation project.
