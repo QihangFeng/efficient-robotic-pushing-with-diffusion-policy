@@ -249,4 +249,6 @@ Seven of the nine lost attempts succeed with fine-tuned/fixed-eight execution. T
 
 The [separate retention-pilot execution protocol](robotics-retention-pilot/protocol.json) freezes the approved recipe, exact training samples and 42 development attempts. Its runner passes sixteen CPU tests. Unchanged sample slots reproduce the original training schedule; baseline replacement uses a separate sampling RNG. Protocol preparation alone is not evidence of model improvement. The original preflight files remain a record of data preparation.
 
+The [retention training record](robotics-retention-pilot/training.json) and [training audit](robotics-retention-pilot/training-audit.json) confirm the completed 600-update candidate: 2,400 training forwards, 207.51 seconds and 1,111.08 MiB peak allocated GPU memory. The same final block changes and the backbone remains unchanged. Training completion alone does not establish fewer negative flips; the full prescribed development comparison must finish.
+
 The current tracked results cover the robotic manipulation project.

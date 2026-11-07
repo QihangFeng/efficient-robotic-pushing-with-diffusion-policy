@@ -108,6 +108,12 @@ The isolated [retention runner](../experiments/robotics_retention_pilot.py) impl
 
 The explicit runner stages are `prepare`, `verify`, `train` and `evaluate`. Preparation and verification do not load the pretrained robot policy. Real training and pushing occur only in their named stages. More elaborate teacher-output anchoring remains a separate future option if rehearsal is inadequate; it is not part of this pilot.
 
+### Training stage completed
+
+The retention candidate completed **600 updates / 2,400 denoiser training forwards** in **207.51 seconds**, excluding policy loading. Peak allocated GPU memory was **1,111.08 MiB**. The new checkpoint is stored separately from the original and current recovery-trained heads. Its [training record](../results/robotics-retention-pilot/training.json) and [independent training audit](../results/robotics-retention-pilot/training-audit.json) verify 600 expert, 1,200 recovery and 600 baseline-success samples; all 1,800 unchanged sample slots reproduce the earlier recipe's choices. Only the same **1,313,282 final-block parameters** change, and the frozen backbone/normalization digest matches the original.
+
+These checks establish a correctly executed training stage, not improved robot performance. The complete 42-attempt development comparison is still required to judge the preservation idea. The trained head's SHA-256 is `8a5cdddd67c7958a59513165dcdfd6e8b1a80380e95c383c89b5faeee6115bfc`.
+
 ### Prepared data and proposed schedule
 
 The [separate data supplement](../results/robotics-retention-preflight/baseline-supplement.json) references the existing arrays without changing their original diagnostic metadata. All **3,006 RGB frames**, own pusher positions and **2,986 executed commands** match the twenty saved successful source traces. The supplement contains 2,686 complete H16 windows with two observations per sample and no padding. No image was re-rendered or re-fitted.

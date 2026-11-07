@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "optimizer_updates": 600,
+  "denoiser_training_calls": 2400,
+  "actual_group_counts": {
+    "expert": 600,
+    "recovery": 1200,
+    "baseline": 600
+  },
+  "unchanged_training_sample_slots_checked": 1800,
+  "validation_samples": 96,
+  "updated_parameters": 1313282,
+  "frozen_backbone_matches_original": true,
+  "test_scenes_used_for_training": false,
+  "training_sha256": "58844eaf73eb111f26da6e41dbfed4c83ad8fbf32a76cd40c14a30a00d0ecd16",
+  "protocol_sha256": "8688e48b42718bc9bfdb004e22b33f5835c90088092b653980520b530ef5fdec",
+  "auditor_sha256": "474bd8de4b0d6bbe8920bf62a0ed57b936e885cda3aaab8310ad8f6422623b0a",
+  "scope": "CPU artifact/provenance checks; does not repeat gradients."
+}
