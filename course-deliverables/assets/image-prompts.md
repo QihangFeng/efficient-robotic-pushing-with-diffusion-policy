@@ -1,5 +1,21 @@
 # Illustration sources and prompts
 
+## Diffusion Policy motivation diagram, 6 November 2026
+
+Output: `diffusion-policy-multimodality.png`. Generated using the built-in Imagegen tool. The three scenes illustrate multiple valid routes, an ineffective averaged route, and one coherent sampled route. PowerPoint supplies the editable labels. The obstacle example is conceptual and does not depict a PushT experiment or a guarantee of successful diffusion sampling. The explanation follows Chi et al., Diffusion Policy, Sections 4.1 and 4.3, https://arxiv.org/html/2303.04137.
+
+Exact generation prompt
+
+Use case: scientific-educational.
+Asset type: a simple academic illustration to place inside a PowerPoint slide explaining why a diffusion policy can represent multiple valid movement plans.
+Create a very wide landscape illustration, roughly 3:1, pure white background, flat crisp top-down 2D geometry. THREE equal-width scenes side by side, generous white spacing, no frames, no shadows, no decorative elements, NO TEXT anywhere because all labels will be editable PowerPoint text outside the illustration.
+In all three scenes keep exactly the same geometry: a small green circular start marker at the bottom center, a small hollow green target ring at the top center, and a tall grey rectangular OBSTACLE halfway between them, blocking the direct straight route. The obstacle is an ordinary rectangular obstacle, NOT a T-shaped pushing object.
+LEFT SCENE: two equally plausible smoothly curved routes from the same start to the same target, one passing clearly to the LEFT of the obstacle in dark green #275D38, the other passing clearly to its RIGHT in amber. Neither route touches or crosses the obstacle. Both routes have small forward arrowheads along them and both reach the target. This depicts two modes in demonstrations.
+MIDDLE SCENE: a single red straight route from the same start directly toward the target. It runs into the center of the grey obstacle. A restrained red X marks the collision with the obstacle. This depicts the problematic coordinate-wise average of the left and right routes. The route is visibly blocked and ends at the collision.
+RIGHT SCENE: ONE coherent dark green route passes to the LEFT of the same obstacle and reaches the target. Show five small green waypoint dots along this route and arrowheads that indicate travel from bottom to top. This depicts one possible diffusion sample, not a search through many candidates.
+Keep the start markers, target rings, and obstacles identical in size and relative positions across all three scenes. Use charcoal grey for obstacles, green and amber for the two demonstrated routes, and muted red only for the blocked mean route. Clarity at classroom projection size is more important than decoration. Flat white academic diagram, visually simple. No statistics, robot drawings, text, numbers, formulas, or logos.
+
+
 The original PNG illustrations were generated with the built-in image-generation tool. The current action diagram was edited with that tool; the current fine-tuning diagram combines a generated neural-network illustration with user-approved precise SVG scene panels. They are conceptual illustrations, not measured robot trajectories, model architecture specifications or experimental results. The presentation also uses cropped simulator illustrations from the existing project evidence; their paths and source credits appear in the relevant slide notes. Revision details and exact prompts appear below.
 
 ## Original action-reuse illustration
