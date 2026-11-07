@@ -1,0 +1,21 @@
+{
+  "protocol_sha256": "8688e48b42718bc9bfdb004e22b33f5835c90088092b653980520b530ef5fdec",
+  "training_sha256": "58844eaf73eb111f26da6e41dbfed4c83ad8fbf32a76cd40c14a30a00d0ecd16",
+  "heads": {
+    "fixed8": {
+      "tensor_digest": "ab4692b8ebab463bda2232d9cc3e24b42c2f7813c0c1de432599e0e65213c938"
+    },
+    "current12": {
+      "path": "data/prepared/robotics/recovery-pilot/training/final-tail.pt",
+      "sha256": "1d1b0b0383fd6da6cc5325929fa879bed6ceef5289688c8dae52dedd7bda7219",
+      "tensor_digest": "4286fe28e2da68f003cfadbbe3cab2db51cbc716d21c8df9e128e6cbf15eb3da",
+      "optimizer_step": 600
+    },
+    "retention12": {
+      "path": "data\\prepared\\robotics\\retention-pilot\\training\\final-tail.pt",
+      "sha256": "8a5cdddd67c7958a59513165dcdfd6e8b1a80380e95c383c89b5faeee6115bfc",
+      "tensor_digest": "5b1ab28224b6e113419244ff395e16c2dd329942f7286ddfe342060e40490b0c",
+      "optimizer_step": 600
+    }
+  }
+}

@@ -1,12 +1,14 @@
-# Investigating the nine lost original-baseline successes
+# Lost baseline successes: diagnosis and rehearsal pilot
 
-**The saved evidence does not support treating all nine losses as catastrophic forgetting or as one faulty interruption rule.** Seven of the nine attempts succeed with the same fine-tuned model under fixed-eight execution. The combined method's losses include destructive fresh predictions and final positioning stalls. This review identifies a bounded preservation experiment to discuss; it does not establish a recovery fix.
+**The approved baseline-success rehearsal candidate did not mitigate negative flips in the development pilot.** It succeeded in **8/14 attempts**, versus **11/14** for both the current recovery-trained/adaptive method and the original fixed-eight control. It lost three current-method successes and gained none. The candidate is not adopted; the existing model, controller and forty-scene results remain unchanged.
+
+The preceding saved-trajectory diagnosis does not support treating all nine original losses as catastrophic forgetting or as one faulty interruption rule. Seven of the nine attempts succeed with the same fine-tuned model under fixed-eight execution. Their combined-method losses include destructive fresh predictions and final positioning stalls. The mitigation remains unresolved.
 
 The combined method still gains 23 successes and loses nine against original fixed eight, giving 60/80 versus 46/80. Those nine scene/prediction-draw pairs cover **seven distinct starting scenes**. Preserving the gains matters as much as recovering selected losses.
 
 ## Scope and checks
 
-This is CPU-only analysis of the existing four-configuration comparison on scenes 170–209, draw offsets 60000/70000. It reads all **320 attempts and 70,797 recorded movements**, rather than inspecting failures alone. No policy, training code or simulator is imported by the review or auditor. No model prediction, training update, physics replay, camera fitting, new pushing attempt or controller change occurred.
+Sections 1–3 analyze the existing four-configuration comparison on scenes 170–209, draw offsets 60000/70000. That CPU-only diagnosis reads all **320 attempts and 70,797 recorded movements**, rather than inspecting failures alone. Its review and auditor import no policy, training code or simulator and perform no new inference, training or physics. Section 4 separately records the approved baseline-success rehearsal pilot, which does train a new output block and collect development attempts.
 
 The [review](../results/robotics-baseline-loss-review/summary.json) binds 724 source/evidence files and verifies sidecars, compressed trace hashes, model identities, H16 generation, prediction accounting, first-success termination and common starting states. Existing frozen audits supply the earlier controller/queue provenance; this review does not claim to repeat neural inference or physics. The [separate arithmetic audit](../results/robotics-baseline-loss-review/artifact-audit.json) checks the component outcomes, peaks, stationary tails, matched-prefix indices and all comparison-group decline counts directly from raw JSON and traces.
 
@@ -86,35 +88,97 @@ None of the 98 extensions in the nine losses causes an immediate >3 pp overlap d
 
 All nine losses contain a >3 pp fresh-prefix drawdown, but so do **46 of the 60 successes**. Four losses have no interruption at all. These findings do not justify reopening the rejected warning/weighted filters, treating every decline as failure or adding an oracle success/failure gate.
 
-## 4. A concrete preservation experiment to discuss
+## 4. Baseline-success rehearsal pilot
 
 The literature distinguishes improving average performance from preserving previously correct behavior. [Positive-Congruent Training (CVPR 2021)](https://arxiv.org/abs/2011.09161) gives greater preservation weight to examples handled correctly by the old classifier. Its classification method is not a ready-made trajectory controller. [Learning without Forgetting](https://arxiv.org/abs/1606.09282) preserves old model responses during adaptation. [FDPP (ICRA 2025)](https://arxiv.org/html/2501.08259v1) tests diffusion-policy fine-tuning on PushT and uses a distribution-preservation penalty; its preference-based RL pipeline differs from our supervised update.
 
-**The smallest training change worth discussing is baseline-success rehearsal:** include native, successful original-policy trajectories alongside the existing expert/recovery data. This is a proposed adaptation of the preservation idea, not a validated mitigation or a reproduction of PCT/FDPP.
+**The approved pilot tests baseline-success rehearsal:** include native, successful original-policy trajectories alongside the existing expert/recovery data. This adapts the preservation idea; it is not a reproduction of PCT/FDPP, and training completion alone does not validate the mitigation.
 
-We already have **20 ordinary successful baseline trajectories on discovery scenes 0–29**, prepared as diagnostic controls. They supply **2,686 complete native H16 windows** and were **not used in the current training**. Their arrays and source metadata are available; the new audit verifies their stored array hashes. Any reuse requires a new dataset manifest, leaving the diagnostic manifest intact.
+We already have **20 ordinary successful baseline trajectories on discovery scenes 0–29**, prepared as diagnostic controls. They supply **2,686 complete native H16 windows** and were **not used to train the established recovery-trained checkpoint**. The separate supplement supplies the new candidate's training/validation split while leaving the diagnostic manifest intact. Its audit verifies the existing arrays and source metadata.
 
-One bounded candidate would:
+The fixed candidate recipe is:
 
 1. Start from the same original checkpoint and update only the same final convolution block for 600 updates, retaining the learning rate, H16 labels, normalization and 100-step inference.
 2. Keep four accumulated samples per update. Replace one of the two expert samples with a successful-baseline sample: **one expert + one baseline-success + two recovery**, versus the original **two expert + two recovery**. This preserves the recovery sample count and total denoiser training-call budget.
 3. Split the twenty baseline-success scenes into sixteen training scenes and four validation scenes before training. Preserve the existing whole-scene recovery split. Exclude all forty evaluation scenes, their trajectories and the nine inspected losses from training/selection data.
 4. Leave the milestone controller unchanged. There is no additional model or prediction call during deployment. A retention dataset may improve predicted movements; it is not guaranteed to resolve the seven execution-associated losses.
-5. First compare the candidate, current combined model and original fixed-eight policy on a fixed development screen. Four held-out baseline-success scenes plus the three existing recovery-validation scenes, with two new prediction draws, would require **42 development attempts**. Historical per-attempt rates suggest roughly **90 minutes plus loading/checks**, not a measured runtime for the proposed model. Freeze the exact split, draws, checkpoint and stopping rule before running it.
+5. Compare the candidate, current combined model and original fixed-eight policy on a fixed development screen. Four held-out baseline-success scenes plus the three existing recovery-validation scenes, with two new prediction draws, give **42 development attempts**. The pre-run estimate was roughly **90 minutes plus loading/checks**. The exact split, draws, checkpoint and stopping rule were frozen before running it.
 
-The development screen should report gains and losses relative to original fixed eight, overall success, coverage, predictions and runtime, including failures. A candidate should advance only if it improves the retention trade-off without sacrificing the existing recovery behavior. Confirming generalization would then require a separately agreed, untouched evaluation cohort. The inspected scenes 170–209 cannot become fresh evaluation evidence for this redesign.
+The development screen reports gains and losses relative to original fixed eight, overall success, coverage, predictions and runtime, including failures. A candidate should advance only if it improves the retention trade-off without sacrificing the existing recovery behavior. Confirming generalization would then require a separately agreed, untouched evaluation cohort. The inspected scenes 170–209 cannot become fresh evaluation evidence for this redesign.
 
-The isolated [retention runner](../experiments/robotics_retention_pilot.py) implements this prescribed candidate. All **16 CPU runner tests pass**, including exact resumption on a tiny test model, candidate checkpoint identity, protected outputs and scene-cluster statistics. Its [execution protocol](../results/robotics-retention-pilot/protocol.json) freezes all 600 training updates and the 42 development attempts. The original two recovery samples and first expert sample match the previous training schedule at every update; only the second expert slot changes, using a separate baseline-sampling RNG. No recovery benefit is established until the model run and complete comparison finish.
+The isolated [retention runner](../experiments/robotics_retention_pilot.py) implements this prescribed candidate. All **16 CPU runner tests pass**, including exact resumption on a tiny test model, candidate checkpoint identity, protected outputs and scene-cluster statistics. Its [execution protocol](../results/robotics-retention-pilot/protocol.json) freezes all 600 training updates and the 42 development attempts. The original two recovery samples and first expert sample match the previous training schedule at every update; only the second expert slot changes, using a separate baseline-sampling RNG. All prescribed training and comparison attempts are complete.
 
 The explicit runner stages are `prepare`, `verify`, `train` and `evaluate`. Preparation and verification do not load the pretrained robot policy. Real training and pushing occur only in their named stages. More elaborate teacher-output anchoring remains a separate future option if rehearsal is inadequate; it is not part of this pilot.
+
+This tests one prescribed data mix and one training seed. Replacing an expert sample halves the expert rehearsal count while keeping recovery examples and total updates fixed. It does not isolate the effect of adding baseline-success examples while preserving all expert rehearsal. The final update-600 checkpoint is fixed in advance; validation losses and development outcomes do not select another checkpoint or mixture.
 
 ### Training stage completed
 
 The retention candidate completed **600 updates / 2,400 denoiser training forwards** in **207.51 seconds**, excluding policy loading. Peak allocated GPU memory was **1,111.08 MiB**. The new checkpoint is stored separately from the original and current recovery-trained heads. Its [training record](../results/robotics-retention-pilot/training.json) and [independent training audit](../results/robotics-retention-pilot/training-audit.json) verify 600 expert, 1,200 recovery and 600 baseline-success samples; all 1,800 unchanged sample slots reproduce the earlier recipe's choices. Only the same **1,313,282 final-block parameters** change, and the frozen backbone/normalization digest matches the original.
 
-These checks establish a correctly executed training stage, not improved robot performance. The complete 42-attempt development comparison is still required to judge the preservation idea. The trained head's SHA-256 is `8a5cdddd67c7958a59513165dcdfd6e8b1a80380e95c383c89b5faeee6115bfc`.
+These checks establish a correctly executed training stage. The trained head's SHA-256 is `8a5cdddd67c7958a59513165dcdfd6e8b1a80380e95c383c89b5faeee6115bfc`.
 
-### Prepared data and proposed schedule
+On the fixed 32 validation windows per group, baseline-success denoising loss rose from **0.005654 to 0.008167**; expert loss rose from 0.002244 to 0.004628, while recovery loss fell from 0.018247 to 0.017308. These are noise-prediction losses on correlated windows, not pushing success rates or a checkpoint-selection rule. Baseline-success rehearsal did not preserve even this held-out denoising score under the chosen mix.
+
+### Completed development comparison
+
+All **42 scheduled attempts** finished in one collector invocation, with no completed attempt replaced, excluded or rerun. Each method used the same seven starting scenes and two prediction draws: **14 attempts per method, seven scene clusters**. All use two observations, H16 generation, 100 denoising steps, a 300-movement limit and success strictly above 95% simulator target coverage. Dynamic simulator state remains scoring-only. Both adaptive arms reuse the unchanged milestone controller.
+
+The [summary](../results/robotics-retention-pilot/summary.json) includes all successes and failures:
+
+| Method | Successful pushes | Average final alignment | Average predictions | Average runtime |
+|---|---:|---:|---:|---:|
+| Original pretrained / fixed eight | 11/14 (78.6%) | 91.60% | 25.93 | 127.30 s |
+| Current recovery-trained / adaptive | 11/14 (78.6%) | 93.21% | 24.00 | 128.35 s |
+| New baseline-rehearsal / adaptive | 8/14 (57.1%) | 88.79% | 26.86 | 144.35 s |
+
+The candidate succeeds **4/7 in each draw**. Current and original each succeed **5/7 at offset 91000 and 6/7 at offset 92000**. These draws repeat the same seven physical scenes; they are not fourteen independent scenes.
+
+| Method | Baseline holdouts: scenes 1, 5, 10, 23 | Recovery validation: scenes 15, 16, 18 | Gained / lost successes versus original fixed eight |
+|---|---:|---:|---:|
+| Original / fixed eight | 6/8 | 5/6 | Reference |
+| Current / adaptive | 8/8 | 3/6 | 2 gained / 2 lost |
+| New rehearsal / adaptive | 5/8 | 3/6 | 2 gained / 5 lost |
+
+The new candidate retains the same two gains against original fixed eight, at **10/92000 and 23/91000**, but introduces three additional losses relative to the current method. All three time out at movement 300:
+
+| Scene / draw | Current success at movement | Candidate final alignment |
+|---|---:|---:|
+| 1 / 92000 | 203 | 85.52% |
+| 5 / 91000 | 294 | 93.53% |
+| 23 / 92000 | 165 | 71.99% |
+
+None of the current method's failed attempts is rescued. The candidate also retains the current losses against original fixed eight at **15/91000 and 16/92000**. Thus this recipe worsens retention on the baseline holdouts without an observed recovery-success improvement.
+
+Uncertainty uses the frozen 10,000-resample, seven-scene bootstrap, after averaging both paired draw differences within each scene:
+
+| Candidate minus current method | Observed difference | Paired-scene bootstrap 95% interval |
+|---|---:|---:|
+| Success rate | -21.43 percentage points | -42.86 to -7.14 pp |
+| Final alignment | -4.42 percentage points | -9.16 to -0.29 pp |
+| Predictions per attempt | +2.86 | +0.50 to +5.36 |
+| Runtime per attempt | +16.01 s | +1.98 to +30.98 s |
+
+These are descriptive development intervals for one prescribed mixture/training seed on seven inspected scenes. They do not establish population-wide inferiority of rehearsal, a unique cause of the losses or generalization to new scenes. Replacing an expert slot and changing the data source are coupled in this test. The original nine confirmation losses were not rerun or used to select this candidate.
+
+**Decision:** preserve this candidate and its negative result as evidence; keep the established checkpoint and controller. The result does not justify tuning on the forty inspected evaluation scenes, adding inference candidates or reopening the rejected interruption filters. A further preservation method would require a separately discussed training recipe and bounded protocol.
+
+### Cost and completed audit
+
+The collector's [resource record](../results/robotics-retention-pilot/evaluation-resources-from-000-1794077221799475400.json) covers **94.54 minutes**, including the four startup checks and collection/verification overhead. The timer starts after initial policy/head loading and initial backbone hashing. Its generated scope label says "including load"; that phrase overstates the measured interval, and the original record is preserved. Per-attempt timing includes prediction, physics and camera/controller monitoring, including the initial camera estimate. Model loading, environment reset and artifact writing are outside those per-attempt measurements.
+
+Peak allocated inference GPU memory is **1,095.41 MiB in every arm**. Episode-weighted average prediction times are 4.8746/4.8881/4.8991 seconds for original/current/candidate. The collector samples 1.12 GiB peak process RSS and at least 4.08 GiB available system memory during its measured interval. The candidate's unchanged inference architecture makes more predictions and takes longer per attempt in this screen.
+
+The [independent complete audit](../results/robotics-retention-pilot/artifact-audit.json) passes: **42 scored attempts, four startup attempts and 9,304 recorded movements**. It rechecks frozen inputs/training provenance, model/head identities, exact original-head restoration, common physical/RGB initial states, action-queue indices, H16 accounting, success/timeout arithmetic, all means and gained/lost lists, and seven-scene bootstrap statistics. It reads saved artifacts and the small head tensors on CPU; it does not repeat gradients, neural inference or physics. The collector also verifies the frozen backbone and original weight file at completion.
+
+Recheck the completed pilot without new training or pushing:
+
+```powershell
+.\.venv-robotics\Scripts\python.exe experiments\robotics_retention_pilot.py --stage verify
+.\.venv-robotics\Scripts\python.exe experiments\robotics_retention_pilot_audit.py --stage complete
+```
+
+### Prepared data and fixed schedule
 
 The [separate data supplement](../results/robotics-retention-preflight/baseline-supplement.json) references the existing arrays without changing their original diagnostic metadata. All **3,006 RGB frames**, own pusher positions and **2,986 executed commands** match the twenty saved successful source traces. The supplement contains 2,686 complete H16 windows with two observations per sample and no padding. No image was re-rendered or re-fitted.
 
@@ -122,10 +186,10 @@ The whole-scene baseline split is selected by SHA-256 order with fixed key `2026
 
 - Baseline training scenes: **0, 8, 12, 13, 14, 17, 19, 20, 21, 22, 24, 25, 26, 27, 28, 29**.
 - Baseline validation scenes: **1, 5, 10, 23**.
-- Proposed development scenes: **1, 5, 10, 15, 16, 18, 23**, combining baseline holdouts with existing recovery validation scenes.
-- Proposed prediction offsets: **91000/92000**. The three methods rotate within each scene/draw pair, giving the [42-attempt schedule](../results/robotics-retention-preflight/plan.json).
+- Development scenes: **1, 5, 10, 15, 16, 18, 23**, combining baseline holdouts with existing recovery validation scenes.
+- Prediction offsets: **91000/92000**. The three methods rotate within each scene/draw pair, giving the [42-attempt schedule](../results/robotics-retention-preflight/plan.json).
 
-These are development scenes, not a new held-out generalization cohort. The prepared supplement excludes scenes 170–209. The original expert/recovery dataset, its splits, model checkpoints and previous evaluations remain unchanged. The plan is a reviewable proposal, not approval or evidence of successful training.
+These are inspected development scenes, not a fresh generalization cohort. The prepared supplement excludes scenes 170–209. The original expert/recovery dataset, its splits, model checkpoints and previous evaluations remain unchanged. The preflight files record data preparation; the separate training and evaluation records establish what actually ran.
 
 All ten preflight CPU tests and the [complete array/trace check](../results/robotics-retention-preflight/data-audit.json) pass. Repeating preparation reproduces identical JSON. The preflight has no training/evaluation command and imports no policy, optimizer or simulator. Run it with:
 
@@ -148,4 +212,4 @@ The **15 CPU tests pass**. They cover within-window drawdown versus net progress
 
 The optional coverage plot uses `--plot` with Matplotlib available. It was rendered with isolated scratch plotting packages (Matplotlib 3.9.2, NumPy 1.26.4); no plotting package was installed into `.venv-robotics`. Numerical review and verification require no new plotting dependency.
 
-This is retrospective diagnostic evidence. It does not show that copying a successful baseline trajectory from another state will work, that all negative flips can be removed, or that a proposed preservation recipe improves unseen scenes. The [earlier loss review](2026-10-13-robotics-lost-success-review.md) and its stopped controller directions remain preserved.
+The saved-trajectory diagnosis is retrospective, and the rehearsal pilot is development evidence. Together they identify an unsuccessful preservation recipe, not a validated fix or a generalization result. The [earlier loss review](2026-10-13-robotics-lost-success-review.md) and its stopped controller directions remain preserved.

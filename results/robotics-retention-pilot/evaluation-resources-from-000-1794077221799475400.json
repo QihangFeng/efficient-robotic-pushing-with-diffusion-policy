@@ -1,0 +1,8 @@
+{
+  "before": 0,
+  "after": 42,
+  "wall_seconds": 5672.3960391,
+  "peak_process_rss_bytes": 1201033216,
+  "minimum_available_bytes": 4380909568,
+  "scope": "This invocation, including load/smoke/verification; per-attempt times stay separate."
+}

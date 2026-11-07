@@ -1,0 +1,307 @@
+{
+  "complete": true,
+  "scope": "Development only; no automatic adoption or generalization claim.",
+  "methods": {
+    "fixed8": {
+      "attempts": 14,
+      "successes": 11,
+      "mean_final_coverage": 0.9160051300658967,
+      "mean_model_queries": 25.928571428571427,
+      "mean_wall_seconds": 127.30118312857121,
+      "mean_monitor_seconds": 0.0,
+      "mean_prediction_seconds": 4.874573964198974,
+      "maximum_gpu_allocated_bytes": 1148623360
+    },
+    "current12": {
+      "attempts": 14,
+      "successes": 11,
+      "mean_final_coverage": 0.9320947622863889,
+      "mean_model_queries": 24.0,
+      "mean_wall_seconds": 128.34633641428582,
+      "mean_monitor_seconds": 10.026162321426584,
+      "mean_prediction_seconds": 4.888050332627265,
+      "maximum_gpu_allocated_bytes": 1148623360
+    },
+    "retention12": {
+      "attempts": 14,
+      "successes": 8,
+      "mean_final_coverage": 0.8879138649425963,
+      "mean_model_queries": 26.857142857142858,
+      "mean_wall_seconds": 144.35459092857147,
+      "mean_monitor_seconds": 11.49797067857149,
+      "mean_prediction_seconds": 4.899147143869181,
+      "maximum_gpu_allocated_bytes": 1148623360
+    }
+  },
+  "per_draw": {
+    "91000": {
+      "fixed8": {
+        "attempts": 7,
+        "successes": 5,
+        "mean_final_coverage": 0.8781832266844337,
+        "mean_model_queries": 26.428571428571427,
+        "mean_wall_seconds": 129.38749541428544,
+        "mean_monitor_seconds": 0.0,
+        "mean_prediction_seconds": 4.854265953137218,
+        "maximum_gpu_allocated_bytes": 1148623360
+      },
+      "current12": {
+        "attempts": 7,
+        "successes": 5,
+        "mean_final_coverage": 0.9077583160034667,
+        "mean_model_queries": 27.0,
+        "mean_wall_seconds": 143.85960098571454,
+        "mean_monitor_seconds": 10.687886028571354,
+        "mean_prediction_seconds": 4.891889651542589,
+        "maximum_gpu_allocated_bytes": 1148623360
+      },
+      "retention12": {
+        "attempts": 7,
+        "successes": 4,
+        "mean_final_coverage": 0.9285267491448966,
+        "mean_model_queries": 28.142857142857142,
+        "mean_wall_seconds": 150.3640401428572,
+        "mean_monitor_seconds": 11.493133614286696,
+        "mean_prediction_seconds": 4.891052339250442,
+        "maximum_gpu_allocated_bytes": 1148623360
+      }
+    },
+    "92000": {
+      "fixed8": {
+        "attempts": 7,
+        "successes": 6,
+        "mean_final_coverage": 0.9538270334473596,
+        "mean_model_queries": 25.428571428571427,
+        "mean_wall_seconds": 125.21487084285698,
+        "mean_monitor_seconds": 0.0,
+        "mean_prediction_seconds": 4.89488197526073,
+        "maximum_gpu_allocated_bytes": 1148623360
+      },
+      "current12": {
+        "attempts": 7,
+        "successes": 6,
+        "mean_final_coverage": 0.9564312085693112,
+        "mean_model_queries": 21.0,
+        "mean_wall_seconds": 112.83307184285708,
+        "mean_monitor_seconds": 9.364438614281815,
+        "mean_prediction_seconds": 4.8842110137119406,
+        "maximum_gpu_allocated_bytes": 1148623360
+      },
+      "retention12": {
+        "attempts": 7,
+        "successes": 4,
+        "mean_final_coverage": 0.8473009807402959,
+        "mean_model_queries": 25.571428571428573,
+        "mean_wall_seconds": 138.34514171428575,
+        "mean_monitor_seconds": 11.50280774285628,
+        "mean_prediction_seconds": 4.9072419484879175,
+        "maximum_gpu_allocated_bytes": 1148623360
+      }
+    }
+  },
+  "comparisons": [
+    {
+      "method": "current12",
+      "reference": "fixed8",
+      "gained_successes": [
+        {
+          "scene": 10,
+          "draw": 92000
+        },
+        {
+          "scene": 23,
+          "draw": 91000
+        }
+      ],
+      "lost_successes": [
+        {
+          "scene": 15,
+          "draw": 91000
+        },
+        {
+          "scene": 16,
+          "draw": 92000
+        }
+      ],
+      "differences": {
+        "success": {
+          "mean_difference": 0.0,
+          "paired_scene_bootstrap_95_interval": [
+            -0.2857142857142857,
+            0.2857142857142857
+          ]
+        },
+        "final_coverage": {
+          "mean_difference": 0.016089632220492273,
+          "paired_scene_bootstrap_95_interval": [
+            -0.03970115079445342,
+            0.08941618860671914
+          ]
+        },
+        "model_queries": {
+          "mean_difference": -1.9285714285714286,
+          "paired_scene_bootstrap_95_interval": [
+            -6.714285714285714,
+            2.142857142857143
+          ]
+        },
+        "wall_seconds": {
+          "mean_difference": 1.0451532857146049,
+          "paired_scene_bootstrap_95_interval": [
+            -23.06244997178558,
+            21.79974117142904
+          ]
+        },
+        "monitor_seconds": {
+          "mean_difference": 10.026162321426584,
+          "paired_scene_bootstrap_95_interval": [
+            8.489555521427194,
+            11.457363233212957
+          ]
+        }
+      }
+    },
+    {
+      "method": "retention12",
+      "reference": "fixed8",
+      "gained_successes": [
+        {
+          "scene": 10,
+          "draw": 92000
+        },
+        {
+          "scene": 23,
+          "draw": 91000
+        }
+      ],
+      "lost_successes": [
+        {
+          "scene": 1,
+          "draw": 92000
+        },
+        {
+          "scene": 5,
+          "draw": 91000
+        },
+        {
+          "scene": 15,
+          "draw": 91000
+        },
+        {
+          "scene": 16,
+          "draw": 92000
+        },
+        {
+          "scene": 23,
+          "draw": 92000
+        }
+      ],
+      "differences": {
+        "success": {
+          "mean_difference": -0.21428571428571427,
+          "paired_scene_bootstrap_95_interval": [
+            -0.42857142857142855,
+            0.07142857142857142
+          ]
+        },
+        "final_coverage": {
+          "mean_difference": -0.02809126512330033,
+          "paired_scene_bootstrap_95_interval": [
+            -0.08543516628783154,
+            0.031736088936145136
+          ]
+        },
+        "model_queries": {
+          "mean_difference": 0.9285714285714286,
+          "paired_scene_bootstrap_95_interval": [
+            -3.4285714285714284,
+            5.0
+          ]
+        },
+        "wall_seconds": {
+          "mean_difference": 17.053407800000254,
+          "paired_scene_bootstrap_95_interval": [
+            -4.235758007142522,
+            37.352183571428476
+          ]
+        },
+        "monitor_seconds": {
+          "mean_difference": 11.49797067857149,
+          "paired_scene_bootstrap_95_interval": [
+            10.122947892860598,
+            12.773467792856666
+          ]
+        }
+      }
+    },
+    {
+      "method": "retention12",
+      "reference": "current12",
+      "gained_successes": [],
+      "lost_successes": [
+        {
+          "scene": 1,
+          "draw": 92000
+        },
+        {
+          "scene": 5,
+          "draw": 91000
+        },
+        {
+          "scene": 23,
+          "draw": 92000
+        }
+      ],
+      "differences": {
+        "success": {
+          "mean_difference": -0.21428571428571427,
+          "paired_scene_bootstrap_95_interval": [
+            -0.42857142857142855,
+            -0.07142857142857142
+          ]
+        },
+        "final_coverage": {
+          "mean_difference": -0.0441808973437926,
+          "paired_scene_bootstrap_95_interval": [
+            -0.0916208980786841,
+            -0.0028571612051271505
+          ]
+        },
+        "model_queries": {
+          "mean_difference": 2.857142857142857,
+          "paired_scene_bootstrap_95_interval": [
+            0.5,
+            5.357142857142857
+          ]
+        },
+        "wall_seconds": {
+          "mean_difference": 16.00825451428565,
+          "paired_scene_bootstrap_95_interval": [
+            1.9838944999998083,
+            30.97765978571429
+          ]
+        },
+        "monitor_seconds": {
+          "mean_difference": 1.4718083571449045,
+          "paired_scene_bootstrap_95_interval": [
+            -0.19760861427818913,
+            3.1510267999964787
+          ]
+        }
+      }
+    }
+  ],
+  "recovery_validation_successes_of_six": {
+    "fixed8": 5,
+    "current12": 3,
+    "retention12": 3
+  },
+  "statistics": {
+    "scene_clusters": 7,
+    "draws": 2,
+    "bootstrap_samples": 10000,
+    "seed": 20261107
+  },
+  "protocol_sha256": "8688e48b42718bc9bfdb004e22b33f5835c90088092b653980520b530ef5fdec",
+  "eval_bindings_sha256": "88ad48f4fee25b2b8bdc279123e515c6c47369dd743852719756877b25ce2287"
+}

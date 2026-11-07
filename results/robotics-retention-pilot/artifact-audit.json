@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "scored_attempts": 42,
+  "smoke_attempts": 4,
+  "independent_scene_clusters": 7,
+  "recorded_movements_checked": 9304,
+  "training_checked": true,
+  "model_identities_and_action_queue_arithmetic_match": true,
+  "summary_and_cluster_statistics_match": true,
+  "summary_sha256": "6a0325e9653b5a9d6f7c2c37925cf9ade973e7b4b040bcb2a87b610207f62c49",
+  "auditor_sha256": "474bd8de4b0d6bbe8920bf62a0ed57b936e885cda3aaab8310ad8f6422623b0a",
+  "scope": "Development artifact audit; no new neural inference or physics."
+}
