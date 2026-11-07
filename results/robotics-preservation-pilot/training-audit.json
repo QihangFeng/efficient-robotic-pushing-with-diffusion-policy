@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "optimizer_updates": 600,
+  "student_training_denoiser_calls": 3000,
+  "teacher_training_final_block_calls": 600,
+  "actual_group_counts": {
+    "expert": 1200,
+    "recovery": 1200,
+    "baseline_anchor": 600
+  },
+  "unchanged_supervised_sample_slots_checked": 2400,
+  "original_first_supervised_losses_match": true,
+  "validation_samples": 96,
+  "updated_parameters": 1313282,
+  "frozen_backbone_matches_original": true,
+  "original_teacher_preserved": true,
+  "test_scenes_used_for_training": false,
+  "training_sha256": "2cb98b179ae5290f591a86ddada2571e66fe2b0551dc49c914d3d074e4ace4d6",
+  "protocol_sha256": "e20f8f3ab0e04b922369e1dcd55498974ef9a5078483be5b61e87d10523e72e3",
+  "auditor_sha256": "cf833c39aa0566fa3c41225ef7a5dc0d8f97827d0cf975be457b44a1518bf7ee",
+  "scope": "CPU artifact/provenance arithmetic; does not repeat gradients."
+}

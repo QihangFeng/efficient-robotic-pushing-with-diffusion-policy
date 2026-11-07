@@ -221,6 +221,30 @@ The separate [preservation runner](../experiments/robotics_preservation_pilot.py
 
 The [new protocol](../results/robotics-preservation-pilot/protocol.json) binds the source/tests/auditor, installed LeRobot denoiser source, old data/checkpoint provenance and 28 reused reference attempts before any new GPU update. The explicit stages are `prepare`, `verify`, `feasibility`, `train` and `evaluate`. Preparation and CPU checks do not construct the pretrained robot policy. A successful single-update gate must restore original weights, module modes, gradient flags and CPU/CUDA RNG, and reproduce the original first four supervised losses, before the fixed training run proceeds. These preparation checks establish implementation readiness; model performance requires the prescribed fourteen candidate attempts.
 
+### Feasibility and training completed
+
+The [single-update GPU gate](../results/robotics-preservation-pilot/feasibility.json) passes. Initial preservation loss is exactly zero; after one real update it is `2.4385e-6`, so the teacher exposes actual student drift. The four supervised losses reproduce the original training record exactly. The original student weights, frozen state, module modes, gradient flags and CPU/CUDA RNG are restored. The measured gate takes 3.99 seconds after loading/preparation and peaks at **1,111.29 MiB** allocated GPU memory. No action generation or pushing occurs in this gate.
+
+The prescribed [training run](../results/robotics-preservation-pilot/training.json) then completes **600 updates**, with **3,000 student denoiser training forwards and 600 frozen-teacher final-block forwards**. It takes **280.28 seconds (4.67 minutes)** after policy loading, including validation/checkpoint work, and peaks at **1,116.30 MiB** allocated GPU memory. Validation additionally uses 512 student denoiser and 128 teacher-head forwards; those are outside the training-forward counts. All **2,400 original expert/recovery sample slots** remain unchanged, with 600 separate baseline anchoring windows. The learned six-tensor head is saved separately, with SHA-256 `d644fad4edf7cbedc50f31830625ba48b38f1ac5950bc02d627bd64d5f00eb3b`.
+
+The [independent training audit](../results/robotics-preservation-pilot/training-audit.json) passes: the original first supervised losses match, all sample groups/splits and objective sums match the fixed recipe, teacher/backbone digests remain original, and only the same **1,313,282 final-block parameters** change. The audit reads saved records and small CPU head tensors; it does not repeat gradients.
+
+On the fixed validation windows, final expert/recovery denoising losses are 0.003035/0.016870, compared with 0.004444/0.017235 for the established recovery-trained head on the same windows/noise. The new candidate's baseline denoising loss is 0.006500, versus 0.005654 at initialization, and its mean teacher-output discrepancy is 0.000828. These are supporting training diagnostics, not pushing success or checkpoint-selection criteria. All fourteen scheduled candidate attempts are still needed to judge retention.
+
+## 6. Further literature and implications for this implementation
+
+The literature offers different preservation mechanisms; their relevance depends on whether a loss comes from changed model outputs or from the states/execution decisions encountered in the feedback loop.
+
+| Primary source | Preservation idea | Relevance and limit here |
+|---|---|---|
+| [L2-SP, ICML 2018](https://proceedings.mlr.press/v80/li18a.html) | Penalize movement away from pretrained parameters. | A parameter penalty could anchor the final block during training. Parameter proximity alone does not ensure the same closed-loop outcome. This is distinct from the current output penalty. |
+| [WiSE-FT, CVPR 2022](https://arxiv.org/abs/2109.01903) | Blend pretrained and fine-tuned weights into a single checkpoint. | Our six same-shaped final-block tensors could be blended offline, keeping the deployed architecture unchanged. The paper studies classification robustness; PushT retention remains untested. Our nonlinear final block also means weight blending is not generally identical to blending predicted actions. |
+| [DAgger, AISTATS 2011](https://proceedings.mlr.press/v15/ross11a.html) | Obtain expert labels at states visited by the learner and aggregate them into training. | This addresses the effect of actions on future observations. It motivates checking coverage of the states visited under adaptive execution; it would require trusted new corrective labels rather than treating simulator scores as action labels. |
+
+The saved dataset contains **six recovery episodes from the failure-pattern investigation and twenty-five from the benefit-aware pilot**. For example, scene 2's `recovery-000`/`recovery-001` metadata records a branch after movement 157 from an original failure, followed by cached continuation or one-shot replanning. These are useful successful continuations, but do not establish coverage of every state later visited by a changed checkpoint with adaptive execution. This is an implementation-grounded reason to keep closed-loop distribution shift separate from forgetting; it does not establish the cause of any particular loss.
+
+These are literature-informed directions, not additional implemented candidates. The approved weight-1.0 output-preservation run and its fourteen-attempt schedule stay frozen. The existing result that seven of nine confirmation losses succeed with trained/fixed-eight execution also cautions against expecting a weight-only preservation mechanism to eliminate every execution-associated loss.
+
 ## Reproduction and validation
 
 From the project root, diagnostics and the independent audit use the existing robotics environment and standard-library code:
