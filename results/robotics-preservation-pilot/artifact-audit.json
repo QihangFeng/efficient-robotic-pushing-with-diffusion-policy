@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "new_scored_attempts": 14,
+  "reused_scored_attempts": 28,
+  "new_smoke_attempts": 4,
+  "independent_scene_clusters": 7,
+  "recorded_movements_checked": 9013,
+  "training_checked": true,
+  "model_identities_and_queue_arithmetic_match": true,
+  "summary_and_cluster_statistics_match": true,
+  "summary_sha256": "daa029995ffae6d5e695ec7a7d39e00b5718c79930e0a674fb4a40ba3214baa5",
+  "auditor_sha256": "cf833c39aa0566fa3c41225ef7a5dc0d8f97827d0cf975be457b44a1518bf7ee",
+  "scope": "CPU development artifact audit; no new inference or physics."
+}

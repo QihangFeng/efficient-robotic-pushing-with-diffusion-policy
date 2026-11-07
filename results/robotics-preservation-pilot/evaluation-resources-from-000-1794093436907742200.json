@@ -1,0 +1,8 @@
+{
+  "before": 0,
+  "after": 14,
+  "wall_seconds": 2058.326586799998,
+  "peak_process_rss_bytes": 2661228544,
+  "minimum_available_bytes": 4215877632,
+  "scope": "After initial CPU input verification; includes model/head loading, smoke, collection, final checks and restoration. Per-attempt times stay separate."
+}

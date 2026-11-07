@@ -1,6 +1,6 @@
 # Lost baseline successes: diagnosis and rehearsal pilot
 
-**The approved baseline-success rehearsal candidate did not mitigate negative flips in the development pilot.** It succeeded in **8/14 attempts**, versus **11/14** for both the current recovery-trained/adaptive method and the original fixed-eight control. It lost three current-method successes and gained none. The candidate is not adopted; the existing model, controller and forty-scene results remain unchanged.
+**Neither preservation recipe reduced negative flips on this seven-scene development comparison.** Original fixed-eight and the current recovery-trained/adaptive method each succeed in **11/14 attempts**. Baseline-success rehearsal succeeds in **8/14**; the subsequent output-preservation candidate succeeds in **10/14**. The latter repairs three current-method failures but loses four current successes, increasing original-baseline losses from two to four. Neither candidate is adopted; the established checkpoint, controller and forty-scene results remain unchanged.
 
 The preceding saved-trajectory diagnosis does not support treating all nine original losses as catastrophic forgetting or as one faulty interruption rule. Seven of the nine attempts succeed with the same fine-tuned model under fixed-eight execution. Their combined-method losses include destructive fresh predictions and final positioning stalls. The mitigation remains unresolved.
 
@@ -8,7 +8,7 @@ The combined method still gains 23 successes and loses nine against original fix
 
 ## Scope and checks
 
-Sections 1–3 analyze the existing four-configuration comparison on scenes 170–209, draw offsets 60000/70000. That CPU-only diagnosis reads all **320 attempts and 70,797 recorded movements**, rather than inspecting failures alone. Its review and auditor import no policy, training code or simulator and perform no new inference, training or physics. Section 4 separately records the approved baseline-success rehearsal pilot, which does train a new output block and collect development attempts.
+Sections 1–3 analyze the existing four-configuration comparison on scenes 170–209, draw offsets 60000/70000. That CPU-only diagnosis reads all **320 attempts and 70,797 recorded movements**, rather than inspecting failures alone. Its review and auditor import no policy, training code or simulator and perform no new inference, training or physics. Sections 4 and 5 separately record the approved preservation pilots, which train separate output blocks and collect development attempts.
 
 The [review](../results/robotics-baseline-loss-review/summary.json) binds 724 source/evidence files and verifies sidecars, compressed trace hashes, model identities, H16 generation, prediction accounting, first-success termination and common starting states. Existing frozen audits supply the earlier controller/queue provenance; this review does not claim to repeat neural inference or physics. The [separate arithmetic audit](../results/robotics-baseline-loss-review/artifact-audit.json) checks the component outcomes, peaks, stationary tails, matched-prefix indices and all comparison-group decline counts directly from raw JSON and traces.
 
@@ -26,6 +26,21 @@ Original fixed eight succeeds and fine-tuned/adaptive fails in every row below. 
 | No | No | 1 | Both separate changes fail; original fixed eight alone succeeds. |
 
 Thus **seven of nine** losses have a successful fine-tuned/fixed-eight control, while two also fail with fine-tuning alone. Calling all nine losses forgetting would overlook the execution interaction. Returning to fixed eight everywhere would also discard gains: over all eighty attempts, fine-tuned/fixed-eight succeeds 56 times versus 60 for the combined method and uses more predictions.
+
+### Whole-cohort retention matters
+
+Recounting all four configurations from the [confirmation index](../results/robotics-recovery-confirmation/evaluation.json) and [trained/fixed-eight index](../results/robotics-recovery-fixed8/evaluation.json), after verifying their hashes against this review's frozen bindings, gives:
+
+| Configuration | Successes / 80 | Gains versus original fixed eight | Losses versus original fixed eight |
+|---|---:|---:|---:|
+| Original / fixed eight | 46 | Reference | Reference |
+| Original / adaptive | 48 | 19 | 17 |
+| Fine-tuned / fixed eight | 56 | 18 | 8 |
+| Fine-tuned / adaptive | 60 | 23 | 9 |
+
+Gains come from the original baseline's 34 failures; losses come from its 46 successes. Fine-tuned/fixed-eight rescues seven of the combined method's nine selected losses, but has **eight losses overall**, including six different original successes retained by the combined method. Switching execution settings exchanges failure cases; it does not reduce the whole-cohort loss count to two.
+
+The original checkpoint itself loses **17** fixed-eight successes when paired with adaptive execution. Therefore, even exact preservation of that checkpoint's denoising outputs would not guarantee preservation of the fixed-eight baseline's closed-loop successes. The current fine-tuned/adaptive model already reduces that count to nine while gaining more successes. This limits the original-teacher preservation hypothesis; the new bounded test must be judged against the complete current method, not just closeness to original weights or a selected repaired case.
 
 ## 2. What happens in each saved combined attempt?
 
@@ -229,7 +244,64 @@ The prescribed [training run](../results/robotics-preservation-pilot/training.js
 
 The [independent training audit](../results/robotics-preservation-pilot/training-audit.json) passes: the original first supervised losses match, all sample groups/splits and objective sums match the fixed recipe, teacher/backbone digests remain original, and only the same **1,313,282 final-block parameters** change. The audit reads saved records and small CPU head tensors; it does not repeat gradients.
 
-On the fixed validation windows, final expert/recovery denoising losses are 0.003035/0.016870, compared with 0.004444/0.017235 for the established recovery-trained head on the same windows/noise. The new candidate's baseline denoising loss is 0.006500, versus 0.005654 at initialization, and its mean teacher-output discrepancy is 0.000828. These are supporting training diagnostics, not pushing success or checkpoint-selection criteria. All fourteen scheduled candidate attempts are still needed to judge retention.
+On the fixed validation windows, final expert/recovery denoising losses are 0.003035/0.016870, compared with 0.004444/0.017235 for the established recovery-trained head on the same windows/noise. The new candidate's baseline denoising loss is 0.006500, versus 0.005654 at initialization, and its mean teacher-output discrepancy is 0.000828. These are supporting training diagnostics, not pushing success or checkpoint-selection criteria. The completed comparison below judges the final-update-600 checkpoint without selecting another training step.
+
+### Completed output-preservation comparison
+
+All **fourteen new candidate attempts** finish in one invocation. The **28 original/current reference attempts** are reused unchanged, giving 42 scored comparisons on the same seven development scenes and two prediction draws. No completed attempt is replaced or excluded. Four new startup checks confirm exact original-action restoration. All methods retain the native observations/actions, H16 generation, 100 denoising steps, 300-movement limit and strict >95% success criterion.
+
+The [completed summary](../results/robotics-preservation-pilot/summary.json) reports:
+
+| Method | Successful pushes | Average final alignment | Average predictions | Average recorded runtime* |
+|---|---:|---:|---:|---:|
+| Original / fixed eight, reused | 11/14 (78.6%) | 91.60% | 25.93 | 127.30 s |
+| Current recovery-trained / adaptive, reused | 11/14 (78.6%) | 93.21% | 24.00 | 128.35 s |
+| Output-preservation / adaptive, new | 10/14 (71.4%) | 94.82% | 24.50 | 142.32 s |
+
+*Reference timings come from an earlier invocation. The architecture, H16 shapes, 100-step inference and maximum allocated GPU memory are unchanged, while episode-weighted average prediction times differ: 5.2730 seconds for the new candidate versus 4.8881 for current and 4.8746 for original. These measurements do not isolate an algorithmic speed effect. The time difference cannot be attributed only to the extra 0.50 predictions per attempt; session-level effects remain unresolved. Runtime is descriptive across sessions.
+
+The candidate succeeds **5/7 in each prediction draw**; each reference succeeds 5/7 at offset 91000 and 6/7 at offset 92000.
+
+| Method | Baseline holdouts / 8 | Recovery validation / 6 | Gains / losses versus original fixed eight |
+|---|---:|---:|---:|
+| Original / fixed eight | 6 | 5 | Reference |
+| Current / adaptive | 8 | 3 | 2 gained / 2 lost |
+| Output-preservation / adaptive | 5 | 5 | 3 gained / 4 lost |
+
+Compared with current, the new candidate repairs **15/91000, 16/91000 and 16/92000**, succeeding at movements **225, 192 and 155** respectively. These are all three current-method failures in this development screen. It also loses four current successes; all four time out at movement 300:
+
+| New lost scene / draw | Current success at movement | Candidate final alignment |
+|---|---:|---:|
+| 1 / 91000 | 195 | 93.85% |
+| 5 / 91000 | 294 | 91.40% |
+| 15 / 92000 | 168 | 92.74% |
+| 23 / 92000 | 165 | 89.17% |
+
+Both development baseline losses of the current method, 15/91000 and 16/92000, are repaired, but four other original-baseline successes are lost. Thus selected-case repair does not establish reduced negative flips overall. Scene 15 itself illustrates the trade: the successful prediction draw switches between checkpoints, leaving one success out of two for that scene. For every development attempt, at least one of the current and output-preservation checkpoints succeeds; this is diagnostic complementarity, not an executable 14/14 policy or permission to select models using eventual outcomes.
+
+The predeclared development gate **fails**: original-baseline losses are four, above the required fewer-than-two, and overall success is ten, below eleven. Recovery-validation success meets its separate requirement. The candidate is **not adopted**. The forty confirmation scenes and their nine original losses were not rerun or used as training/selection examples.
+
+| Output-preservation minus current | Observed difference | Paired-scene bootstrap 95% interval |
+|---|---:|---:|
+| Success rate | -7.14 percentage points | -35.71 to +28.57 pp |
+| Final alignment | +1.61 percentage points | -1.61 to +5.29 pp |
+| Predictions per attempt | +0.50 | -5.43 to +5.43 |
+| Recorded runtime | +13.97 s | -17.62 to +40.38 s |
+
+These descriptive intervals average both draw differences within each of seven scenes before 10,000 bootstrap resamples. All include zero; the cohort is small, previously inspected development data, and one training seed/penalty weight was tested. The result establishes neither general superiority nor a unique explanation of each failure. Better denoising validation loss and higher average alignment do not substitute for the failed retention gate.
+
+### Collection cost and final checks
+
+The [evaluation resource record](../results/robotics-preservation-pilot/evaluation-resources-from-000-1794093436907742200.json) covers **34.31 minutes**, after initial CPU input verification and including model/head loading, startup checks, all fourteen attempts, final checks and restoration. Together with the measured 4.67-minute training phase, these intervals total approximately **38.98 minutes**; model loading/preparation outside the training timer and implementation time remain separate. Evaluation peaks at **2.48 GiB sampled process RSS**, including loading, with at least 3.93 GiB available system memory. Its sampling interval includes loading, unlike the first rehearsal collector's interval, so those process-RAM peaks are not directly comparable. Maximum allocated GPU memory during attempts is **1,095.41 MiB in every arm**; no teacher is deployed.
+
+The [independent complete audit](../results/robotics-preservation-pilot/artifact-audit.json) passes for **14 new scored attempts, 28 reused references, four new startup checks and 9,013 recorded movements**. It verifies model identities, unchanged frozen inputs/training provenance, exact original restoration, common initial physical/RGB states, action-queue indices, H16 accounting, first-success/timeout arithmetic, all means and gained/lost lists, and scene-cluster statistics. It performs no new neural inference, gradients or physics. The collector separately verifies the original weights and unchanged backbone at completion. All new source, tests, protocol, heads and evidence stay frozen on the experiment branch.
+
+Recheck this completed pilot without new training or pushing:
+
+```powershell
+.\.venv-robotics\Scripts\python.exe experiments\robotics_preservation_pilot.py --stage verify
+.\.venv-robotics\Scripts\python.exe experiments\robotics_preservation_pilot_audit.py --stage complete
+```
 
 ## 6. Further literature and implications for this implementation
 
@@ -239,11 +311,27 @@ The literature offers different preservation mechanisms; their relevance depends
 |---|---|---|
 | [L2-SP, ICML 2018](https://proceedings.mlr.press/v80/li18a.html) | Penalize movement away from pretrained parameters. | A parameter penalty could anchor the final block during training. Parameter proximity alone does not ensure the same closed-loop outcome. This is distinct from the current output penalty. |
 | [WiSE-FT, CVPR 2022](https://arxiv.org/abs/2109.01903) | Blend pretrained and fine-tuned weights into a single checkpoint. | Our six same-shaped final-block tensors could be blended offline, keeping the deployed architecture unchanged. The paper studies classification robustness; PushT retention remains untested. Our nonlinear final block also means weight blending is not generally identical to blending predicted actions. |
+| [Model soups, ICML 2022](https://proceedings.mlr.press/v162/wortsman22a.html) | Average compatible checkpoints fine-tuned from a common pretrained model. | This motivates combining the current and output-preservation heads, which have complementary development outcomes and the same frozen backbone. Its classification results do not guarantee combining their robot-control successes. |
 | [DAgger, AISTATS 2011](https://proceedings.mlr.press/v15/ross11a.html) | Obtain expert labels at states visited by the learner and aggregate them into training. | This addresses the effect of actions on future observations. It motivates checking coverage of the states visited under adaptive execution; it would require trusted new corrective labels rather than treating simulator scores as action labels. |
 
 The saved dataset contains **six recovery episodes from the failure-pattern investigation and twenty-five from the benefit-aware pilot**. For example, scene 2's `recovery-000`/`recovery-001` metadata records a branch after movement 157 from an original failure, followed by cached continuation or one-shot replanning. These are useful successful continuations, but do not establish coverage of every state later visited by a changed checkpoint with adaptive execution. This is an implementation-grounded reason to keep closed-loop distribution shift separate from forgetting; it does not establish the cause of any particular loss.
 
 These are literature-informed directions, not additional implemented candidates. The approved weight-1.0 output-preservation run and its fourteen-attempt schedule stay frozen. The existing result that seven of nine confirmation losses succeed with trained/fixed-eight execution also cautions against expecting a weight-only preservation mechanism to eliminate every execution-associated loss.
+
+**Execution-side work:** [PACE (2026), sections 3 and 6](https://arxiv.org/html/2606.00537v4) chooses replanning boundaries from smoothed speed valleys in one predicted chunk, with a threshold calibrated from training demonstrations and no extra chunk samples. Its authors explicitly limit the method when the base policy keeps generating incomplete or incorrect actions. That limitation is relevant to our recorded stationary tails despite repeated predictions. Its default 50-command joint-space setting differs from our short H16, absolute two-dimensional commands; a PushT adaptation would require separate calibration and an agreed execution budget. This is a diagnostic hypothesis, not demonstrated negative-flip recovery.
+
+[DEHP (2026)](https://arxiv.org/abs/2606.11408) instead trains a lightweight horizon-selection branch with online RL while freezing the chunk policy. [STEP (ICML 2026)](https://proceedings.mlr.press/v306/li26aa.html) uses consistency-based warm starts for denoising acceleration. They motivate horizon selection and temporal coherence, but would introduce additional training or inference components beyond this pilot. None of these sources establishes that the original baseline's successful PushT cases will all be retained by our controller.
+
+## 7. Proposed follow-up: one fixed checkpoint average
+
+**Reviewable proposal only; no averaged checkpoint, new implementation or new evaluation has been created.** The two trained checkpoints solve complementary development attempts. [Model soups](https://proceedings.mlr.press/v162/wortsman22a.html) provides a reason to test whether averaging their compatible weights can preserve useful behavior in a single deployed model. This is an adaptation to our policy, not evidence that the paper already solves PushT negative flips.
+
+1. Use the established recovery-trained final600 head and the new output-preservation final600 head as the two endpoints. Their frozen backbone/normalization are identical and their six FP32 parameter tensors have matching names and shapes. Form exactly **one 50/50 midpoint**, computing each element's mean in float64 and casting once to float32. Preserve both endpoint files and bind their hashes. No retraining, coefficient search, per-scene selection or online multi-model inference is included.
+2. Use separate new source, protocol, checkpoint and result paths, with CPU checks of tensor arithmetic, finite values, unchanged endpoints/backbone, protected evidence and resumption. The deployed model retains the existing architecture, H16 generation, two observations, 100-step sampler and unchanged adaptive controller. A weight average of the nonlinear final block need not reproduce an average of its action outputs; its behavior must be measured.
+3. Run the original/current/midpoint/original short startup controls, then **fourteen midpoint attempts** on the same seven development scenes and offsets 91000/92000. Reuse the 28 original/current references and the fourteen pure preservation attempts as supporting comparisons. Complete the new fourteen regardless of intermediate results. Keep the 300-movement limit and strict >95% scoring.
+4. Report all gains/losses, overall/recovery success, alignment, predictions and descriptive runtime. Retain the existing development screen: fewer than two original-baseline losses, at least 11/14 successes and at least 3/6 recovery successes. Report any newly lost current successes as well. A favorable screen would justify discussing a fresh confirmation, not automatic adoption. All these seven scenes remain inspected development data; scenes 170–209 stay excluded from training/selection.
+
+There is no model training in this proposal. The last candidate's fourteen-attempt collector took 34.31 minutes including loading/checks; a reasonable execution estimate for this fixed test is **30–45 minutes plus implementation time**. It tests whether one averaged model can retain the complementary repairs without sacrificing existing successes. The failure sets alone do not prove it will succeed.
 
 ## Reproduction and validation
 
@@ -259,4 +347,4 @@ The **15 CPU tests pass**. They cover within-window drawdown versus net progress
 
 The optional coverage plot uses `--plot` with Matplotlib available. It was rendered with isolated scratch plotting packages (Matplotlib 3.9.2, NumPy 1.26.4); no plotting package was installed into `.venv-robotics`. Numerical review and verification require no new plotting dependency.
 
-The saved-trajectory diagnosis is retrospective, and the rehearsal pilot is development evidence. Together they identify an unsuccessful preservation recipe, not a validated fix or a generalization result. The [earlier loss review](2026-10-13-robotics-lost-success-review.md) and its stopped controller directions remain preserved.
+The saved-trajectory diagnosis is retrospective, and both preservation pilots are development evidence. Together they identify two unsuccessful retention recipes and complementary recovery behavior, not a validated negative-flip fix or a generalization result. The [earlier loss review](2026-10-13-robotics-lost-success-review.md) and its stopped controller directions remain preserved.
