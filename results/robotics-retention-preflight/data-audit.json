@@ -1,0 +1,207 @@
+{
+  "passed": true,
+  "baseline_success_episodes": 20,
+  "all_rgb_frames_checked": 3006,
+  "all_actions_checked": 2986,
+  "complete_windows": 2686,
+  "per_episode": [
+    {
+      "episode_id": "ordinary_control-031",
+      "scene": 0,
+      "rgb_frames_checked": 188,
+      "executed_actions_checked": 187,
+      "own_positions_checked": 188,
+      "new_rendering_or_physics": false
+    },
+    {
+      "episode_id": "ordinary_control-032",
+      "scene": 1,
+      "rgb_frames_checked": 195,
+      "executed_actions_checked": 194,
+      "own_positions_checked": 195,
+      "new_rendering_or_physics": false
+    },
+    {
+      "episode_id": "ordinary_control-033",
+      "scene": 5,
+      "rgb_frames_checked": 177,
+      "executed_actions_checked": 176,
+      "own_positions_checked": 177,
+      "new_rendering_or_physics": false
+    },
+    {
+      "episode_id": "ordinary_control-034",
+      "scene": 8,
+      "rgb_frames_checked": 194,
+      "executed_actions_checked": 193,
+      "own_positions_checked": 194,
+      "new_rendering_or_physics": false
+    },
+    {
+      "episode_id": "ordinary_control-035",
+      "scene": 10,
+      "rgb_frames_checked": 185,
+      "executed_actions_checked": 184,
+      "own_positions_checked": 185,
+      "new_rendering_or_physics": false
+    },
+    {
+      "episode_id": "ordinary_control-036",
+      "scene": 12,
+      "rgb_frames_checked": 161,
+      "executed_actions_checked": 160,
+      "own_positions_checked": 161,
+      "new_rendering_or_physics": false
+    },
+    {
+      "episode_id": "ordinary_control-037",
+      "scene": 13,
+      "rgb_frames_checked": 152,
+      "executed_actions_checked": 151,
+      "own_positions_checked": 152,
+      "new_rendering_or_physics": false
+    },
+    {
+      "episode_id": "ordinary_control-038",
+      "scene": 14,
+      "rgb_frames_checked": 113,
+      "executed_actions_checked": 112,
+      "own_positions_checked": 113,
+      "new_rendering_or_physics": false
+    },
+    {
+      "episode_id": "ordinary_control-039",
+      "scene": 17,
+      "rgb_frames_checked": 98,
+      "executed_actions_checked": 97,
+      "own_positions_checked": 98,
+      "new_rendering_or_physics": false
+    },
+    {
+      "episode_id": "ordinary_control-040",
+      "scene": 19,
+      "rgb_frames_checked": 83,
+      "executed_actions_checked": 82,
+      "own_positions_checked": 83,
+      "new_rendering_or_physics": false
+    },
+    {
+      "episode_id": "ordinary_control-041",
+      "scene": 20,
+      "rgb_frames_checked": 144,
+      "executed_actions_checked": 143,
+      "own_positions_checked": 144,
+      "new_rendering_or_physics": false
+    },
+    {
+      "episode_id": "ordinary_control-042",
+      "scene": 21,
+      "rgb_frames_checked": 113,
+      "executed_actions_checked": 112,
+      "own_positions_checked": 113,
+      "new_rendering_or_physics": false
+    },
+    {
+      "episode_id": "ordinary_control-043",
+      "scene": 22,
+      "rgb_frames_checked": 216,
+      "executed_actions_checked": 215,
+      "own_positions_checked": 216,
+      "new_rendering_or_physics": false
+    },
+    {
+      "episode_id": "ordinary_control-044",
+      "scene": 23,
+      "rgb_frames_checked": 131,
+      "executed_actions_checked": 130,
+      "own_positions_checked": 131,
+      "new_rendering_or_physics": false
+    },
+    {
+      "episode_id": "ordinary_control-045",
+      "scene": 24,
+      "rgb_frames_checked": 106,
+      "executed_actions_checked": 105,
+      "own_positions_checked": 106,
+      "new_rendering_or_physics": false
+    },
+    {
+      "episode_id": "ordinary_control-046",
+      "scene": 25,
+      "rgb_frames_checked": 201,
+      "executed_actions_checked": 200,
+      "own_positions_checked": 201,
+      "new_rendering_or_physics": false
+    },
+    {
+      "episode_id": "ordinary_control-047",
+      "scene": 26,
+      "rgb_frames_checked": 112,
+      "executed_actions_checked": 111,
+      "own_positions_checked": 112,
+      "new_rendering_or_physics": false
+    },
+    {
+      "episode_id": "ordinary_control-048",
+      "scene": 27,
+      "rgb_frames_checked": 114,
+      "executed_actions_checked": 113,
+      "own_positions_checked": 114,
+      "new_rendering_or_physics": false
+    },
+    {
+      "episode_id": "ordinary_control-049",
+      "scene": 28,
+      "rgb_frames_checked": 202,
+      "executed_actions_checked": 201,
+      "own_positions_checked": 202,
+      "new_rendering_or_physics": false
+    },
+    {
+      "episode_id": "ordinary_control-050",
+      "scene": 29,
+      "rgb_frames_checked": 121,
+      "executed_actions_checked": 120,
+      "own_positions_checked": 121,
+      "new_rendering_or_physics": false
+    }
+  ],
+  "scene_splits": {
+    "train": [
+      0,
+      8,
+      12,
+      13,
+      14,
+      17,
+      19,
+      20,
+      21,
+      22,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "validation": [
+      1,
+      5,
+      10,
+      23
+    ]
+  },
+  "development_scenes": [
+    1,
+    5,
+    10,
+    15,
+    16,
+    18,
+    23
+  ],
+  "test_scene_overlap": [],
+  "source_arrays_unchanged": true,
+  "gradients_policy_predictions_and_physics_calls": 0
+}

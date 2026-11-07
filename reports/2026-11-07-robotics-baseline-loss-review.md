@@ -104,7 +104,27 @@ One bounded candidate would:
 
 The development screen should report gains and losses relative to original fixed eight, overall success, coverage, predictions and runtime, including failures. A candidate should advance only if it improves the retention trade-off without sacrificing the existing recovery behavior. Confirming generalization would then require a separately agreed, untouched evaluation cohort. The inspected scenes 170–209 cannot become fresh evaluation evidence for this redesign.
 
-The preservation candidate has not been implemented or trained. More elaborate teacher-output anchoring remains a second option if replay alone is inadequate; its extra offline computation and loss weight would need a separate controlled design.
+The preservation candidate has not been trained. Its source-data preflight is complete; a training implementation and frozen execution protocol are still required before a model run. More elaborate teacher-output anchoring remains a second option if replay alone is inadequate; its extra offline computation and loss weight would need a separate controlled design.
+
+### Prepared data and proposed schedule
+
+The [separate data supplement](../results/robotics-retention-preflight/baseline-supplement.json) references the existing arrays without changing their original diagnostic metadata. All **3,006 RGB frames**, own pusher positions and **2,986 executed commands** match the twenty saved successful source traces. The supplement contains 2,686 complete H16 windows with two observations per sample and no padding. No image was re-rendered or re-fitted.
+
+The whole-scene baseline split is selected by SHA-256 order with fixed key `20261107/baseline-retention`, before candidate outcomes:
+
+- Baseline training scenes: **0, 8, 12, 13, 14, 17, 19, 20, 21, 22, 24, 25, 26, 27, 28, 29**.
+- Baseline validation scenes: **1, 5, 10, 23**.
+- Proposed development scenes: **1, 5, 10, 15, 16, 18, 23**, combining baseline holdouts with existing recovery validation scenes.
+- Proposed prediction offsets: **91000/92000**. The three methods rotate within each scene/draw pair, giving the [42-attempt schedule](../results/robotics-retention-preflight/plan.json).
+
+These are development scenes, not a new held-out generalization cohort. The prepared supplement excludes scenes 170–209. The original expert/recovery dataset, its splits, model checkpoints and previous evaluations remain unchanged. The plan is a reviewable proposal, not approval or evidence of successful training.
+
+All ten preflight CPU tests and the [complete array/trace check](../results/robotics-retention-preflight/data-audit.json) pass. Repeating preparation reproduces identical JSON. The preflight has no training/evaluation command and imports no policy, optimizer or simulator. Run it with:
+
+```powershell
+.\.venv-robotics\Scripts\python.exe experiments\robotics_retention_preflight.py
+.\.venv-robotics\Scripts\python.exe -m unittest discover -s tests -p test_robotics_retention_preflight.py
+```
 
 ## Reproduction and validation
 

@@ -1,0 +1,324 @@
+{
+  "status": "proposal_ready_for_review; no model run",
+  "training": {
+    "settings": {
+      "optimizer_steps": 600,
+      "accumulation": 4,
+      "lr": 1e-05,
+      "weight_decay": 0.0,
+      "seed": 51000,
+      "validation_seed": 51001,
+      "validation_windows_per_group": 32,
+      "validation_steps": [
+        0,
+        200,
+        400,
+        600
+      ],
+      "checkpoint_steps": [
+        200,
+        400,
+        600
+      ],
+      "selection": "final_600_only"
+    },
+    "microbatch_groups": [
+      "expert",
+      "recovery",
+      "baseline",
+      "recovery"
+    ],
+    "optimizer_steps": 600,
+    "total_denoiser_training_calls": 2400,
+    "start_from": "same original pretrained checkpoint, not the previous fine-tuned head",
+    "trainable_prefix": "diffusion.unet.final_conv.",
+    "controller": "unchanged milestone 8/12"
+  },
+  "comparison": {
+    "scenes": [
+      1,
+      5,
+      10,
+      15,
+      16,
+      18,
+      23
+    ],
+    "draws": [
+      91000,
+      92000
+    ],
+    "arms": [
+      "fixed8",
+      "current12",
+      "retention12"
+    ],
+    "schedule": [
+      {
+        "scene": 1,
+        "draw": 91000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 1,
+        "draw": 91000,
+        "arm": "current12"
+      },
+      {
+        "scene": 1,
+        "draw": 91000,
+        "arm": "retention12"
+      },
+      {
+        "scene": 1,
+        "draw": 92000,
+        "arm": "current12"
+      },
+      {
+        "scene": 1,
+        "draw": 92000,
+        "arm": "retention12"
+      },
+      {
+        "scene": 1,
+        "draw": 92000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 5,
+        "draw": 91000,
+        "arm": "retention12"
+      },
+      {
+        "scene": 5,
+        "draw": 91000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 5,
+        "draw": 91000,
+        "arm": "current12"
+      },
+      {
+        "scene": 5,
+        "draw": 92000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 5,
+        "draw": 92000,
+        "arm": "current12"
+      },
+      {
+        "scene": 5,
+        "draw": 92000,
+        "arm": "retention12"
+      },
+      {
+        "scene": 10,
+        "draw": 91000,
+        "arm": "current12"
+      },
+      {
+        "scene": 10,
+        "draw": 91000,
+        "arm": "retention12"
+      },
+      {
+        "scene": 10,
+        "draw": 91000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 10,
+        "draw": 92000,
+        "arm": "retention12"
+      },
+      {
+        "scene": 10,
+        "draw": 92000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 10,
+        "draw": 92000,
+        "arm": "current12"
+      },
+      {
+        "scene": 15,
+        "draw": 91000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 15,
+        "draw": 91000,
+        "arm": "current12"
+      },
+      {
+        "scene": 15,
+        "draw": 91000,
+        "arm": "retention12"
+      },
+      {
+        "scene": 15,
+        "draw": 92000,
+        "arm": "current12"
+      },
+      {
+        "scene": 15,
+        "draw": 92000,
+        "arm": "retention12"
+      },
+      {
+        "scene": 15,
+        "draw": 92000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 16,
+        "draw": 91000,
+        "arm": "retention12"
+      },
+      {
+        "scene": 16,
+        "draw": 91000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 16,
+        "draw": 91000,
+        "arm": "current12"
+      },
+      {
+        "scene": 16,
+        "draw": 92000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 16,
+        "draw": 92000,
+        "arm": "current12"
+      },
+      {
+        "scene": 16,
+        "draw": 92000,
+        "arm": "retention12"
+      },
+      {
+        "scene": 18,
+        "draw": 91000,
+        "arm": "current12"
+      },
+      {
+        "scene": 18,
+        "draw": 91000,
+        "arm": "retention12"
+      },
+      {
+        "scene": 18,
+        "draw": 91000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 18,
+        "draw": 92000,
+        "arm": "retention12"
+      },
+      {
+        "scene": 18,
+        "draw": 92000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 18,
+        "draw": 92000,
+        "arm": "current12"
+      },
+      {
+        "scene": 23,
+        "draw": 91000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 23,
+        "draw": 91000,
+        "arm": "current12"
+      },
+      {
+        "scene": 23,
+        "draw": 91000,
+        "arm": "retention12"
+      },
+      {
+        "scene": 23,
+        "draw": 92000,
+        "arm": "current12"
+      },
+      {
+        "scene": 23,
+        "draw": 92000,
+        "arm": "retention12"
+      },
+      {
+        "scene": 23,
+        "draw": 92000,
+        "arm": "fixed8"
+      }
+    ],
+    "attempts": 42,
+    "max_movements": 300,
+    "generation_horizon": 16,
+    "observations": 2,
+    "denoising_steps": 100,
+    "success": "true coverage strictly greater than 0.95",
+    "prediction_seed": "scene plus draw; paired by prediction call order",
+    "excluded_test_scenes": [
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181,
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      188,
+      189,
+      190,
+      191,
+      192,
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199,
+      200,
+      201,
+      202,
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      209
+    ],
+    "scope": "Inspected discovery scenes; development evidence only, not generalization."
+  },
+  "limits": [
+    "No train/evaluate command exists in this preflight.",
+    "Training implementation, CPU tests and frozen execution protocol remain required before a model run.",
+    "No new model or recovery rule has been validated."
+  ]
+}

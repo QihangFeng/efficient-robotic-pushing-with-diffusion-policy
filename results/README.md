@@ -241,4 +241,10 @@ Original fixed-eight/original adaptive/trained fixed-eight/trained adaptive succ
 
 Seven of the nine lost attempts succeed with fine-tuned/fixed-eight execution. Their adaptive runs contain destructive fresh predictions and positioning stalls; no single cause or recovery fix is established. The three-percentage-point decline screen also appears in successful runs and is not a new controller gate. Preserve the existing checkpoint, milestone and evidence. Any preservation redesign needs separate development and evaluation data.
 
+## Baseline-preservation data preflight
+
+- [Supplement](robotics-retention-preflight/baseline-supplement.json): a separate proposed training/validation split of the twenty existing successful-baseline controls, with 2,686 complete native windows. Original arrays and diagnostic metadata are unchanged.
+- [Array audit](robotics-retention-preflight/data-audit.json): all 3,006 RGB frames and 2,986 executed commands verified against saved source traces; ten preflight CPU tests pass.
+- [Proposed plan](robotics-retention-preflight/plan.json): the same 600-update final-block budget with one expert, one baseline-success and two recovery samples per update, followed by 42 development attempts. No model run, training update or new evaluation has occurred. The proposal excludes scenes 170–209 and remains subject to design review.
+
 The current tracked results cover the robotic manipulation project.
