@@ -245,6 +245,8 @@ Seven of the nine lost attempts succeed with fine-tuned/fixed-eight execution. T
 
 - [Supplement](robotics-retention-preflight/baseline-supplement.json): a separate proposed training/validation split of the twenty existing successful-baseline controls, with 2,686 complete native windows. Original arrays and diagnostic metadata are unchanged.
 - [Array audit](robotics-retention-preflight/data-audit.json): all 3,006 RGB frames and 2,986 executed commands verified against saved source traces; ten preflight CPU tests pass.
-- [Proposed plan](robotics-retention-preflight/plan.json): the same 600-update final-block budget with one expert, one baseline-success and two recovery samples per update, followed by 42 development attempts. No model run, training update or new evaluation has occurred. The proposal excludes scenes 170–209 and remains subject to design review.
+- [Prepared plan](robotics-retention-preflight/plan.json): the same 600-update final-block budget with one expert, one baseline-success and two recovery samples per update, followed by 42 development attempts. These preflight files record preparation only and exclude scenes 170–209.
+
+The [separate retention-pilot execution protocol](robotics-retention-pilot/protocol.json) freezes the approved recipe, exact training samples and 42 development attempts. Its runner passes sixteen CPU tests. Unchanged sample slots reproduce the original training schedule; baseline replacement uses a separate sampling RNG. Protocol preparation alone is not evidence of model improvement. The original preflight files remain a record of data preparation.
 
 The current tracked results cover the robotic manipulation project.

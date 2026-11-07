@@ -58,3 +58,7 @@ results/robotics-baseline-loss-review/artifact-audit.json text eol=lf
 experiments/robotics_retention_preflight.py text eol=lf
 tests/test_robotics_retention_preflight.py text eol=lf
 results/robotics-retention-preflight/*.json text eol=lf
+experiments/robotics_retention_pilot.py text eol=lf
+tests/test_robotics_retention_pilot.py text eol=lf
+results/robotics-retention-pilot/*.json text eol=lf
+results/robotics-retention-pilot/**/model-binding.json text eol=lf

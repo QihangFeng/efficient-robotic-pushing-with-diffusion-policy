@@ -104,7 +104,9 @@ One bounded candidate would:
 
 The development screen should report gains and losses relative to original fixed eight, overall success, coverage, predictions and runtime, including failures. A candidate should advance only if it improves the retention trade-off without sacrificing the existing recovery behavior. Confirming generalization would then require a separately agreed, untouched evaluation cohort. The inspected scenes 170–209 cannot become fresh evaluation evidence for this redesign.
 
-The preservation candidate has not been trained. Its source-data preflight is complete; a training implementation and frozen execution protocol are still required before a model run. More elaborate teacher-output anchoring remains a second option if replay alone is inadequate; its extra offline computation and loss weight would need a separate controlled design.
+The isolated [retention runner](../experiments/robotics_retention_pilot.py) implements this prescribed candidate. All **16 CPU runner tests pass**, including exact resumption on a tiny test model, candidate checkpoint identity, protected outputs and scene-cluster statistics. Its [execution protocol](../results/robotics-retention-pilot/protocol.json) freezes all 600 training updates and the 42 development attempts. The original two recovery samples and first expert sample match the previous training schedule at every update; only the second expert slot changes, using a separate baseline-sampling RNG. No recovery benefit is established until the model run and complete comparison finish.
+
+The explicit runner stages are `prepare`, `verify`, `train` and `evaluate`. Preparation and verification do not load the pretrained robot policy. Real training and pushing occur only in their named stages. More elaborate teacher-output anchoring remains a separate future option if rehearsal is inadequate; it is not part of this pilot.
 
 ### Prepared data and proposed schedule
 
