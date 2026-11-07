@@ -230,7 +230,6 @@ Trained/milestone/fixed-eight successes were **60/48/46 out of eighty**. Relativ
 
 - [Comparison summary](robotics-visual-sac-comparison/summary.json) and [report](../reports/2026-11-06-robotics-visual-sac-comparison.md): 40 frozen SAC attempts against 80 saved original fixed-eight attempts on the same 40 starting scenes. SAC achieved 0/40 successes and fixed eight achieved 46/80.
 - [Protocol](robotics-visual-sac-comparison/protocol.json) and [SAC traces](robotics-visual-sac-comparison/sac-traces.json.gz) record the checkpoint, matched scene IDs, actions, and coverage for each step.
-- [80-scene expansion](robotics-visual-sac-comparison-80/summary.json): adds 40 distinct starting scenes and keeps the original 40. SAC completed 0/80 pushes. The original fixed-eight policy achieved 61.25% success when weighting scenes equally.
 
 Original fixed-eight/original adaptive/trained fixed-eight/trained adaptive successes were **46/48/56/60 out of eighty**. Adding adaptive execution to the trained model saved 18.62% of predictions and reduced observed runtime by 11.13%, with four more successes. The additional success gain remains uncertain (paired scene-bootstrap interval: -8.75 to +18.75 percentage points); the prediction-saving interval excludes zero. All 711 CPU tests and the separate raw-artifact audit passed. Preserve the exact checkpoint, milestone `0f40449` and existing evidence. These are the same inspected forty scenes, and runtime across sessions remains descriptive.
 
