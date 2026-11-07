@@ -233,4 +233,12 @@ Trained/milestone/fixed-eight successes were **60/48/46 out of eighty**. Relativ
 
 Original fixed-eight/original adaptive/trained fixed-eight/trained adaptive successes were **46/48/56/60 out of eighty**. Adding adaptive execution to the trained model saved 18.62% of predictions and reduced observed runtime by 11.13%, with four more successes. The additional success gain remains uncertain (paired scene-bootstrap interval: -8.75 to +18.75 percentage points); the prediction-saving interval excludes zero. All 711 CPU tests and the separate raw-artifact audit passed. Preserve the exact checkpoint, milestone `0f40449` and existing evidence. These are the same inspected forty scenes, and runtime across sessions remains descriptive.
 
+## Saved review of lost baseline successes
+
+- [Review](robotics-baseline-loss-review/summary.json): all 320 four-configuration attempts and 70,797 saved movements; the nine lost scene/draw pairs, matched execution prefixes, later declines, stationary tails and successful comparison cases.
+- [Independent audit](robotics-baseline-loss-review/artifact-audit.json): raw-record arithmetic and 724 source/evidence bindings; also verifies availability of the twenty unused successful-baseline rehearsal controls.
+- [Coverage histories](robotics-baseline-loss-review/lost-success-coverage.png) and [report](../reports/2026-11-07-robotics-baseline-loss-review.md): case-by-case evidence and a proposed baseline-success rehearsal experiment for discussion. No new prediction, training, physics replay or controller change occurred.
+
+Seven of the nine lost attempts succeed with fine-tuned/fixed-eight execution. Their adaptive runs contain destructive fresh predictions and positioning stalls; no single cause or recovery fix is established. The three-percentage-point decline screen also appears in successful runs and is not a new controller gate. Preserve the existing checkpoint, milestone and evidence. Any preservation redesign needs separate development and evaluation data.
+
 The current tracked results cover the robotic manipulation project.

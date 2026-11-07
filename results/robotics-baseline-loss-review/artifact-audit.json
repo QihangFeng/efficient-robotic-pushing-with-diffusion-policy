@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "attempts": 320,
+  "losses": 9,
+  "distinct_lost_scenes": 7,
+  "movements": 70797,
+  "source_bindings_verified": 724,
+  "component_patterns_and_peaks_and_stationarity_match": true,
+  "all_control_group_drop_counts_match": true,
+  "trained_first_schedule_difference_counts": {
+    "17": 5,
+    "9": 74,
+    "33": 1
+  },
+  "available_baseline_success_rehearsal": {
+    "episodes": 20,
+    "scene_ids": [
+      0,
+      1,
+      5,
+      8,
+      10,
+      12,
+      13,
+      14,
+      17,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "complete_native_windows": 2686,
+    "used_in_current_training": false,
+    "manifest_sha256": "9650153226439d9a19559824d7a0946e6bc8c63a173a523b7f2f700a768bdea2",
+    "scope": "Availability for a proposed future retention experiment; not new training data or a trained candidate."
+  },
+  "summary_sha256": "f30c1364b8161bf2e99c98cb5bfaf2a0b16907d75a9ea187b52443fcf07d12f3",
+  "auditor_sha256": "6e31882489bea0910f14c71c8988dcf05febd8dcaf0cce4f4e585a5c997a5943",
+  "scope": "Independent saved-JSON/trace arithmetic; no policy import, inference, training or physics."
+}
