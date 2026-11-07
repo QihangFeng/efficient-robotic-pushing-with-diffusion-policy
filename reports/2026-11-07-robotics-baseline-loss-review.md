@@ -198,9 +198,9 @@ All ten preflight CPU tests and the [complete array/trace check](../results/robo
 .\.venv-robotics\Scripts\python.exe -m unittest discover -s tests -p test_robotics_retention_preflight.py
 ```
 
-## 5. Next proposal: preserve original model outputs during training
+## 5. Output-preservation pilot
 
-**Proposal only; no implementation or training is authorized by this section.** Keep all of the established expert/recovery examples, and penalize the student when its denoising output changes too much from the original model on successful-baseline states. The aim is to retain old behavior while learning recoveries. The unsuccessful mixture replaced half the expert examples; this proposal preserves that expert rehearsal and adds an explicit preservation objective.
+**Qihang approved this second pilot after reviewing the unsuccessful rehearsal result.** Keep all of the established expert/recovery examples, and penalize the student when its denoising output changes too much from the original model on successful-baseline states. The aim is to retain old behavior while learning recoveries. The unsuccessful mixture replaced half the expert examples; this candidate preserves that expert rehearsal and adds an explicit preservation objective. Mitigation development now belongs on `experiment/negative-flip-mitigation`; the earlier six commits remain intact there, while `main` returns to the preceding `4ff40a4` project snapshot.
 
 [Learning without Forgetting](https://arxiv.org/abs/1606.09282) motivates preserving old model responses during adaptation. [FDPP, section IV-C](https://arxiv.org/html/2501.08259v1) regularizes a diffusion policy toward its pretrained action distribution. The proposed denoiser-output penalty is our supervised adaptation of this principle. It is neither an exact KL calculation nor a reproduction of either paper, and it cannot guarantee identical closed-loop outcomes.
 
@@ -214,6 +214,12 @@ The reviewable bounded recipe is:
 6. **Judge retention and recovery together.** Report all newly gained/lost successes against both references, including any new current-method losses. Consider a separate fresh confirmation only if original-baseline losses fall below the current **two**, total success is at least **11/14**, and recovery-validation success is at least **3/6**. Bootstrap seven scenes after averaging their two draws. These inspected scenes remain development data; exclude scenes 170–209 from training and selection. No automatic promotion or further mixture/weight search follows this test.
 
 The measured candidate collector averaged 144.35 seconds per attempt. Fourteen new attempts at that rate take about **34 minutes**; allowing for training and checks gives an estimated **35–50 minutes of model execution**, plus implementation time. The new training cost and GPU peak have not been measured. Reusing the backbone and keeping a small teacher head makes this a plausible laptop experiment, subject to the feasibility check. This remains a proposed mitigation, not a finding that negative flips have been solved.
+
+### Implementation and frozen preparation
+
+The separate [preservation runner](../experiments/robotics_preservation_pilot.py), [CPU tests](../tests/test_robotics_preservation_pilot.py) and [artifact auditor](../experiments/robotics_preservation_pilot_audit.py) preserve all previous experiment sources and results. All **20 CPU tests pass**. They check the zero penalty for an unchanged original head, the gradient pulling a perturbed output back toward its teacher, frozen teacher/backbone state, all 2,400 original sample slots, independent auxiliary noise, exact interrupted/resumed updates and RNG, native inputs, protected artifacts, reference trace arithmetic, candidate head selection and seven-scene statistics. The zero-weight CPU control also reproduces later original supervised updates exactly.
+
+The [new protocol](../results/robotics-preservation-pilot/protocol.json) binds the source/tests/auditor, installed LeRobot denoiser source, old data/checkpoint provenance and 28 reused reference attempts before any new GPU update. The explicit stages are `prepare`, `verify`, `feasibility`, `train` and `evaluate`. Preparation and CPU checks do not construct the pretrained robot policy. A successful single-update gate must restore original weights, module modes, gradient flags and CPU/CUDA RNG, and reproduce the original first four supervised losses, before the fixed training run proceeds. These preparation checks establish implementation readiness; model performance requires the prescribed fourteen candidate attempts.
 
 ## Reproduction and validation
 

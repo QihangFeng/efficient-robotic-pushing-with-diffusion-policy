@@ -253,4 +253,8 @@ The [retention training record](robotics-retention-pilot/training.json) and [tra
 
 The [completed comparison](robotics-retention-pilot/summary.json) covers all 42 development attempts on seven scenes with two prediction draws. Original fixed-eight/current adaptive/new rehearsal adaptive succeed **11/11/8 times out of 14**. The candidate loses three current-method successes and gains none; recovery-validation success stays 3/6 while baseline-holdout success falls from 8/8 to 5/8. It is not adopted. The [complete audit](robotics-retention-pilot/artifact-audit.json) passes for all 42 scored and four startup attempts, 9,304 movements and scene-cluster statistics. The collector records 94.54 minutes after initial model loading; its generated "including load" scope label overstates that interval. Details and limitations are in the [existing baseline-loss report](../reports/2026-11-07-robotics-baseline-loss-review.md). The forty-scene evaluation and established checkpoint remain unchanged.
 
+## Output-preservation pilot
+
+The [preservation protocol](robotics-preservation-pilot/protocol.json) fixes the approved follow-up: preserve the original two-expert/two-recovery samples for 600 updates, add a weight-1.0 original-teacher denoiser-output penalty on one baseline window per update, then collect fourteen candidate attempts and reuse the 28 audited original/current references. All twenty new CPU tests pass. A restored single-update GPU gate precedes real training. This experiment runs on `experiment/negative-flip-mitigation`; preparation is not evidence of reduced negative flips, and the forty evaluation scenes stay excluded from training/selection.
+
 The current tracked results cover the robotic manipulation project.
