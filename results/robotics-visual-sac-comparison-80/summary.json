@@ -1,0 +1,1847 @@
+{
+  "protocol_sha256": "8129196c5567b9eae294a1d11797bd899a8e28c02cce24d790f8a0554460c61b",
+  "trace_sha256": "77a393272fdf2f1ff4f401ffd43ed7dfa6c7ae318ec6cd9e3e7f4e96588e260a",
+  "new_cohort": {
+    "scenes": 40,
+    "methods": {
+      "visual_sac": {
+        "attempts": 40,
+        "successes": 0,
+        "scene_mean_success": 0,
+        "scene_mean_final_coverage": 0.07048939456917193,
+        "scene_mean_peak_coverage": 0.07355324145037327,
+        "scene_mean_movements": 300
+      },
+      "diffusion_fixed8": {
+        "attempts": 40,
+        "successes": 26,
+        "scene_mean_success": 0.65,
+        "scene_mean_final_coverage": 0.9208221469227159,
+        "scene_mean_peak_coverage": 0.9470432763253471,
+        "scene_mean_movements": 213
+      }
+    },
+    "paired_sac_minus_fixed8": {
+      "success": -0.65,
+      "final_coverage": -0.850332752353544,
+      "peak_coverage": -0.8734900348749739,
+      "movements": 87
+    }
+  },
+  "previous_cohort": {
+    "scenes": 40,
+    "methods": {
+      "visual_sac": {
+        "attempts": 40,
+        "successes": 0,
+        "scene_mean_success": 0,
+        "scene_mean_final_coverage": 0.06367275694350154,
+        "scene_mean_peak_coverage": 0.07179417540341164,
+        "scene_mean_movements": 300
+      },
+      "diffusion_fixed8": {
+        "attempts": 80,
+        "successes": 46,
+        "scene_mean_success": 0.575,
+        "scene_mean_final_coverage": 0.909638875527219,
+        "scene_mean_peak_coverage": 0.9396858206723603,
+        "scene_mean_movements": 228.4375
+      }
+    },
+    "paired_sac_minus_fixed8": {
+      "success": -0.575,
+      "final_coverage": -0.8459661185837175,
+      "peak_coverage": -0.8678916452689487,
+      "movements": 71.5625
+    }
+  },
+  "combined": {
+    "scenes": 80,
+    "methods": {
+      "visual_sac": {
+        "attempts": 80,
+        "successes": 0,
+        "scene_mean_success": 0,
+        "scene_mean_final_coverage": 0.06708107575633673,
+        "scene_mean_peak_coverage": 0.07267370842689246,
+        "scene_mean_movements": 300
+      },
+      "diffusion_fixed8": {
+        "attempts": 120,
+        "successes": 72,
+        "scene_mean_success": 0.6125,
+        "scene_mean_final_coverage": 0.9152305112249675,
+        "scene_mean_peak_coverage": 0.9433645484988538,
+        "scene_mean_movements": 220.71875
+      }
+    },
+    "paired_sac_minus_fixed8": {
+      "success": -0.6125,
+      "final_coverage": -0.8481494354686308,
+      "peak_coverage": -0.8706908400719613,
+      "movements": 79.28125
+    }
+  },
+  "scene_pairs": [
+    {
+      "scene": 110,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0034701934414932355,
+          "peak_coverage": 0.0034701934414932355,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9552632199918731,
+          "peak_coverage": 0.9552632199918731,
+          "movements": 234
+        }
+      ]
+    },
+    {
+      "scene": 111,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.045405839469399877,
+          "peak_coverage": 0.045405839469399877,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9614891423744492,
+          "peak_coverage": 0.9614891423744492,
+          "movements": 110
+        }
+      ]
+    },
+    {
+      "scene": 112,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.08415555792554964,
+          "peak_coverage": 0.08415555792554964,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9588631877169644,
+          "peak_coverage": 0.9588631877169644,
+          "movements": 130
+        }
+      ]
+    },
+    {
+      "scene": 113,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.11650548022968128,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.951097465952221,
+          "peak_coverage": 0.951097465952221,
+          "movements": 156
+        }
+      ]
+    },
+    {
+      "scene": 114,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9504958532340257,
+          "peak_coverage": 0.9504958532340257,
+          "movements": 168
+        }
+      ]
+    },
+    {
+      "scene": 115,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.030927228583136186,
+          "peak_coverage": 0.030927228583136186,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9538916285176717,
+          "peak_coverage": 0.9538916285176717,
+          "movements": 98
+        }
+      ]
+    },
+    {
+      "scene": 116,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.9243910726005401,
+          "peak_coverage": 0.9243910726005401,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 117,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.955542609527912,
+          "peak_coverage": 0.955542609527912,
+          "movements": 167
+        }
+      ]
+    },
+    {
+      "scene": 118,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.9385176530764506,
+          "peak_coverage": 0.9423989873407923,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 119,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9556433790895417,
+          "peak_coverage": 0.9556433790895417,
+          "movements": 126
+        }
+      ]
+    },
+    {
+      "scene": 120,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0022752075668580583,
+          "peak_coverage": 0.00832360258523035,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.8745036549810905,
+          "peak_coverage": 0.9281706282072798,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 121,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.038158048719560494,
+          "peak_coverage": 0.038158048719560494,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9750735313466385,
+          "peak_coverage": 0.9750735313466385,
+          "movements": 197
+        }
+      ]
+    },
+    {
+      "scene": 122,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.8104174470105795,
+          "peak_coverage": 0.910625222543371,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 123,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.11963984366015001,
+          "peak_coverage": 0.11963984366015001,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9556517544026154,
+          "peak_coverage": 0.9556517544026154,
+          "movements": 239
+        }
+      ]
+    },
+    {
+      "scene": 124,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.3594876714823523,
+          "peak_coverage": 0.3594876714823523,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9566990416517916,
+          "peak_coverage": 0.9566990416517916,
+          "movements": 206
+        }
+      ]
+    },
+    {
+      "scene": 125,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9593978901108858,
+          "peak_coverage": 0.9593978901108858,
+          "movements": 183
+        }
+      ]
+    },
+    {
+      "scene": 126,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.838921092498283,
+          "peak_coverage": 0.9348968162668317,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 127,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.013755472536790827,
+          "peak_coverage": 0.013755472536790827,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.782981473170077,
+          "peak_coverage": 0.9452876789288148,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 128,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.03068520012984975,
+          "peak_coverage": 0.03068520012984975,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9602007938816828,
+          "peak_coverage": 0.9602007938816828,
+          "movements": 296
+        }
+      ]
+    },
+    {
+      "scene": 129,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.1652270155514628,
+          "peak_coverage": 0.1652270155514628,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.9487213876123138,
+          "peak_coverage": 0.9487213876123138,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 130,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9505718061109475,
+          "peak_coverage": 0.9505718061109475,
+          "movements": 143
+        }
+      ]
+    },
+    {
+      "scene": 131,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.18620032462044803,
+          "peak_coverage": 0.18620032462044803,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9560588062482036,
+          "peak_coverage": 0.9560588062482036,
+          "movements": 167
+        }
+      ]
+    },
+    {
+      "scene": 132,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.33285168726310355,
+          "peak_coverage": 0.33285168726310355,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9571167162528357,
+          "peak_coverage": 0.9571167162528357,
+          "movements": 152
+        }
+      ]
+    },
+    {
+      "scene": 133,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9590780587616355,
+          "peak_coverage": 0.9590780587616355,
+          "movements": 128
+        }
+      ]
+    },
+    {
+      "scene": 134,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.32344788397983026,
+          "peak_coverage": 0.32344788397983026,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.6455539249000173,
+          "peak_coverage": 0.9405802134536132,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 135,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.002503742764080492,
+          "peak_coverage": 0.002503742764080492,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.8781226735795008,
+          "peak_coverage": 0.9280607760721891,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 136,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9687951055077111,
+          "peak_coverage": 0.9687951055077111,
+          "movements": 168
+        }
+      ]
+    },
+    {
+      "scene": 137,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.24923984943484273,
+          "peak_coverage": 0.24923984943484273,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.9408210805044066,
+          "peak_coverage": 0.9478281679068195,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 138,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.8469072369185195,
+          "peak_coverage": 0.8507351724036392,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 139,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.11501551934334903,
+          "peak_coverage": 0.11501551934334903,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.955379500763335,
+          "peak_coverage": 0.955379500763335,
+          "movements": 98
+        }
+      ]
+    },
+    {
+      "scene": 140,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.12157659634229935,
+          "peak_coverage": 0.12157659634229935,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9526216285497128,
+          "peak_coverage": 0.9526216285497128,
+          "movements": 183
+        }
+      ]
+    },
+    {
+      "scene": 141,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.8248455977063459,
+          "peak_coverage": 0.908446044500012,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 142,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9639044408724627,
+          "peak_coverage": 0.9639044408724627,
+          "movements": 154
+        }
+      ]
+    },
+    {
+      "scene": 143,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.760447874540362,
+          "peak_coverage": 0.9376894254258065,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 144,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.1247016160442847,
+          "peak_coverage": 0.1247016160442847,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.9300484766909028,
+          "peak_coverage": 0.9462142286326186,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 145,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.3690765227212371,
+          "peak_coverage": 0.3690765227212371,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9506531288181667,
+          "peak_coverage": 0.9506531288181667,
+          "movements": 170
+        }
+      ]
+    },
+    {
+      "scene": 146,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9505290255799287,
+          "peak_coverage": 0.9505290255799287,
+          "movements": 107
+        }
+      ]
+    },
+    {
+      "scene": 147,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9541012867135897,
+          "peak_coverage": 0.9541012867135897,
+          "movements": 161
+        }
+      ]
+    },
+    {
+      "scene": 148,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.10177476118679886,
+          "peak_coverage": 0.10177476118679886,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9545375979939112,
+          "peak_coverage": 0.9545375979939112,
+          "movements": 121
+        }
+      ]
+    },
+    {
+      "scene": 149,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9650286311485321,
+          "peak_coverage": 0.9650286311485321,
+          "movements": 258
+        }
+      ]
+    },
+    {
+      "scene": 170,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.04916242320545539,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9551378937323262,
+          "peak_coverage": 0.9551378937323262,
+          "movements": 257
+        },
+        {
+          "success": true,
+          "final_coverage": 0.9514867150799851,
+          "peak_coverage": 0.9514867150799851,
+          "movements": 246
+        }
+      ]
+    },
+    {
+      "scene": 171,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.3764977683969354,
+          "peak_coverage": 0.3764977683969354,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9646307043587298,
+          "peak_coverage": 0.9646307043587298,
+          "movements": 129
+        },
+        {
+          "success": true,
+          "final_coverage": 0.9620786917718095,
+          "peak_coverage": 0.9620786917718095,
+          "movements": 120
+        }
+      ]
+    },
+    {
+      "scene": 172,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.2823648162679246,
+          "peak_coverage": 0.2823648162679246,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9559615050642728,
+          "peak_coverage": 0.9559615050642728,
+          "movements": 264
+        },
+        {
+          "success": true,
+          "final_coverage": 0.9541699020355442,
+          "peak_coverage": 0.9541699020355442,
+          "movements": 224
+        }
+      ]
+    },
+    {
+      "scene": 173,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.9068658127652776,
+          "peak_coverage": 0.9068658127652776,
+          "movements": 300
+        },
+        {
+          "success": false,
+          "final_coverage": 0.9445214285546488,
+          "peak_coverage": 0.9445214285546488,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 174,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.9333015534703214,
+          "peak_coverage": 0.9333015534703214,
+          "movements": 300
+        },
+        {
+          "success": false,
+          "final_coverage": 0.9442971644883276,
+          "peak_coverage": 0.9442971644883276,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 175,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.17496584661005374,
+          "peak_coverage": 0.17496584661005374,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.8908068102011583,
+          "peak_coverage": 0.947034325207288,
+          "movements": 300
+        },
+        {
+          "success": true,
+          "final_coverage": 0.9705447277361456,
+          "peak_coverage": 0.9705447277361456,
+          "movements": 184
+        }
+      ]
+    },
+    {
+      "scene": 176,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.00236725091640498,
+          "peak_coverage": 0.00236725091640498,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9604787673789158,
+          "peak_coverage": 0.9604787673789158,
+          "movements": 121
+        },
+        {
+          "success": true,
+          "final_coverage": 0.9602057898026596,
+          "peak_coverage": 0.9602057898026596,
+          "movements": 145
+        }
+      ]
+    },
+    {
+      "scene": 177,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.8864508495457039,
+          "peak_coverage": 0.9315697791871707,
+          "movements": 300
+        },
+        {
+          "success": true,
+          "final_coverage": 0.9565447771776228,
+          "peak_coverage": 0.9565447771776228,
+          "movements": 184
+        }
+      ]
+    },
+    {
+      "scene": 178,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9511943486327402,
+          "peak_coverage": 0.9511943486327402,
+          "movements": 153
+        },
+        {
+          "success": true,
+          "final_coverage": 0.9556446431379381,
+          "peak_coverage": 0.9556446431379381,
+          "movements": 145
+        }
+      ]
+    },
+    {
+      "scene": 179,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9753211895649352,
+          "peak_coverage": 0.9753211895649352,
+          "movements": 177
+        },
+        {
+          "success": false,
+          "final_coverage": 0.73210397385827,
+          "peak_coverage": 0.9414056109535038,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 180,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9535204812069061,
+          "peak_coverage": 0.9535204812069061,
+          "movements": 226
+        },
+        {
+          "success": true,
+          "final_coverage": 0.9612991272835546,
+          "peak_coverage": 0.9612991272835546,
+          "movements": 250
+        }
+      ]
+    },
+    {
+      "scene": 181,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.9417571833995444,
+          "peak_coverage": 0.9417571833995444,
+          "movements": 300
+        },
+        {
+          "success": true,
+          "final_coverage": 0.963894082003656,
+          "peak_coverage": 0.963894082003656,
+          "movements": 104
+        }
+      ]
+    },
+    {
+      "scene": 182,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.10719678696428164,
+          "peak_coverage": 0.10719678696428164,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.7581381750084449,
+          "peak_coverage": 0.9207098140325439,
+          "movements": 300
+        },
+        {
+          "success": false,
+          "final_coverage": 0.7213197996809004,
+          "peak_coverage": 0.9460188556902107,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 183,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.37349275732592785,
+          "peak_coverage": 0.37349275732592785,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.8394584252460349,
+          "peak_coverage": 0.9275788323721231,
+          "movements": 300
+        },
+        {
+          "success": true,
+          "final_coverage": 0.97552834962584,
+          "peak_coverage": 0.97552834962584,
+          "movements": 165
+        }
+      ]
+    },
+    {
+      "scene": 184,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9586738729230329,
+          "peak_coverage": 0.9586738729230329,
+          "movements": 247
+        },
+        {
+          "success": true,
+          "final_coverage": 0.9500422983641733,
+          "peak_coverage": 0.9500422983641733,
+          "movements": 238
+        }
+      ]
+    },
+    {
+      "scene": 185,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.35023211042594365,
+          "peak_coverage": 0.35023211042594365,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9522973916349324,
+          "peak_coverage": 0.9522973916349324,
+          "movements": 65
+        },
+        {
+          "success": true,
+          "final_coverage": 0.9541411169557245,
+          "peak_coverage": 0.9541411169557245,
+          "movements": 64
+        }
+      ]
+    },
+    {
+      "scene": 186,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0034724644365861867,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9563376250186375,
+          "peak_coverage": 0.9563376250186375,
+          "movements": 121
+        },
+        {
+          "success": true,
+          "final_coverage": 0.9579993898182197,
+          "peak_coverage": 0.9579993898182197,
+          "movements": 170
+        }
+      ]
+    },
+    {
+      "scene": 187,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.07180328868809892,
+          "peak_coverage": 0.1911051262211431,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9831104779798472,
+          "peak_coverage": 0.9831104779798472,
+          "movements": 151
+        },
+        {
+          "success": false,
+          "final_coverage": 0.9203275358811275,
+          "peak_coverage": 0.938459753007366,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 188,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.03356126888476162,
+          "peak_coverage": 0.03356126888476162,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.9236505359884613,
+          "peak_coverage": 0.9236505359884613,
+          "movements": 300
+        },
+        {
+          "success": true,
+          "final_coverage": 0.9513800125791939,
+          "peak_coverage": 0.9513800125791939,
+          "movements": 106
+        }
+      ]
+    },
+    {
+      "scene": 189,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.14808093774062003,
+          "peak_coverage": 0.14808093774062003,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.813907212222532,
+          "peak_coverage": 0.9360452647947703,
+          "movements": 300
+        },
+        {
+          "success": false,
+          "final_coverage": 0.9132446734435308,
+          "peak_coverage": 0.9132446734435308,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 190,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.954522003194982,
+          "peak_coverage": 0.954522003194982,
+          "movements": 224
+        },
+        {
+          "success": true,
+          "final_coverage": 0.9518970346520137,
+          "peak_coverage": 0.9518970346520137,
+          "movements": 223
+        }
+      ]
+    },
+    {
+      "scene": 191,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.9339527633374489,
+          "peak_coverage": 0.9339527633374489,
+          "movements": 300
+        },
+        {
+          "success": false,
+          "final_coverage": 0.7498077993793841,
+          "peak_coverage": 0.9149780061435698,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 192,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9502046262046728,
+          "peak_coverage": 0.9502046262046728,
+          "movements": 272
+        },
+        {
+          "success": true,
+          "final_coverage": 0.9536087320818689,
+          "peak_coverage": 0.9536087320818689,
+          "movements": 160
+        }
+      ]
+    },
+    {
+      "scene": 193,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.965790051668664,
+          "peak_coverage": 0.965790051668664,
+          "movements": 193
+        },
+        {
+          "success": false,
+          "final_coverage": 0.9284857357716427,
+          "peak_coverage": 0.9422597125938881,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 194,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.873988676515157,
+          "peak_coverage": 0.873988676515157,
+          "movements": 300
+        },
+        {
+          "success": true,
+          "final_coverage": 0.9525319351274228,
+          "peak_coverage": 0.9525319351274228,
+          "movements": 170
+        }
+      ]
+    },
+    {
+      "scene": 195,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9675962417587303,
+          "peak_coverage": 0.9675962417587303,
+          "movements": 97
+        },
+        {
+          "success": true,
+          "final_coverage": 0.9507944635778679,
+          "peak_coverage": 0.9507944635778679,
+          "movements": 152
+        }
+      ]
+    },
+    {
+      "scene": 196,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.15292001322131835,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.934803450712105,
+          "peak_coverage": 0.934803450712105,
+          "movements": 300
+        },
+        {
+          "success": false,
+          "final_coverage": 0.9225410530472254,
+          "peak_coverage": 0.9225410530472254,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 197,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.046613813013689595,
+          "peak_coverage": 0.046613813013689595,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9517813842038385,
+          "peak_coverage": 0.9517813842038385,
+          "movements": 162
+        },
+        {
+          "success": false,
+          "final_coverage": 0.743911381076403,
+          "peak_coverage": 0.9442043738318596,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 198,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.14439069721954925,
+          "peak_coverage": 0.14439069721954925,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9527682938826119,
+          "peak_coverage": 0.9527682938826119,
+          "movements": 128
+        },
+        {
+          "success": true,
+          "final_coverage": 0.9500195739372994,
+          "peak_coverage": 0.9500195739372994,
+          "movements": 209
+        }
+      ]
+    },
+    {
+      "scene": 199,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.16397913130174416,
+          "peak_coverage": 0.16397913130174416,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.725603365115634,
+          "peak_coverage": 0.940447711213604,
+          "movements": 300
+        },
+        {
+          "success": false,
+          "final_coverage": 0.9130512856337647,
+          "peak_coverage": 0.9130866894691406,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 200,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9512172728920587,
+          "peak_coverage": 0.9512172728920587,
+          "movements": 232
+        },
+        {
+          "success": true,
+          "final_coverage": 0.9797531511451901,
+          "peak_coverage": 0.9797531511451901,
+          "movements": 234
+        }
+      ]
+    },
+    {
+      "scene": 201,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.9220716831576536,
+          "peak_coverage": 0.9489405759374274,
+          "movements": 300
+        },
+        {
+          "success": true,
+          "final_coverage": 0.981922993182809,
+          "peak_coverage": 0.981922993182809,
+          "movements": 96
+        }
+      ]
+    },
+    {
+      "scene": 202,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9577657577859463,
+          "peak_coverage": 0.9577657577859463,
+          "movements": 144
+        },
+        {
+          "success": true,
+          "final_coverage": 0.9601496873649432,
+          "peak_coverage": 0.9601496873649432,
+          "movements": 250
+        }
+      ]
+    },
+    {
+      "scene": 203,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.734564475985036,
+          "peak_coverage": 0.9418557305365376,
+          "movements": 300
+        },
+        {
+          "success": false,
+          "final_coverage": 0.8476951903101948,
+          "peak_coverage": 0.9466772865824737,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 204,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9502663082949621,
+          "peak_coverage": 0.9502663082949621,
+          "movements": 198
+        },
+        {
+          "success": false,
+          "final_coverage": 0.9009755161492147,
+          "peak_coverage": 0.9129198329853361,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 205,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 2.723560293802497e-06,
+          "peak_coverage": 2.723560293802497e-06,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.952244875597177,
+          "peak_coverage": 0.952244875597177,
+          "movements": 129
+        },
+        {
+          "success": true,
+          "final_coverage": 0.956103707443445,
+          "peak_coverage": 0.956103707443445,
+          "movements": 225
+        }
+      ]
+    },
+    {
+      "scene": 206,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0,
+          "peak_coverage": 0.0,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.7808495529943362,
+          "peak_coverage": 0.9402792447356146,
+          "movements": 300
+        },
+        {
+          "success": false,
+          "final_coverage": 0.8867803652234715,
+          "peak_coverage": 0.9486686880064307,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 207,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.0456322767287668,
+          "peak_coverage": 0.0456322767287668,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": true,
+          "final_coverage": 0.9506568250168055,
+          "peak_coverage": 0.9506568250168055,
+          "movements": 154
+        },
+        {
+          "success": false,
+          "final_coverage": 0.8837581029775388,
+          "peak_coverage": 0.9333092707937576,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 208,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.1198631181808276,
+          "peak_coverage": 0.1198631181808276,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.5097352463638819,
+          "peak_coverage": 0.6350062651052932,
+          "movements": 300
+        },
+        {
+          "success": false,
+          "final_coverage": 0.5570678719486972,
+          "peak_coverage": 0.6383727161666568,
+          "movements": 300
+        }
+      ]
+    },
+    {
+      "scene": 209,
+      "visual_sac": [
+        {
+          "success": false,
+          "final_coverage": 0.10586568551423771,
+          "peak_coverage": 0.10586568551423771,
+          "movements": 300
+        }
+      ],
+      "diffusion_fixed8": [
+        {
+          "success": false,
+          "final_coverage": 0.8643012728568226,
+          "peak_coverage": 0.9250988988525791,
+          "movements": 300
+        },
+        {
+          "success": true,
+          "final_coverage": 0.9537953199869768,
+          "peak_coverage": 0.9537953199869768,
+          "movements": 167
+        }
+      ]
+    }
+  ]
+}
