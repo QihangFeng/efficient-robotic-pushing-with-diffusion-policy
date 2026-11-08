@@ -352,7 +352,17 @@ The [official PushT configuration](https://github.com/real-stanford/diffusion_po
 
 The bounded estimate is **35–50 minutes of model execution plus implementation**. Each new sample retains eight real future commands; an adaptive twelve-movement execution can use later predicted slots whose training targets include padding. Whether this treatment improves closed-loop retention must be measured.
 
-Preparation passes **nine CPU tests**. The separate implementation reuses the existing training routine and the previous collector/statistics procedure; old source files and arrays are not edited. GPU feasibility, prescribed training, all fourteen attempts and artifact verification are the remaining stages.
+Preparation passes **nine CPU tests**. The separate implementation reuses the existing training routine and the previous collector/statistics procedure; old source files and arrays are not edited.
+
+### Feasibility and training completed
+
+The [real GPU gate](../results/robotics-endpoint-padding/feasibility.json) passes in 3.63 seconds after loading, with 1,101.06 MiB peak allocated memory. It uses four seven-slot-padded examples, verifies that the native unmasked objective ignores padding-mask flags as configured, performs one actual update, and restores the original weights, modes, gradient flags and CPU/CUDA RNG.
+
+The [prescribed training](../results/robotics-endpoint-padding/training.json) completes all **600 updates / 2,400 denoiser training forwards** in **201.69 seconds (3.36 minutes)**, including validation/checkpoint work and excluding model loading and data preparation. It peaks at **1,111.08 MiB** allocated GPU memory and 1.73 GiB measured process RSS. The final checkpoint is separate, with SHA-256 `9201fea433f5fbdaae59e23745ee69dd3ba4584552979ea9d5659afd402954a4`.
+
+The [independent training audit](../results/robotics-endpoint-padding/training-audit.json) passes: all 12,021 windows match the frozen reconstruction, the whole-scene/episode split and actual 600-update schedule match, only the same 1,313,282 parameters change, and the frozen backbone matches the established original. Each group supplies 1,200 samples. Of these, **73 expert and 282 recovery samples** use endpoint padding; the higher recovery proportion reflects hierarchical sampling and the newly usable short episodes. These are repeated correlated sample slots, not new demonstrations.
+
+The final diagnostic denoising losses are 0.003814 expert and 0.016252 recovery on the expanded dataset's fixed validation plan. That plan differs from earlier plans because the window pool changed; these scores do not establish better pushing or directly compare with earlier validation means. The fourteen-attempt closed-loop comparison is the performance check and is now running.
 
 ## Reproduction and validation
 

@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "optimizer_updates": 600,
+  "student_training_denoiser_calls": 2400,
+  "actual_group_counts": {
+    "expert": 1200,
+    "recovery": 1200
+  },
+  "sampled_endpoint_windows": {
+    "expert": 73,
+    "recovery": 282
+  },
+  "complete_plus_padded_windows_verified": 12021,
+  "updated_parameters": 1313282,
+  "frozen_backbone_matches_original": true,
+  "native_padding_loss_masking": false,
+  "test_scenes_used_for_training": false,
+  "training_sha256": "17744dc3e89becf48786eb81208373650d75f819d3e31988ddf2c8d0033914a2",
+  "protocol_sha256": "88b82435ce7bb234ce596660efe1ef20b2b03b90e44d54d77d54f56f6f288ad3",
+  "auditor_sha256": "634599d45eb1dc9f6a247599584462b2cabb1d8d98a2aa6e0c79568adcafedd8",
+  "scope": "CPU source/provenance/schedule arithmetic and saved head tensors; no repeated gradients."
+}
