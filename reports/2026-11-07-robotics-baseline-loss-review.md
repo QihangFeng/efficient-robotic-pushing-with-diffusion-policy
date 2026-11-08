@@ -333,6 +333,27 @@ These are literature-informed directions, not additional implemented candidates.
 
 There is no model training in this proposal. The last candidate's fourteen-attempt collector took 34.31 minutes including loading/checks; a reasonable execution estimate for this fixed test is **30–45 minutes plus implementation time**. It tests whether one averaged model can retain the complementary repairs without sacrificing existing successes. The failure sets alone do not prove it will succeed.
 
+## 8. Limited endpoint-padding test
+
+**Qihang approved this test and authorized subsequent negative-flip mitigation experiments on this branch without repeated authorization requests.** This permission is specific to `experiment/negative-flip-mitigation`; the existing checkpoints, frozen experiments, unrelated files and `main` remain preserved.
+
+Read-only inspection found that complete H16 windows exclude the last fourteen nonterminal conditioning observations of each sufficiently long trajectory. Their executed actions can still appear in earlier targets. Two short successful scene-3 recovery continuations supply no complete training windows: one starts after movement 193 and succeeds at movement 201, increasing coverage from 92.87% to 95.70% in eight recorded future movements.
+
+The [official PushT configuration](https://github.com/real-stanford/diffusion_policy/blob/main/diffusion_policy/config/task/pusht_image.yaml) sets end padding to execution length minus one; the [sampler](https://github.com/real-stanford/diffusion_policy/blob/main/diffusion_policy/common/sampler.py) repeats the final recorded value. The pinned LeRobot checkpoint also specifies `drop_n_last_frames=7` and `do_mask_loss_for_padding=false`. This motivates testing limited endpoint padding, rather than claiming that the omission caused our losses or that this reproduces every pretraining detail.
+
+### Frozen recipe
+
+- Start from the original pretrained checkpoint. Reuse the established 600-update, learning-rate `1e-5`, two-expert/two-recovery training routine, updating only the same final convolution block. There is no teacher penalty, baseline supplement, checkpoint average or extra update budget.
+- Keep every original complete window unchanged. Append windows with one to seven endpoint copies, using two real observations and at least eight genuine future commands. Preserve original public-expert terminal handling and whole-episode/scene splits. Repeated targets are a training convention, not observed post-terminal behavior; the native loss remains unmasked. Initial-frame padding is not added.
+- Training gains **448 expert + 129 recovery windows**, for 7,266 expert and 1,866 recovery windows. Validation gains 112 expert + 77 recovery windows. The two short recovery episodes become usable. All **12,021** complete/padded windows are deterministically reconstructible from the unchanged arrays. Hierarchical sampling probabilities and random sample identities change as windows/episodes become available.
+- Freeze separate source, tests, protocol, training checkpoint and results under `robotics-endpoint-padding`. Test sample indexing, exact original targets, padding masks, real-data alignment, unchanged source arrays and exact training resumption. One real four-sample padded update must restore the original model and RNG before full training.
+- Collect all fourteen candidate attempts on development scenes **1, 5, 10, 15, 16, 18, 23**, offsets **91000/92000**, reusing the 28 original/current references. Keep H16 generation, two RGB/pusher observations, 100 denoising steps, the milestone controller, 300-movement limit and strict >95% success unchanged. Run the same four short startup/restoration controls.
+- Apply the unchanged development screen: fewer than two original-baseline losses, at least 11/14 successes, and at least 3/6 recovery-validation successes. Report new losses against current as well. The seven scenes are inspected development data; scenes 170–209 stay excluded from training and selection. A favorable screen requires fresh confirmation before a generalization claim.
+
+The bounded estimate is **35–50 minutes of model execution plus implementation**. Each new sample retains eight real future commands; an adaptive twelve-movement execution can use later predicted slots whose training targets include padding. Whether this treatment improves closed-loop retention must be measured.
+
+Preparation passes **nine CPU tests**. The separate implementation reuses the existing training routine and the previous collector/statistics procedure; old source files and arrays are not edited. GPU feasibility, prescribed training, all fourteen attempts and artifact verification are the remaining stages.
+
 ## Reproduction and validation
 
 From the project root, diagnostics and the independent audit use the existing robotics environment and standard-library code:

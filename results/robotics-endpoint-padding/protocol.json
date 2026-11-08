@@ -1,0 +1,9646 @@
+{
+  "scope": "One approved limited-endpoint-padding development test; no automatic adoption.",
+  "settings": {
+    "optimizer_steps": 600,
+    "accumulation": 4,
+    "lr": 1e-05,
+    "weight_decay": 0.0,
+    "seed": 51000,
+    "validation_seed": 51001,
+    "validation_windows_per_group": 32,
+    "validation_steps": [
+      0,
+      200,
+      400,
+      600
+    ],
+    "checkpoint_steps": [
+      200,
+      400,
+      600
+    ],
+    "selection": "final_600_only"
+  },
+  "data": {
+    "original_windows": 11255,
+    "total_windows": 12021,
+    "window_fingerprint": "d3ca5207eb54f0039ed1ef7cee0c9dfceab81a26751b10ea8c561b47aa0cc74f",
+    "maximum_padding": 7,
+    "counts": {
+      "train/expert/complete": 6818,
+      "train/expert/padded": 448,
+      "train/recovery/complete": 1737,
+      "train/recovery/padded": 129,
+      "validation/expert/complete": 1677,
+      "validation/expert/padded": 112,
+      "validation/recovery/complete": 1023,
+      "validation/recovery/padded": 77
+    },
+    "contract": "Two real RGB/pusher observations; >=8 real future commands; last command repeated at most7 times; native unmasked loss."
+  },
+  "training_schedule": [
+    {
+      "step": 1,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7542,
+        56,
+        11813,
+        11318
+      ]
+    },
+    {
+      "step": 2,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3885,
+        1735,
+        6419,
+        1048
+      ]
+    },
+    {
+      "step": 3,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4973,
+        246,
+        9050,
+        803
+      ]
+    },
+    {
+      "step": 4,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11650,
+        709,
+        11823,
+        1256
+      ]
+    },
+    {
+      "step": 5,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7943,
+        1723,
+        7296,
+        11276
+      ]
+    },
+    {
+      "step": 6,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6778,
+        882,
+        4568,
+        384
+      ]
+    },
+    {
+      "step": 7,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4240,
+        11378,
+        3187,
+        11381
+      ]
+    },
+    {
+      "step": 8,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8273,
+        902,
+        8225,
+        798
+      ]
+    },
+    {
+      "step": 9,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5656,
+        11378,
+        4345,
+        705
+      ]
+    },
+    {
+      "step": 10,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8977,
+        1721,
+        5430,
+        1002
+      ]
+    },
+    {
+      "step": 11,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5226,
+        135,
+        6437,
+        890
+      ]
+    },
+    {
+      "step": 12,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11503,
+        257,
+        9031,
+        11320
+      ]
+    },
+    {
+      "step": 13,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4474,
+        202,
+        5489,
+        969
+      ]
+    },
+    {
+      "step": 14,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9095,
+        602,
+        7369,
+        11290
+      ]
+    },
+    {
+      "step": 15,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8280,
+        848,
+        5170,
+        205
+      ]
+    },
+    {
+      "step": 16,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5077,
+        11318,
+        9546,
+        798
+      ]
+    },
+    {
+      "step": 17,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4195,
+        1075,
+        7426,
+        559
+      ]
+    },
+    {
+      "step": 18,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8118,
+        11320,
+        7242,
+        11320
+      ]
+    },
+    {
+      "step": 19,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9522,
+        11318,
+        6622,
+        1436
+      ]
+    },
+    {
+      "step": 20,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7488,
+        1677,
+        8386,
+        11333
+      ]
+    },
+    {
+      "step": 21,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11507,
+        852,
+        8424,
+        1012
+      ]
+    },
+    {
+      "step": 22,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5993,
+        1151,
+        6110,
+        11318
+      ]
+    },
+    {
+      "step": 23,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3677,
+        927,
+        8218,
+        654
+      ]
+    },
+    {
+      "step": 24,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8212,
+        518,
+        6198,
+        1734
+      ]
+    },
+    {
+      "step": 25,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3984,
+        863,
+        2959,
+        11320
+      ]
+    },
+    {
+      "step": 26,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11791,
+        11320,
+        6025,
+        11319
+      ]
+    },
+    {
+      "step": 27,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7320,
+        11285,
+        11748,
+        11357
+      ]
+    },
+    {
+      "step": 28,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5220,
+        1047,
+        3662,
+        1414
+      ]
+    },
+    {
+      "step": 29,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5433,
+        488,
+        7027,
+        97
+      ]
+    },
+    {
+      "step": 30,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7668,
+        1370,
+        9250,
+        1094
+      ]
+    },
+    {
+      "step": 31,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5988,
+        1038,
+        5754,
+        820
+      ]
+    },
+    {
+      "step": 32,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5799,
+        11319,
+        3905,
+        237
+      ]
+    },
+    {
+      "step": 33,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6055,
+        11320,
+        8950,
+        1199
+      ]
+    },
+    {
+      "step": 34,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6167,
+        827,
+        11738,
+        1089
+      ]
+    },
+    {
+      "step": 35,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5335,
+        437,
+        3618,
+        1723
+      ]
+    },
+    {
+      "step": 36,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5690,
+        11319,
+        4322,
+        11319
+      ]
+    },
+    {
+      "step": 37,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5523,
+        786,
+        9307,
+        1151
+      ]
+    },
+    {
+      "step": 38,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7512,
+        283,
+        9314,
+        1429
+      ]
+    },
+    {
+      "step": 39,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11513,
+        11318,
+        6583,
+        844
+      ]
+    },
+    {
+      "step": 40,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5799,
+        11319,
+        4122,
+        11320
+      ]
+    },
+    {
+      "step": 41,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5059,
+        1077,
+        3083,
+        1442
+      ]
+    },
+    {
+      "step": 42,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5977,
+        93,
+        7693,
+        792
+      ]
+    },
+    {
+      "step": 43,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11594,
+        1438,
+        8785,
+        48
+      ]
+    },
+    {
+      "step": 44,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8579,
+        603,
+        3117,
+        11318
+      ]
+    },
+    {
+      "step": 45,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6885,
+        768,
+        4309,
+        11380
+      ]
+    },
+    {
+      "step": 46,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6001,
+        1729,
+        4323,
+        1168
+      ]
+    },
+    {
+      "step": 47,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9133,
+        530,
+        6467,
+        1414
+      ]
+    },
+    {
+      "step": 48,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5286,
+        1173,
+        7299,
+        1727
+      ]
+    },
+    {
+      "step": 49,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7156,
+        598,
+        6526,
+        1079
+      ]
+    },
+    {
+      "step": 50,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4995,
+        1464,
+        7850,
+        11380
+      ]
+    },
+    {
+      "step": 51,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9319,
+        11320,
+        5172,
+        11383
+      ]
+    },
+    {
+      "step": 52,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5021,
+        984,
+        8836,
+        1222
+      ]
+    },
+    {
+      "step": 53,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3803,
+        63,
+        3679,
+        84
+      ]
+    },
+    {
+      "step": 54,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7880,
+        956,
+        8886,
+        435
+      ]
+    },
+    {
+      "step": 55,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3462,
+        1735,
+        4175,
+        275
+      ]
+    },
+    {
+      "step": 56,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3771,
+        11318,
+        4547,
+        1189
+      ]
+    },
+    {
+      "step": 57,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7985,
+        1616,
+        7660,
+        977
+      ]
+    },
+    {
+      "step": 58,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6539,
+        776,
+        5241,
+        907
+      ]
+    },
+    {
+      "step": 59,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3575,
+        203,
+        11852,
+        1121
+      ]
+    },
+    {
+      "step": 60,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3778,
+        1022,
+        8152,
+        1599
+      ]
+    },
+    {
+      "step": 61,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11858,
+        1734,
+        8131,
+        564
+      ]
+    },
+    {
+      "step": 62,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5904,
+        11318,
+        8404,
+        261
+      ]
+    },
+    {
+      "step": 63,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6202,
+        11320,
+        6494,
+        376
+      ]
+    },
+    {
+      "step": 64,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5350,
+        971,
+        6929,
+        1639
+      ]
+    },
+    {
+      "step": 65,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8351,
+        11320,
+        3047,
+        1718
+      ]
+    },
+    {
+      "step": 66,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4545,
+        11362,
+        3308,
+        942
+      ]
+    },
+    {
+      "step": 67,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11907,
+        1730,
+        2955,
+        1727
+      ]
+    },
+    {
+      "step": 68,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5517,
+        1146,
+        5240,
+        11320
+      ]
+    },
+    {
+      "step": 69,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5997,
+        11358,
+        8249,
+        1130
+      ]
+    },
+    {
+      "step": 70,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9012,
+        11318,
+        8682,
+        1089
+      ]
+    },
+    {
+      "step": 71,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5524,
+        11320,
+        3068,
+        215
+      ]
+    },
+    {
+      "step": 72,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9018,
+        1156,
+        8986,
+        1637
+      ]
+    },
+    {
+      "step": 73,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8159,
+        1724,
+        5150,
+        11318
+      ]
+    },
+    {
+      "step": 74,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9311,
+        1588,
+        3567,
+        1370
+      ]
+    },
+    {
+      "step": 75,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4331,
+        784,
+        5900,
+        839
+      ]
+    },
+    {
+      "step": 76,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7961,
+        646,
+        5585,
+        1055
+      ]
+    },
+    {
+      "step": 77,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7680,
+        1083,
+        4960,
+        455
+      ]
+    },
+    {
+      "step": 78,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8247,
+        11377,
+        3742,
+        11318
+      ]
+    },
+    {
+      "step": 79,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8549,
+        46,
+        11580,
+        1158
+      ]
+    },
+    {
+      "step": 80,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4297,
+        126,
+        7563,
+        1001
+      ]
+    },
+    {
+      "step": 81,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8837,
+        1044,
+        4004,
+        732
+      ]
+    },
+    {
+      "step": 82,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3874,
+        1207,
+        3533,
+        1733
+      ]
+    },
+    {
+      "step": 83,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3306,
+        525,
+        11812,
+        794
+      ]
+    },
+    {
+      "step": 84,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6842,
+        1060,
+        5116,
+        679
+      ]
+    },
+    {
+      "step": 85,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5226,
+        943,
+        5773,
+        11318
+      ]
+    },
+    {
+      "step": 86,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3947,
+        17,
+        2872,
+        911
+      ]
+    },
+    {
+      "step": 87,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7447,
+        563,
+        3827,
+        554
+      ]
+    },
+    {
+      "step": 88,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8166,
+        11320,
+        4434,
+        11320
+      ]
+    },
+    {
+      "step": 89,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8923,
+        1736,
+        9203,
+        1680
+      ]
+    },
+    {
+      "step": 90,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8303,
+        1284,
+        6617,
+        475
+      ]
+    },
+    {
+      "step": 91,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7426,
+        11318,
+        3028,
+        1720
+      ]
+    },
+    {
+      "step": 92,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        2946,
+        345,
+        4518,
+        1724
+      ]
+    },
+    {
+      "step": 93,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7479,
+        1045,
+        5980,
+        11378
+      ]
+    },
+    {
+      "step": 94,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8204,
+        692,
+        8330,
+        663
+      ]
+    },
+    {
+      "step": 95,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4351,
+        1718,
+        9468,
+        188
+      ]
+    },
+    {
+      "step": 96,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3400,
+        1069,
+        6714,
+        938
+      ]
+    },
+    {
+      "step": 97,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8105,
+        823,
+        5138,
+        1019
+      ]
+    },
+    {
+      "step": 98,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8045,
+        975,
+        5885,
+        1013
+      ]
+    },
+    {
+      "step": 99,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3470,
+        693,
+        7146,
+        11382
+      ]
+    },
+    {
+      "step": 100,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7148,
+        66,
+        3775,
+        166
+      ]
+    },
+    {
+      "step": 101,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3795,
+        643,
+        4740,
+        960
+      ]
+    },
+    {
+      "step": 102,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8177,
+        1501,
+        7954,
+        62
+      ]
+    },
+    {
+      "step": 103,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        2909,
+        307,
+        9465,
+        348
+      ]
+    },
+    {
+      "step": 104,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9197,
+        1103,
+        7930,
+        265
+      ]
+    },
+    {
+      "step": 105,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8560,
+        1383,
+        8183,
+        970
+      ]
+    },
+    {
+      "step": 106,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8700,
+        1211,
+        6097,
+        1728
+      ]
+    },
+    {
+      "step": 107,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5548,
+        399,
+        6182,
+        11379
+      ]
+    },
+    {
+      "step": 108,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        2843,
+        11380,
+        6453,
+        159
+      ]
+    },
+    {
+      "step": 109,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8748,
+        11318,
+        9467,
+        320
+      ]
+    },
+    {
+      "step": 110,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11716,
+        11378,
+        9155,
+        992
+      ]
+    },
+    {
+      "step": 111,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3036,
+        1102,
+        7057,
+        11380
+      ]
+    },
+    {
+      "step": 112,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7230,
+        272,
+        6083,
+        895
+      ]
+    },
+    {
+      "step": 113,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4478,
+        1733,
+        4560,
+        1182
+      ]
+    },
+    {
+      "step": 114,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4608,
+        11318,
+        5896,
+        1037
+      ]
+    },
+    {
+      "step": 115,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4860,
+        706,
+        9149,
+        1188
+      ]
+    },
+    {
+      "step": 116,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7176,
+        11302,
+        4894,
+        174
+      ]
+    },
+    {
+      "step": 117,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3421,
+        11320,
+        6066,
+        1114
+      ]
+    },
+    {
+      "step": 118,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6501,
+        781,
+        3455,
+        637
+      ]
+    },
+    {
+      "step": 119,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4434,
+        79,
+        8832,
+        1160
+      ]
+    },
+    {
+      "step": 120,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6596,
+        24,
+        9117,
+        732
+      ]
+    },
+    {
+      "step": 121,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3193,
+        11382,
+        6915,
+        1730
+      ]
+    },
+    {
+      "step": 122,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4791,
+        535,
+        6826,
+        9
+      ]
+    },
+    {
+      "step": 123,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8459,
+        862,
+        4283,
+        807
+      ]
+    },
+    {
+      "step": 124,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3853,
+        938,
+        4204,
+        150
+      ]
+    },
+    {
+      "step": 125,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5574,
+        802,
+        4896,
+        11378
+      ]
+    },
+    {
+      "step": 126,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8185,
+        1723,
+        8953,
+        11320
+      ]
+    },
+    {
+      "step": 127,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3775,
+        11320,
+        8199,
+        1057
+      ]
+    },
+    {
+      "step": 128,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8516,
+        156,
+        9542,
+        11320
+      ]
+    },
+    {
+      "step": 129,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7794,
+        847,
+        4687,
+        11377
+      ]
+    },
+    {
+      "step": 130,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11583,
+        1721,
+        8019,
+        11318
+      ]
+    },
+    {
+      "step": 131,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3515,
+        758,
+        3093,
+        1727
+      ]
+    },
+    {
+      "step": 132,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9264,
+        465,
+        7385,
+        1722
+      ]
+    },
+    {
+      "step": 133,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11752,
+        969,
+        5469,
+        1721
+      ]
+    },
+    {
+      "step": 134,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8968,
+        299,
+        8540,
+        223
+      ]
+    },
+    {
+      "step": 135,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3218,
+        1313,
+        11614,
+        700
+      ]
+    },
+    {
+      "step": 136,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4507,
+        1114,
+        6105,
+        504
+      ]
+    },
+    {
+      "step": 137,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8962,
+        745,
+        3081,
+        870
+      ]
+    },
+    {
+      "step": 138,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8235,
+        11380,
+        2897,
+        431
+      ]
+    },
+    {
+      "step": 139,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8262,
+        1718,
+        5898,
+        1000
+      ]
+    },
+    {
+      "step": 140,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5455,
+        1731,
+        7789,
+        816
+      ]
+    },
+    {
+      "step": 141,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3754,
+        11379,
+        2870,
+        11319
+      ]
+    },
+    {
+      "step": 142,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11672,
+        11320,
+        3834,
+        1732
+      ]
+    },
+    {
+      "step": 143,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3475,
+        1718,
+        5508,
+        1729
+      ]
+    },
+    {
+      "step": 144,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6227,
+        852,
+        8484,
+        11320
+      ]
+    },
+    {
+      "step": 145,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7766,
+        1720,
+        8474,
+        11318
+      ]
+    },
+    {
+      "step": 146,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7622,
+        1057,
+        5082,
+        936
+      ]
+    },
+    {
+      "step": 147,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7555,
+        358,
+        11507,
+        1456
+      ]
+    },
+    {
+      "step": 148,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4674,
+        1083,
+        5424,
+        467
+      ]
+    },
+    {
+      "step": 149,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11552,
+        1262,
+        4710,
+        1732
+      ]
+    },
+    {
+      "step": 150,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5867,
+        11306,
+        5912,
+        983
+      ]
+    },
+    {
+      "step": 151,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8211,
+        430,
+        5699,
+        657
+      ]
+    },
+    {
+      "step": 152,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11493,
+        583,
+        9383,
+        177
+      ]
+    },
+    {
+      "step": 153,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6014,
+        1721,
+        5368,
+        840
+      ]
+    },
+    {
+      "step": 154,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9050,
+        1078,
+        7928,
+        1719
+      ]
+    },
+    {
+      "step": 155,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6828,
+        11380,
+        6272,
+        11320
+      ]
+    },
+    {
+      "step": 156,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11667,
+        1128,
+        3562,
+        1083
+      ]
+    },
+    {
+      "step": 157,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11692,
+        652,
+        8920,
+        11320
+      ]
+    },
+    {
+      "step": 158,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4253,
+        13,
+        7540,
+        7
+      ]
+    },
+    {
+      "step": 159,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6799,
+        1378,
+        11664,
+        35
+      ]
+    },
+    {
+      "step": 160,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5968,
+        11319,
+        4037,
+        1712
+      ]
+    },
+    {
+      "step": 161,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4409,
+        11378,
+        3186,
+        33
+      ]
+    },
+    {
+      "step": 162,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11811,
+        1062,
+        9103,
+        640
+      ]
+    },
+    {
+      "step": 163,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6980,
+        186,
+        9122,
+        1251
+      ]
+    },
+    {
+      "step": 164,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4144,
+        148,
+        6167,
+        593
+      ]
+    },
+    {
+      "step": 165,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3152,
+        558,
+        11517,
+        1724
+      ]
+    },
+    {
+      "step": 166,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8155,
+        11377,
+        4947,
+        841
+      ]
+    },
+    {
+      "step": 167,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5792,
+        1361,
+        7022,
+        1732
+      ]
+    },
+    {
+      "step": 168,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6728,
+        1734,
+        5968,
+        976
+      ]
+    },
+    {
+      "step": 169,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11822,
+        11319,
+        8316,
+        1735
+      ]
+    },
+    {
+      "step": 170,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6501,
+        1311,
+        3815,
+        1656
+      ]
+    },
+    {
+      "step": 171,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7565,
+        91,
+        6540,
+        1051
+      ]
+    },
+    {
+      "step": 172,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11526,
+        569,
+        9512,
+        215
+      ]
+    },
+    {
+      "step": 173,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5366,
+        1730,
+        5587,
+        1385
+      ]
+    },
+    {
+      "step": 174,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4844,
+        566,
+        8859,
+        1734
+      ]
+    },
+    {
+      "step": 175,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4852,
+        877,
+        3620,
+        11325
+      ]
+    },
+    {
+      "step": 176,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5182,
+        11382,
+        5341,
+        388
+      ]
+    },
+    {
+      "step": 177,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6017,
+        1157,
+        3715,
+        11320
+      ]
+    },
+    {
+      "step": 178,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8569,
+        1085,
+        7115,
+        998
+      ]
+    },
+    {
+      "step": 179,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5744,
+        11286,
+        8667,
+        11320
+      ]
+    },
+    {
+      "step": 180,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6395,
+        885,
+        8617,
+        501
+      ]
+    },
+    {
+      "step": 181,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9536,
+        11358,
+        7188,
+        813
+      ]
+    },
+    {
+      "step": 182,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8404,
+        410,
+        7012,
+        947
+      ]
+    },
+    {
+      "step": 183,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5666,
+        99,
+        4221,
+        976
+      ]
+    },
+    {
+      "step": 184,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7241,
+        962,
+        6083,
+        35
+      ]
+    },
+    {
+      "step": 185,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7858,
+        1042,
+        5802,
+        11320
+      ]
+    },
+    {
+      "step": 186,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4194,
+        1278,
+        5029,
+        1653
+      ]
+    },
+    {
+      "step": 187,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9191,
+        1719,
+        9172,
+        798
+      ]
+    },
+    {
+      "step": 188,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3577,
+        11355,
+        8835,
+        433
+      ]
+    },
+    {
+      "step": 189,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7598,
+        1696,
+        11753,
+        693
+      ]
+    },
+    {
+      "step": 190,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6694,
+        979,
+        11816,
+        586
+      ]
+    },
+    {
+      "step": 191,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5179,
+        1734,
+        5665,
+        11319
+      ]
+    },
+    {
+      "step": 192,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6343,
+        406,
+        6125,
+        81
+      ]
+    },
+    {
+      "step": 193,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7415,
+        784,
+        6304,
+        1633
+      ]
+    },
+    {
+      "step": 194,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3977,
+        1364,
+        4391,
+        11319
+      ]
+    },
+    {
+      "step": 195,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4874,
+        647,
+        5902,
+        11277
+      ]
+    },
+    {
+      "step": 196,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7220,
+        467,
+        8559,
+        1049
+      ]
+    },
+    {
+      "step": 197,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7346,
+        1071,
+        5947,
+        11380
+      ]
+    },
+    {
+      "step": 198,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4703,
+        1393,
+        4988,
+        11318
+      ]
+    },
+    {
+      "step": 199,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11904,
+        11333,
+        11502,
+        1726
+      ]
+    },
+    {
+      "step": 200,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5666,
+        11320,
+        7766,
+        734
+      ]
+    },
+    {
+      "step": 201,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8557,
+        11334,
+        4885,
+        823
+      ]
+    },
+    {
+      "step": 202,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4715,
+        1719,
+        7977,
+        1340
+      ]
+    },
+    {
+      "step": 203,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5460,
+        1284,
+        9281,
+        690
+      ]
+    },
+    {
+      "step": 204,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3841,
+        11380,
+        8662,
+        1272
+      ]
+    },
+    {
+      "step": 205,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8364,
+        11382,
+        3290,
+        11354
+      ]
+    },
+    {
+      "step": 206,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8997,
+        1732,
+        6084,
+        11337
+      ]
+    },
+    {
+      "step": 207,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11587,
+        26,
+        6781,
+        11378
+      ]
+    },
+    {
+      "step": 208,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4623,
+        1079,
+        6064,
+        1105
+      ]
+    },
+    {
+      "step": 209,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5389,
+        503,
+        7115,
+        1595
+      ]
+    },
+    {
+      "step": 210,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3576,
+        394,
+        7845,
+        47
+      ]
+    },
+    {
+      "step": 211,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3710,
+        482,
+        5623,
+        341
+      ]
+    },
+    {
+      "step": 212,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6823,
+        498,
+        3155,
+        11270
+      ]
+    },
+    {
+      "step": 213,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7097,
+        576,
+        7884,
+        11379
+      ]
+    },
+    {
+      "step": 214,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3595,
+        268,
+        4206,
+        11320
+      ]
+    },
+    {
+      "step": 215,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8417,
+        11320,
+        4567,
+        29
+      ]
+    },
+    {
+      "step": 216,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5513,
+        11320,
+        3159,
+        11318
+      ]
+    },
+    {
+      "step": 217,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11700,
+        1382,
+        5264,
+        1447
+      ]
+    },
+    {
+      "step": 218,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8192,
+        5,
+        8196,
+        1648
+      ]
+    },
+    {
+      "step": 219,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8009,
+        1731,
+        3671,
+        11320
+      ]
+    },
+    {
+      "step": 220,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4918,
+        11380,
+        11510,
+        11320
+      ]
+    },
+    {
+      "step": 221,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4897,
+        1369,
+        8297,
+        11381
+      ]
+    },
+    {
+      "step": 222,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4985,
+        11302,
+        7989,
+        439
+      ]
+    },
+    {
+      "step": 223,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8281,
+        298,
+        4151,
+        1727
+      ]
+    },
+    {
+      "step": 224,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        2839,
+        820,
+        9323,
+        11319
+      ]
+    },
+    {
+      "step": 225,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8917,
+        11318,
+        7163,
+        1065
+      ]
+    },
+    {
+      "step": 226,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11661,
+        11341,
+        9207,
+        1016
+      ]
+    },
+    {
+      "step": 227,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6707,
+        163,
+        8902,
+        11319
+      ]
+    },
+    {
+      "step": 228,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8729,
+        1175,
+        8171,
+        564
+      ]
+    },
+    {
+      "step": 229,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6192,
+        1434,
+        5929,
+        982
+      ]
+    },
+    {
+      "step": 230,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8736,
+        11318,
+        8022,
+        11319
+      ]
+    },
+    {
+      "step": 231,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7204,
+        415,
+        4434,
+        1722
+      ]
+    },
+    {
+      "step": 232,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9297,
+        647,
+        6898,
+        1734
+      ]
+    },
+    {
+      "step": 233,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5832,
+        11319,
+        6823,
+        880
+      ]
+    },
+    {
+      "step": 234,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4893,
+        1044,
+        6011,
+        1045
+      ]
+    },
+    {
+      "step": 235,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11694,
+        11379,
+        9118,
+        11320
+      ]
+    },
+    {
+      "step": 236,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9411,
+        11316,
+        5559,
+        1735
+      ]
+    },
+    {
+      "step": 237,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5228,
+        11377,
+        5904,
+        1205
+      ]
+    },
+    {
+      "step": 238,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8351,
+        1719,
+        7822,
+        11377
+      ]
+    },
+    {
+      "step": 239,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3361,
+        1366,
+        5472,
+        1177
+      ]
+    },
+    {
+      "step": 240,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5574,
+        777,
+        5447,
+        11318
+      ]
+    },
+    {
+      "step": 241,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7907,
+        9,
+        5016,
+        1639
+      ]
+    },
+    {
+      "step": 242,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9053,
+        11320,
+        9561,
+        1734
+      ]
+    },
+    {
+      "step": 243,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4210,
+        1030,
+        7981,
+        173
+      ]
+    },
+    {
+      "step": 244,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4731,
+        1601,
+        5230,
+        428
+      ]
+    },
+    {
+      "step": 245,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8248,
+        754,
+        8775,
+        733
+      ]
+    },
+    {
+      "step": 246,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6315,
+        987,
+        5909,
+        440
+      ]
+    },
+    {
+      "step": 247,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6001,
+        1736,
+        5277,
+        662
+      ]
+    },
+    {
+      "step": 248,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3124,
+        1009,
+        8449,
+        117
+      ]
+    },
+    {
+      "step": 249,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5326,
+        165,
+        2945,
+        0
+      ]
+    },
+    {
+      "step": 250,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11640,
+        439,
+        8470,
+        1730
+      ]
+    },
+    {
+      "step": 251,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        2986,
+        1302,
+        6003,
+        11320
+      ]
+    },
+    {
+      "step": 252,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7325,
+        1044,
+        8200,
+        1004
+      ]
+    },
+    {
+      "step": 253,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7530,
+        1583,
+        9388,
+        1098
+      ]
+    },
+    {
+      "step": 254,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4983,
+        1724,
+        4574,
+        1726
+      ]
+    },
+    {
+      "step": 255,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3689,
+        11336,
+        4381,
+        62
+      ]
+    },
+    {
+      "step": 256,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6849,
+        11269,
+        3151,
+        1226
+      ]
+    },
+    {
+      "step": 257,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4357,
+        11318,
+        4701,
+        11284
+      ]
+    },
+    {
+      "step": 258,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8060,
+        11379,
+        9269,
+        1681
+      ]
+    },
+    {
+      "step": 259,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7902,
+        1730,
+        9347,
+        1734
+      ]
+    },
+    {
+      "step": 260,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7325,
+        1311,
+        8318,
+        381
+      ]
+    },
+    {
+      "step": 261,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4643,
+        1732,
+        7708,
+        1734
+      ]
+    },
+    {
+      "step": 262,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8862,
+        11320,
+        8843,
+        1038
+      ]
+    },
+    {
+      "step": 263,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5933,
+        383,
+        8299,
+        11320
+      ]
+    },
+    {
+      "step": 264,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8277,
+        11320,
+        4432,
+        839
+      ]
+    },
+    {
+      "step": 265,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6186,
+        1734,
+        7380,
+        1433
+      ]
+    },
+    {
+      "step": 266,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4865,
+        11318,
+        6422,
+        1722
+      ]
+    },
+    {
+      "step": 267,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3601,
+        495,
+        4523,
+        1375
+      ]
+    },
+    {
+      "step": 268,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5699,
+        11337,
+        6888,
+        691
+      ]
+    },
+    {
+      "step": 269,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6053,
+        1723,
+        5395,
+        611
+      ]
+    },
+    {
+      "step": 270,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        2988,
+        1721,
+        2997,
+        11320
+      ]
+    },
+    {
+      "step": 271,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6195,
+        1185,
+        5414,
+        1379
+      ]
+    },
+    {
+      "step": 272,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4440,
+        1621,
+        6199,
+        11380
+      ]
+    },
+    {
+      "step": 273,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8532,
+        1730,
+        6115,
+        1698
+      ]
+    },
+    {
+      "step": 274,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9290,
+        1171,
+        3392,
+        680
+      ]
+    },
+    {
+      "step": 275,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8712,
+        462,
+        7168,
+        11289
+      ]
+    },
+    {
+      "step": 276,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7978,
+        1735,
+        7375,
+        1728
+      ]
+    },
+    {
+      "step": 277,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4108,
+        335,
+        7892,
+        595
+      ]
+    },
+    {
+      "step": 278,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6557,
+        1370,
+        5600,
+        11320
+      ]
+    },
+    {
+      "step": 279,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11474,
+        55,
+        6848,
+        58
+      ]
+    },
+    {
+      "step": 280,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6138,
+        969,
+        6183,
+        146
+      ]
+    },
+    {
+      "step": 281,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11861,
+        11379,
+        7194,
+        1093
+      ]
+    },
+    {
+      "step": 282,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8633,
+        521,
+        3678,
+        995
+      ]
+    },
+    {
+      "step": 283,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9440,
+        1697,
+        8361,
+        11261
+      ]
+    },
+    {
+      "step": 284,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7756,
+        1723,
+        8255,
+        1360
+      ]
+    },
+    {
+      "step": 285,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7319,
+        1226,
+        4565,
+        11377
+      ]
+    },
+    {
+      "step": 286,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6934,
+        791,
+        8109,
+        765
+      ]
+    },
+    {
+      "step": 287,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4462,
+        787,
+        9016,
+        280
+      ]
+    },
+    {
+      "step": 288,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9226,
+        11320,
+        4121,
+        44
+      ]
+    },
+    {
+      "step": 289,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7357,
+        11320,
+        9073,
+        857
+      ]
+    },
+    {
+      "step": 290,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5841,
+        1122,
+        5120,
+        1725
+      ]
+    },
+    {
+      "step": 291,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5269,
+        1149,
+        8759,
+        452
+      ]
+    },
+    {
+      "step": 292,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5189,
+        569,
+        7217,
+        11320
+      ]
+    },
+    {
+      "step": 293,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5741,
+        131,
+        7374,
+        967
+      ]
+    },
+    {
+      "step": 294,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5490,
+        827,
+        3697,
+        11318
+      ]
+    },
+    {
+      "step": 295,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7248,
+        1010,
+        5529,
+        11320
+      ]
+    },
+    {
+      "step": 296,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6945,
+        11319,
+        4332,
+        347
+      ]
+    },
+    {
+      "step": 297,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11665,
+        586,
+        5127,
+        1725
+      ]
+    },
+    {
+      "step": 298,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4165,
+        1733,
+        7446,
+        1424
+      ]
+    },
+    {
+      "step": 299,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5059,
+        11377,
+        2913,
+        155
+      ]
+    },
+    {
+      "step": 300,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8935,
+        76,
+        5881,
+        1725
+      ]
+    },
+    {
+      "step": 301,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9253,
+        178,
+        2930,
+        1067
+      ]
+    },
+    {
+      "step": 302,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3116,
+        1197,
+        6070,
+        11378
+      ]
+    },
+    {
+      "step": 303,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5413,
+        1250,
+        3025,
+        11319
+      ]
+    },
+    {
+      "step": 304,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7552,
+        79,
+        9150,
+        897
+      ]
+    },
+    {
+      "step": 305,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7879,
+        1362,
+        7355,
+        11382
+      ]
+    },
+    {
+      "step": 306,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6456,
+        853,
+        3582,
+        1402
+      ]
+    },
+    {
+      "step": 307,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11702,
+        302,
+        6180,
+        11318
+      ]
+    },
+    {
+      "step": 308,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8940,
+        443,
+        3795,
+        11319
+      ]
+    },
+    {
+      "step": 309,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4650,
+        617,
+        4375,
+        1163
+      ]
+    },
+    {
+      "step": 310,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5225,
+        1214,
+        8455,
+        1722
+      ]
+    },
+    {
+      "step": 311,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4291,
+        11318,
+        4548,
+        1208
+      ]
+    },
+    {
+      "step": 312,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7625,
+        1729,
+        3018,
+        11266
+      ]
+    },
+    {
+      "step": 313,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8145,
+        296,
+        8226,
+        966
+      ]
+    },
+    {
+      "step": 314,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7250,
+        368,
+        6568,
+        550
+      ]
+    },
+    {
+      "step": 315,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4448,
+        1727,
+        8969,
+        1727
+      ]
+    },
+    {
+      "step": 316,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3782,
+        777,
+        6526,
+        710
+      ]
+    },
+    {
+      "step": 317,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4464,
+        1550,
+        5025,
+        1726
+      ]
+    },
+    {
+      "step": 318,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5916,
+        679,
+        6481,
+        387
+      ]
+    },
+    {
+      "step": 319,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4073,
+        941,
+        8654,
+        1318
+      ]
+    },
+    {
+      "step": 320,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11817,
+        124,
+        5815,
+        69
+      ]
+    },
+    {
+      "step": 321,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8235,
+        1051,
+        8040,
+        11318
+      ]
+    },
+    {
+      "step": 322,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6116,
+        1467,
+        5375,
+        264
+      ]
+    },
+    {
+      "step": 323,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8914,
+        105,
+        7386,
+        11319
+      ]
+    },
+    {
+      "step": 324,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9008,
+        1080,
+        3447,
+        11318
+      ]
+    },
+    {
+      "step": 325,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7234,
+        11320,
+        7233,
+        11348
+      ]
+    },
+    {
+      "step": 326,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8955,
+        1732,
+        6873,
+        815
+      ]
+    },
+    {
+      "step": 327,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7116,
+        1015,
+        8978,
+        1071
+      ]
+    },
+    {
+      "step": 328,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9380,
+        1103,
+        8745,
+        845
+      ]
+    },
+    {
+      "step": 329,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3974,
+        1639,
+        4945,
+        1684
+      ]
+    },
+    {
+      "step": 330,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8985,
+        1429,
+        5192,
+        1734
+      ]
+    },
+    {
+      "step": 331,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5346,
+        11274,
+        11814,
+        149
+      ]
+    },
+    {
+      "step": 332,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        2807,
+        1175,
+        3571,
+        1734
+      ]
+    },
+    {
+      "step": 333,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        2820,
+        592,
+        9413,
+        578
+      ]
+    },
+    {
+      "step": 334,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5391,
+        11320,
+        7864,
+        353
+      ]
+    },
+    {
+      "step": 335,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7187,
+        1672,
+        8967,
+        11341
+      ]
+    },
+    {
+      "step": 336,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9007,
+        11318,
+        8910,
+        11320
+      ]
+    },
+    {
+      "step": 337,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7632,
+        11272,
+        6419,
+        11381
+      ]
+    },
+    {
+      "step": 338,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6100,
+        356,
+        11626,
+        1354
+      ]
+    },
+    {
+      "step": 339,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3269,
+        422,
+        5315,
+        1082
+      ]
+    },
+    {
+      "step": 340,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7149,
+        11319,
+        9424,
+        1026
+      ]
+    },
+    {
+      "step": 341,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6715,
+        1343,
+        6971,
+        679
+      ]
+    },
+    {
+      "step": 342,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8266,
+        946,
+        5301,
+        887
+      ]
+    },
+    {
+      "step": 343,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9243,
+        306,
+        6866,
+        947
+      ]
+    },
+    {
+      "step": 344,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8426,
+        1731,
+        8967,
+        1550
+      ]
+    },
+    {
+      "step": 345,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4270,
+        11320,
+        8185,
+        502
+      ]
+    },
+    {
+      "step": 346,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6927,
+        11320,
+        3735,
+        1487
+      ]
+    },
+    {
+      "step": 347,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9415,
+        120,
+        6709,
+        28
+      ]
+    },
+    {
+      "step": 348,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4639,
+        11320,
+        6893,
+        1096
+      ]
+    },
+    {
+      "step": 349,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4984,
+        398,
+        3672,
+        1734
+      ]
+    },
+    {
+      "step": 350,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7576,
+        79,
+        4208,
+        1382
+      ]
+    },
+    {
+      "step": 351,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8894,
+        947,
+        6104,
+        897
+      ]
+    },
+    {
+      "step": 352,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7877,
+        800,
+        6135,
+        1593
+      ]
+    },
+    {
+      "step": 353,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6163,
+        1725,
+        7502,
+        694
+      ]
+    },
+    {
+      "step": 354,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6921,
+        457,
+        6206,
+        1726
+      ]
+    },
+    {
+      "step": 355,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5164,
+        480,
+        5686,
+        318
+      ]
+    },
+    {
+      "step": 356,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7778,
+        1,
+        9177,
+        281
+      ]
+    },
+    {
+      "step": 357,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8963,
+        1699,
+        6047,
+        11355
+      ]
+    },
+    {
+      "step": 358,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7730,
+        811,
+        5782,
+        203
+      ]
+    },
+    {
+      "step": 359,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3604,
+        796,
+        9109,
+        1323
+      ]
+    },
+    {
+      "step": 360,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3782,
+        11319,
+        3841,
+        11378
+      ]
+    },
+    {
+      "step": 361,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7920,
+        1579,
+        4112,
+        1064
+      ]
+    },
+    {
+      "step": 362,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7303,
+        806,
+        11619,
+        1728
+      ]
+    },
+    {
+      "step": 363,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4901,
+        832,
+        2834,
+        11302
+      ]
+    },
+    {
+      "step": 364,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4919,
+        1090,
+        9309,
+        831
+      ]
+    },
+    {
+      "step": 365,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5079,
+        11265,
+        4484,
+        1736
+      ]
+    },
+    {
+      "step": 366,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6787,
+        11378,
+        5481,
+        11318
+      ]
+    },
+    {
+      "step": 367,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11722,
+        11335,
+        11611,
+        131
+      ]
+    },
+    {
+      "step": 368,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3509,
+        108,
+        11534,
+        11320
+      ]
+    },
+    {
+      "step": 369,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7121,
+        288,
+        5486,
+        11377
+      ]
+    },
+    {
+      "step": 370,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4330,
+        11320,
+        9250,
+        317
+      ]
+    },
+    {
+      "step": 371,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4972,
+        813,
+        11517,
+        1063
+      ]
+    },
+    {
+      "step": 372,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3863,
+        953,
+        4746,
+        201
+      ]
+    },
+    {
+      "step": 373,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7490,
+        896,
+        8057,
+        11314
+      ]
+    },
+    {
+      "step": 374,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5734,
+        1075,
+        9044,
+        808
+      ]
+    },
+    {
+      "step": 375,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9311,
+        1732,
+        9107,
+        247
+      ]
+    },
+    {
+      "step": 376,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5154,
+        734,
+        6377,
+        1620
+      ]
+    },
+    {
+      "step": 377,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        2972,
+        1725,
+        5799,
+        1722
+      ]
+    },
+    {
+      "step": 378,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7196,
+        11320,
+        8365,
+        11329
+      ]
+    },
+    {
+      "step": 379,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7097,
+        1059,
+        6348,
+        11315
+      ]
+    },
+    {
+      "step": 380,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5219,
+        1726,
+        7936,
+        688
+      ]
+    },
+    {
+      "step": 381,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8118,
+        1609,
+        9295,
+        579
+      ]
+    },
+    {
+      "step": 382,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3391,
+        815,
+        8896,
+        703
+      ]
+    },
+    {
+      "step": 383,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8826,
+        1406,
+        3733,
+        1723
+      ]
+    },
+    {
+      "step": 384,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        2779,
+        332,
+        8306,
+        248
+      ]
+    },
+    {
+      "step": 385,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7597,
+        692,
+        8296,
+        11266
+      ]
+    },
+    {
+      "step": 386,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4159,
+        930,
+        7858,
+        11318
+      ]
+    },
+    {
+      "step": 387,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3229,
+        287,
+        6299,
+        1105
+      ]
+    },
+    {
+      "step": 388,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3638,
+        270,
+        5176,
+        19
+      ]
+    },
+    {
+      "step": 389,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7357,
+        1702,
+        8880,
+        1614
+      ]
+    },
+    {
+      "step": 390,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7544,
+        971,
+        9193,
+        1119
+      ]
+    },
+    {
+      "step": 391,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8650,
+        1724,
+        5372,
+        1729
+      ]
+    },
+    {
+      "step": 392,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7017,
+        1197,
+        4733,
+        11378
+      ]
+    },
+    {
+      "step": 393,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6032,
+        1452,
+        6549,
+        1731
+      ]
+    },
+    {
+      "step": 394,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5479,
+        1039,
+        3796,
+        1359
+      ]
+    },
+    {
+      "step": 395,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7722,
+        376,
+        8548,
+        1718
+      ]
+    },
+    {
+      "step": 396,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3607,
+        564,
+        7624,
+        11380
+      ]
+    },
+    {
+      "step": 397,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8465,
+        702,
+        4687,
+        528
+      ]
+    },
+    {
+      "step": 398,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5241,
+        1735,
+        5034,
+        796
+      ]
+    },
+    {
+      "step": 399,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7444,
+        508,
+        11695,
+        1649
+      ]
+    },
+    {
+      "step": 400,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5423,
+        849,
+        7671,
+        1376
+      ]
+    },
+    {
+      "step": 401,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5115,
+        987,
+        4202,
+        1060
+      ]
+    },
+    {
+      "step": 402,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5970,
+        1113,
+        2796,
+        390
+      ]
+    },
+    {
+      "step": 403,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        2976,
+        11319,
+        3437,
+        11378
+      ]
+    },
+    {
+      "step": 404,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5638,
+        391,
+        5964,
+        1158
+      ]
+    },
+    {
+      "step": 405,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3830,
+        11320,
+        9229,
+        11320
+      ]
+    },
+    {
+      "step": 406,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5197,
+        1728,
+        5178,
+        688
+      ]
+    },
+    {
+      "step": 407,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11841,
+        1735,
+        4994,
+        143
+      ]
+    },
+    {
+      "step": 408,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4903,
+        1726,
+        3229,
+        1719
+      ]
+    },
+    {
+      "step": 409,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8844,
+        1150,
+        8356,
+        788
+      ]
+    },
+    {
+      "step": 410,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5874,
+        952,
+        7940,
+        125
+      ]
+    },
+    {
+      "step": 411,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5797,
+        165,
+        5558,
+        1134
+      ]
+    },
+    {
+      "step": 412,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6729,
+        11320,
+        9536,
+        11325
+      ]
+    },
+    {
+      "step": 413,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8508,
+        1229,
+        6043,
+        134
+      ]
+    },
+    {
+      "step": 414,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7376,
+        465,
+        7550,
+        1734
+      ]
+    },
+    {
+      "step": 415,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4981,
+        1177,
+        3915,
+        1057
+      ]
+    },
+    {
+      "step": 416,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8702,
+        1723,
+        3051,
+        445
+      ]
+    },
+    {
+      "step": 417,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6714,
+        1162,
+        3684,
+        1656
+      ]
+    },
+    {
+      "step": 418,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4458,
+        11320,
+        5183,
+        11320
+      ]
+    },
+    {
+      "step": 419,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6850,
+        1059,
+        5699,
+        1728
+      ]
+    },
+    {
+      "step": 420,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4569,
+        11320,
+        8151,
+        1438
+      ]
+    },
+    {
+      "step": 421,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6891,
+        1172,
+        8531,
+        1140
+      ]
+    },
+    {
+      "step": 422,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4097,
+        11320,
+        3342,
+        1050
+      ]
+    },
+    {
+      "step": 423,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9556,
+        1148,
+        11849,
+        461
+      ]
+    },
+    {
+      "step": 424,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4590,
+        882,
+        7785,
+        894
+      ]
+    },
+    {
+      "step": 425,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4105,
+        1014,
+        3777,
+        846
+      ]
+    },
+    {
+      "step": 426,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5575,
+        1358,
+        8365,
+        208
+      ]
+    },
+    {
+      "step": 427,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5341,
+        1721,
+        8932,
+        1151
+      ]
+    },
+    {
+      "step": 428,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6190,
+        419,
+        5835,
+        1734
+      ]
+    },
+    {
+      "step": 429,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3590,
+        1316,
+        11743,
+        1733
+      ]
+    },
+    {
+      "step": 430,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5036,
+        1723,
+        11638,
+        11320
+      ]
+    },
+    {
+      "step": 431,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5716,
+        445,
+        7582,
+        764
+      ]
+    },
+    {
+      "step": 432,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3862,
+        480,
+        7889,
+        531
+      ]
+    },
+    {
+      "step": 433,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4176,
+        17,
+        7885,
+        823
+      ]
+    },
+    {
+      "step": 434,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5952,
+        42,
+        3692,
+        481
+      ]
+    },
+    {
+      "step": 435,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7885,
+        555,
+        5276,
+        1121
+      ]
+    },
+    {
+      "step": 436,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7642,
+        273,
+        9384,
+        1067
+      ]
+    },
+    {
+      "step": 437,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5638,
+        1733,
+        7882,
+        11320
+      ]
+    },
+    {
+      "step": 438,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5000,
+        437,
+        3822,
+        11319
+      ]
+    },
+    {
+      "step": 439,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7694,
+        1731,
+        5924,
+        147
+      ]
+    },
+    {
+      "step": 440,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6798,
+        1177,
+        4936,
+        11383
+      ]
+    },
+    {
+      "step": 441,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8270,
+        967,
+        4730,
+        1079
+      ]
+    },
+    {
+      "step": 442,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4237,
+        836,
+        9467,
+        1069
+      ]
+    },
+    {
+      "step": 443,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5807,
+        916,
+        5280,
+        1171
+      ]
+    },
+    {
+      "step": 444,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4818,
+        1730,
+        7772,
+        173
+      ]
+    },
+    {
+      "step": 445,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5011,
+        11378,
+        11631,
+        852
+      ]
+    },
+    {
+      "step": 446,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8259,
+        547,
+        5485,
+        132
+      ]
+    },
+    {
+      "step": 447,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4540,
+        1718,
+        8133,
+        1023
+      ]
+    },
+    {
+      "step": 448,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8304,
+        1725,
+        11563,
+        11319
+      ]
+    },
+    {
+      "step": 449,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8414,
+        897,
+        4998,
+        1062
+      ]
+    },
+    {
+      "step": 450,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4947,
+        1073,
+        2964,
+        1605
+      ]
+    },
+    {
+      "step": 451,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5507,
+        1133,
+        9172,
+        651
+      ]
+    },
+    {
+      "step": 452,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6799,
+        1625,
+        9052,
+        11320
+      ]
+    },
+    {
+      "step": 453,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8374,
+        11319,
+        6189,
+        1733
+      ]
+    },
+    {
+      "step": 454,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4549,
+        11315,
+        4898,
+        11383
+      ]
+    },
+    {
+      "step": 455,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8236,
+        673,
+        6828,
+        183
+      ]
+    },
+    {
+      "step": 456,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3257,
+        1158,
+        6479,
+        490
+      ]
+    },
+    {
+      "step": 457,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6021,
+        1357,
+        9560,
+        11320
+      ]
+    },
+    {
+      "step": 458,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7570,
+        833,
+        5235,
+        832
+      ]
+    },
+    {
+      "step": 459,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9100,
+        997,
+        3388,
+        1413
+      ]
+    },
+    {
+      "step": 460,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4550,
+        11378,
+        5079,
+        1720
+      ]
+    },
+    {
+      "step": 461,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3946,
+        1034,
+        7916,
+        11320
+      ]
+    },
+    {
+      "step": 462,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3803,
+        948,
+        5863,
+        11322
+      ]
+    },
+    {
+      "step": 463,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4234,
+        11326,
+        8022,
+        1023
+      ]
+    },
+    {
+      "step": 464,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6735,
+        1723,
+        9476,
+        11320
+      ]
+    },
+    {
+      "step": 465,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9542,
+        784,
+        2905,
+        748
+      ]
+    },
+    {
+      "step": 466,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11599,
+        1264,
+        4950,
+        851
+      ]
+    },
+    {
+      "step": 467,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3472,
+        1327,
+        5038,
+        11284
+      ]
+    },
+    {
+      "step": 468,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7127,
+        81,
+        4896,
+        11382
+      ]
+    },
+    {
+      "step": 469,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5522,
+        1099,
+        8274,
+        862
+      ]
+    },
+    {
+      "step": 470,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9163,
+        801,
+        5815,
+        1052
+      ]
+    },
+    {
+      "step": 471,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5499,
+        1729,
+        2807,
+        425
+      ]
+    },
+    {
+      "step": 472,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5272,
+        11359,
+        7894,
+        3
+      ]
+    },
+    {
+      "step": 473,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8246,
+        236,
+        7071,
+        11380
+      ]
+    },
+    {
+      "step": 474,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8487,
+        11301,
+        9471,
+        778
+      ]
+    },
+    {
+      "step": 475,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7995,
+        1203,
+        5508,
+        1433
+      ]
+    },
+    {
+      "step": 476,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9110,
+        11320,
+        4919,
+        1009
+      ]
+    },
+    {
+      "step": 477,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3622,
+        1736,
+        8230,
+        446
+      ]
+    },
+    {
+      "step": 478,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8989,
+        1057,
+        5261,
+        1492
+      ]
+    },
+    {
+      "step": 479,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9248,
+        1560,
+        8710,
+        855
+      ]
+    },
+    {
+      "step": 480,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6756,
+        109,
+        5849,
+        155
+      ]
+    },
+    {
+      "step": 481,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7774,
+        11303,
+        4407,
+        1099
+      ]
+    },
+    {
+      "step": 482,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3811,
+        1734,
+        6155,
+        323
+      ]
+    },
+    {
+      "step": 483,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5005,
+        388,
+        8371,
+        1719
+      ]
+    },
+    {
+      "step": 484,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5362,
+        11320,
+        5471,
+        1669
+      ]
+    },
+    {
+      "step": 485,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8301,
+        1564,
+        6300,
+        934
+      ]
+    },
+    {
+      "step": 486,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4696,
+        1718,
+        9114,
+        11378
+      ]
+    },
+    {
+      "step": 487,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6290,
+        476,
+        3813,
+        1104
+      ]
+    },
+    {
+      "step": 488,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11651,
+        11319,
+        3096,
+        1727
+      ]
+    },
+    {
+      "step": 489,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8460,
+        865,
+        9214,
+        1730
+      ]
+    },
+    {
+      "step": 490,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11853,
+        11341,
+        8807,
+        11319
+      ]
+    },
+    {
+      "step": 491,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7393,
+        11319,
+        5033,
+        292
+      ]
+    },
+    {
+      "step": 492,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6615,
+        730,
+        5200,
+        1405
+      ]
+    },
+    {
+      "step": 493,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8771,
+        1173,
+        7334,
+        782
+      ]
+    },
+    {
+      "step": 494,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9534,
+        1729,
+        6596,
+        1456
+      ]
+    },
+    {
+      "step": 495,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6044,
+        11320,
+        8352,
+        1102
+      ]
+    },
+    {
+      "step": 496,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4812,
+        11320,
+        9409,
+        1728
+      ]
+    },
+    {
+      "step": 497,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4818,
+        862,
+        11673,
+        11379
+      ]
+    },
+    {
+      "step": 498,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7241,
+        11319,
+        7644,
+        11286
+      ]
+    },
+    {
+      "step": 499,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4111,
+        11320,
+        8079,
+        957
+      ]
+    },
+    {
+      "step": 500,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6593,
+        971,
+        7377,
+        1262
+      ]
+    },
+    {
+      "step": 501,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5499,
+        1724,
+        2980,
+        1722
+      ]
+    },
+    {
+      "step": 502,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9009,
+        911,
+        9455,
+        504
+      ]
+    },
+    {
+      "step": 503,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8899,
+        855,
+        9048,
+        11378
+      ]
+    },
+    {
+      "step": 504,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3056,
+        1376,
+        7132,
+        1373
+      ]
+    },
+    {
+      "step": 505,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7037,
+        11256,
+        9072,
+        1353
+      ]
+    },
+    {
+      "step": 506,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4861,
+        11320,
+        5950,
+        11261
+      ]
+    },
+    {
+      "step": 507,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3117,
+        1729,
+        7341,
+        140
+      ]
+    },
+    {
+      "step": 508,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3475,
+        11338,
+        7903,
+        11320
+      ]
+    },
+    {
+      "step": 509,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7301,
+        451,
+        5318,
+        123
+      ]
+    },
+    {
+      "step": 510,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7948,
+        1636,
+        7665,
+        1722
+      ]
+    },
+    {
+      "step": 511,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        2943,
+        800,
+        7494,
+        11319
+      ]
+    },
+    {
+      "step": 512,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9073,
+        1421,
+        6930,
+        11320
+      ]
+    },
+    {
+      "step": 513,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11568,
+        198,
+        7967,
+        1652
+      ]
+    },
+    {
+      "step": 514,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3673,
+        863,
+        9037,
+        1110
+      ]
+    },
+    {
+      "step": 515,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8824,
+        492,
+        9320,
+        1073
+      ]
+    },
+    {
+      "step": 516,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4344,
+        969,
+        4271,
+        801
+      ]
+    },
+    {
+      "step": 517,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6375,
+        792,
+        6169,
+        1375
+      ]
+    },
+    {
+      "step": 518,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        2903,
+        1170,
+        5421,
+        1186
+      ]
+    },
+    {
+      "step": 519,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3201,
+        861,
+        8792,
+        825
+      ]
+    },
+    {
+      "step": 520,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7742,
+        1640,
+        11702,
+        11319
+      ]
+    },
+    {
+      "step": 521,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6351,
+        838,
+        8289,
+        11318
+      ]
+    },
+    {
+      "step": 522,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7711,
+        1733,
+        4959,
+        149
+      ]
+    },
+    {
+      "step": 523,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8550,
+        27,
+        7043,
+        11262
+      ]
+    },
+    {
+      "step": 524,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8161,
+        11320,
+        8657,
+        1048
+      ]
+    },
+    {
+      "step": 525,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4629,
+        11318,
+        4549,
+        951
+      ]
+    },
+    {
+      "step": 526,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11836,
+        927,
+        3015,
+        610
+      ]
+    },
+    {
+      "step": 527,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8609,
+        11381,
+        4190,
+        303
+      ]
+    },
+    {
+      "step": 528,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3501,
+        11383,
+        5687,
+        1161
+      ]
+    },
+    {
+      "step": 529,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4939,
+        1720,
+        4867,
+        1192
+      ]
+    },
+    {
+      "step": 530,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3133,
+        11319,
+        5403,
+        1009
+      ]
+    },
+    {
+      "step": 531,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4231,
+        548,
+        3759,
+        270
+      ]
+    },
+    {
+      "step": 532,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3645,
+        11380,
+        4092,
+        1481
+      ]
+    },
+    {
+      "step": 533,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8304,
+        81,
+        8838,
+        1457
+      ]
+    },
+    {
+      "step": 534,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8183,
+        488,
+        5028,
+        11356
+      ]
+    },
+    {
+      "step": 535,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8874,
+        255,
+        4469,
+        629
+      ]
+    },
+    {
+      "step": 536,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6915,
+        11356,
+        5204,
+        11383
+      ]
+    },
+    {
+      "step": 537,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3329,
+        636,
+        4744,
+        11320
+      ]
+    },
+    {
+      "step": 538,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5333,
+        1013,
+        5034,
+        1361
+      ]
+    },
+    {
+      "step": 539,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3313,
+        11320,
+        4199,
+        172
+      ]
+    },
+    {
+      "step": 540,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5692,
+        11320,
+        5316,
+        724
+      ]
+    },
+    {
+      "step": 541,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7917,
+        574,
+        3800,
+        1357
+      ]
+    },
+    {
+      "step": 542,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8494,
+        790,
+        4736,
+        1159
+      ]
+    },
+    {
+      "step": 543,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5168,
+        11383,
+        11803,
+        308
+      ]
+    },
+    {
+      "step": 544,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9445,
+        1731,
+        6443,
+        881
+      ]
+    },
+    {
+      "step": 545,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4831,
+        11320,
+        4582,
+        11361
+      ]
+    },
+    {
+      "step": 546,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5689,
+        11360,
+        4283,
+        1730
+      ]
+    },
+    {
+      "step": 547,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9194,
+        905,
+        6008,
+        283
+      ]
+    },
+    {
+      "step": 548,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5318,
+        884,
+        7807,
+        458
+      ]
+    },
+    {
+      "step": 549,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3448,
+        725,
+        5237,
+        1728
+      ]
+    },
+    {
+      "step": 550,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4842,
+        1353,
+        5116,
+        807
+      ]
+    },
+    {
+      "step": 551,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8606,
+        1365,
+        8917,
+        152
+      ]
+    },
+    {
+      "step": 552,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8220,
+        839,
+        4935,
+        1161
+      ]
+    },
+    {
+      "step": 553,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5184,
+        11337,
+        3878,
+        11318
+      ]
+    },
+    {
+      "step": 554,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6731,
+        1722,
+        7848,
+        11319
+      ]
+    },
+    {
+      "step": 555,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9035,
+        11320,
+        8160,
+        11377
+      ]
+    },
+    {
+      "step": 556,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11765,
+        1735,
+        6889,
+        1651
+      ]
+    },
+    {
+      "step": 557,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7649,
+        869,
+        3564,
+        11320
+      ]
+    },
+    {
+      "step": 558,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        2801,
+        1167,
+        9249,
+        1655
+      ]
+    },
+    {
+      "step": 559,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5166,
+        11335,
+        7688,
+        1318
+      ]
+    },
+    {
+      "step": 560,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4488,
+        1115,
+        4182,
+        11318
+      ]
+    },
+    {
+      "step": 561,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7884,
+        700,
+        7345,
+        1721
+      ]
+    },
+    {
+      "step": 562,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7063,
+        536,
+        5991,
+        1734
+      ]
+    },
+    {
+      "step": 563,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8834,
+        1370,
+        7150,
+        1182
+      ]
+    },
+    {
+      "step": 564,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11861,
+        1396,
+        8100,
+        612
+      ]
+    },
+    {
+      "step": 565,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4071,
+        1661,
+        8344,
+        1113
+      ]
+    },
+    {
+      "step": 566,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8637,
+        359,
+        6192,
+        1089
+      ]
+    },
+    {
+      "step": 567,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6196,
+        784,
+        4887,
+        1139
+      ]
+    },
+    {
+      "step": 568,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11611,
+        127,
+        2856,
+        307
+      ]
+    },
+    {
+      "step": 569,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3691,
+        799,
+        4633,
+        1072
+      ]
+    },
+    {
+      "step": 570,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5743,
+        430,
+        3091,
+        11320
+      ]
+    },
+    {
+      "step": 571,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9450,
+        1083,
+        4063,
+        596
+      ]
+    },
+    {
+      "step": 572,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11570,
+        470,
+        8305,
+        1735
+      ]
+    },
+    {
+      "step": 573,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        11742,
+        405,
+        9260,
+        1723
+      ]
+    },
+    {
+      "step": 574,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6800,
+        1729,
+        8148,
+        1073
+      ]
+    },
+    {
+      "step": 575,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9311,
+        11318,
+        4854,
+        1723
+      ]
+    },
+    {
+      "step": 576,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8689,
+        10,
+        4420,
+        515
+      ]
+    },
+    {
+      "step": 577,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7271,
+        212,
+        5420,
+        1719
+      ]
+    },
+    {
+      "step": 578,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4365,
+        1724,
+        11672,
+        1727
+      ]
+    },
+    {
+      "step": 579,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3903,
+        428,
+        7324,
+        883
+      ]
+    },
+    {
+      "step": 580,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8144,
+        11378,
+        5305,
+        360
+      ]
+    },
+    {
+      "step": 581,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7663,
+        1006,
+        3449,
+        11378
+      ]
+    },
+    {
+      "step": 582,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4525,
+        587,
+        8042,
+        132
+      ]
+    },
+    {
+      "step": 583,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3448,
+        1066,
+        2916,
+        1075
+      ]
+    },
+    {
+      "step": 584,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3657,
+        244,
+        4633,
+        1043
+      ]
+    },
+    {
+      "step": 585,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        8851,
+        790,
+        5470,
+        1310
+      ]
+    },
+    {
+      "step": 586,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3909,
+        264,
+        8035,
+        11259
+      ]
+    },
+    {
+      "step": 587,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6949,
+        1065,
+        3184,
+        11320
+      ]
+    },
+    {
+      "step": 588,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5298,
+        504,
+        8993,
+        1619
+      ]
+    },
+    {
+      "step": 589,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3548,
+        423,
+        9011,
+        11320
+      ]
+    },
+    {
+      "step": 590,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3092,
+        11319,
+        5845,
+        1723
+      ]
+    },
+    {
+      "step": 591,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        4030,
+        731,
+        8852,
+        11327
+      ]
+    },
+    {
+      "step": 592,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        5461,
+        1649,
+        7942,
+        1723
+      ]
+    },
+    {
+      "step": 593,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7299,
+        1731,
+        5451,
+        512
+      ]
+    },
+    {
+      "step": 594,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6460,
+        1727,
+        3817,
+        41
+      ]
+    },
+    {
+      "step": 595,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        3490,
+        1042,
+        7236,
+        258
+      ]
+    },
+    {
+      "step": 596,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        7654,
+        1727,
+        8818,
+        1372
+      ]
+    },
+    {
+      "step": 597,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6511,
+        1183,
+        2837,
+        1243
+      ]
+    },
+    {
+      "step": 598,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        9483,
+        792,
+        7494,
+        11319
+      ]
+    },
+    {
+      "step": 599,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        6721,
+        1332,
+        4940,
+        11346
+      ]
+    },
+    {
+      "step": 600,
+      "groups": [
+        "expert",
+        "recovery",
+        "expert",
+        "recovery"
+      ],
+      "windows": [
+        2839,
+        1732,
+        6257,
+        11379
+      ]
+    }
+  ],
+  "comparison": {
+    "scenes": [
+      1,
+      5,
+      10,
+      15,
+      16,
+      18,
+      23
+    ],
+    "draws": [
+      91000,
+      92000
+    ],
+    "schedule": [
+      {
+        "scene": 1,
+        "draw": 91000,
+        "arm": "padded12"
+      },
+      {
+        "scene": 1,
+        "draw": 92000,
+        "arm": "padded12"
+      },
+      {
+        "scene": 5,
+        "draw": 91000,
+        "arm": "padded12"
+      },
+      {
+        "scene": 5,
+        "draw": 92000,
+        "arm": "padded12"
+      },
+      {
+        "scene": 10,
+        "draw": 91000,
+        "arm": "padded12"
+      },
+      {
+        "scene": 10,
+        "draw": 92000,
+        "arm": "padded12"
+      },
+      {
+        "scene": 15,
+        "draw": 91000,
+        "arm": "padded12"
+      },
+      {
+        "scene": 15,
+        "draw": 92000,
+        "arm": "padded12"
+      },
+      {
+        "scene": 16,
+        "draw": 91000,
+        "arm": "padded12"
+      },
+      {
+        "scene": 16,
+        "draw": 92000,
+        "arm": "padded12"
+      },
+      {
+        "scene": 18,
+        "draw": 91000,
+        "arm": "padded12"
+      },
+      {
+        "scene": 18,
+        "draw": 92000,
+        "arm": "padded12"
+      },
+      {
+        "scene": 23,
+        "draw": 91000,
+        "arm": "padded12"
+      },
+      {
+        "scene": 23,
+        "draw": 92000,
+        "arm": "padded12"
+      }
+    ],
+    "reference_items": [
+      {
+        "scene": 1,
+        "draw": 91000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 1,
+        "draw": 91000,
+        "arm": "current12"
+      },
+      {
+        "scene": 1,
+        "draw": 92000,
+        "arm": "current12"
+      },
+      {
+        "scene": 1,
+        "draw": 92000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 5,
+        "draw": 91000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 5,
+        "draw": 91000,
+        "arm": "current12"
+      },
+      {
+        "scene": 5,
+        "draw": 92000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 5,
+        "draw": 92000,
+        "arm": "current12"
+      },
+      {
+        "scene": 10,
+        "draw": 91000,
+        "arm": "current12"
+      },
+      {
+        "scene": 10,
+        "draw": 91000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 10,
+        "draw": 92000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 10,
+        "draw": 92000,
+        "arm": "current12"
+      },
+      {
+        "scene": 15,
+        "draw": 91000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 15,
+        "draw": 91000,
+        "arm": "current12"
+      },
+      {
+        "scene": 15,
+        "draw": 92000,
+        "arm": "current12"
+      },
+      {
+        "scene": 15,
+        "draw": 92000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 16,
+        "draw": 91000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 16,
+        "draw": 91000,
+        "arm": "current12"
+      },
+      {
+        "scene": 16,
+        "draw": 92000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 16,
+        "draw": 92000,
+        "arm": "current12"
+      },
+      {
+        "scene": 18,
+        "draw": 91000,
+        "arm": "current12"
+      },
+      {
+        "scene": 18,
+        "draw": 91000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 18,
+        "draw": 92000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 18,
+        "draw": 92000,
+        "arm": "current12"
+      },
+      {
+        "scene": 23,
+        "draw": 91000,
+        "arm": "fixed8"
+      },
+      {
+        "scene": 23,
+        "draw": 91000,
+        "arm": "current12"
+      },
+      {
+        "scene": 23,
+        "draw": 92000,
+        "arm": "current12"
+      },
+      {
+        "scene": 23,
+        "draw": 92000,
+        "arm": "fixed8"
+      }
+    ],
+    "reference_source": "results\\robotics-retention-pilot"
+  },
+  "smoke": {
+    "scene": 0,
+    "draw": 1234,
+    "steps": 16,
+    "order": [
+      [
+        "before",
+        "fixed8"
+      ],
+      [
+        "current",
+        "current12"
+      ],
+      [
+        "candidate",
+        "padded12"
+      ],
+      [
+        "restored",
+        "fixed8"
+      ]
+    ]
+  },
+  "current_head": {
+    "path": "data/prepared/robotics/recovery-pilot/training/final-tail.pt",
+    "sha256": "1d1b0b0383fd6da6cc5325929fa879bed6ceef5289688c8dae52dedd7bda7219",
+    "tensor_digest": "4286fe28e2da68f003cfadbbe3cab2db51cbc716d21c8df9e128e6cbf15eb3da",
+    "optimizer_step": 600
+  },
+  "original_head_digest": "ab4692b8ebab463bda2232d9cc3e24b42c2f7813c0c1de432599e0e65213c938",
+  "generation": {
+    "horizon": 16,
+    "observations": 2,
+    "denoising_steps": 100
+  },
+  "controller_rules": {
+    "base_length": 8,
+    "maximum_length": 12,
+    "minimum_history": 8,
+    "extension_max_coverage": 0.75,
+    "extension_max_drawdown": 0.015,
+    "extension_min_recovery": -0.01,
+    "minimum_command_step": 2.0,
+    "minimum_direction_cosine": 0.5,
+    "interrupt_warnings": 2,
+    "interrupt_drawdown": 0.03,
+    "interrupt_peak": 0.8,
+    "interrupt_recovery": -0.005,
+    "confirmation_steps": 2,
+    "minimum_plan_age": 4,
+    "minimum_pending": 2,
+    "maximum_interruptions": 2,
+    "cooldown_actions": 12
+  },
+  "statistics": {
+    "scene_clusters": 7,
+    "draws": 2,
+    "bootstrap_samples": 10000,
+    "seed": 20261107
+  },
+  "packages": {
+    "torch": "2.6.0+cu124",
+    "lerobot": "0.3.3",
+    "gym-pusht": "0.1.5",
+    "numpy": "1.26.4",
+    "diffusers": "0.35.1"
+  },
+  "objective": "Original mean(two expert + two recovery denoising losses); native padding loss masking remains false.",
+  "initialization": "Original pretrained head; no continued training of current or preservation checkpoints.",
+  "selection": "Final update600 only; all14 attempts collected regardless of outcomes.",
+  "screen": {
+    "original_baseline_losses_below": 2,
+    "successes_at_least": 11,
+    "recovery_successes_at_least": 3,
+    "automatic_adoption": false
+  },
+  "fingerprints": {
+    ".venv-robotics/Lib/site-packages/lerobot/policies/diffusion/configuration_diffusion.py": "de06c1fd9cdfa3d0c0ed8930e1ce60153003175b9607f48db81e9579a126b4fc",
+    ".venv-robotics/Lib/site-packages/lerobot/policies/diffusion/modeling_diffusion.py": "c60d98bade6508be7446d9eb39a28c788b47d8c336b28767046bb84fe1484095",
+    "data/prepared/robotics/recovery-pilot/expert-000000.npz": "bb099113798b959950cb5cc9c613761ea92a14fa689c8ee206912efb829d8448",
+    "data/prepared/robotics/recovery-pilot/expert-000001.npz": "470615ac181432f206f8a898a1a6ffa560d4f896d46107c5841204a86aff4188",
+    "data/prepared/robotics/recovery-pilot/expert-000002.npz": "f02849c1430fad4518d4e65eb0de91224874e63e92d0d91e53f464b6205d7efa",
+    "data/prepared/robotics/recovery-pilot/expert-000003.npz": "a20eb531e1a76ea5314ac6dafb6898db78cb90f9019f4649caf2bc3594dc2d56",
+    "data/prepared/robotics/recovery-pilot/expert-000004.npz": "94acfa9cdba1f44b3570d2cf998c1b3686f07e7b931b316a2465576f7b87c57a",
+    "data/prepared/robotics/recovery-pilot/expert-000005.npz": "0476d35fd9b06b314b95085fc1e5321daf5b581489376ba93ab5fa9d27c701c2",
+    "data/prepared/robotics/recovery-pilot/expert-000006.npz": "b01e8bd1bd2dfa00b65221b1f1013fccd5c1158aabf7d22760eb2137b51660b1",
+    "data/prepared/robotics/recovery-pilot/expert-000007.npz": "35d1973115e00c6c3e16bb84193b171b9beb3ad916281910c9099276fef45b0e",
+    "data/prepared/robotics/recovery-pilot/expert-000008.npz": "4fd1da75978c94c9626fbeffbd9c86ed91a5dc4444fe7f65c2ea11335921c8ce",
+    "data/prepared/robotics/recovery-pilot/expert-000009.npz": "9227f2daa233c76e297d3fa087419f9b29b0d7599164cd1fb9dc4fac6a31ddee",
+    "data/prepared/robotics/recovery-pilot/expert-000010.npz": "8890e7108899b800a25cbb27976a4b51626e5e23efbf1290e2834529077d9b9a",
+    "data/prepared/robotics/recovery-pilot/expert-000011.npz": "5ce64d6ce409cb7ac421602a412f2d28894da684fc1bb2646174f93b782aeb4e",
+    "data/prepared/robotics/recovery-pilot/expert-000012.npz": "f4e3d467d4a6f9d49f011c4c962c48be729595d02a6a8b3cfd955222ec111bd9",
+    "data/prepared/robotics/recovery-pilot/expert-000013.npz": "6f428f78ad428bbe975c13a23a55db3ee46a5227c613fc3e22a84d18f25d3178",
+    "data/prepared/robotics/recovery-pilot/expert-000014.npz": "8c3cddbeed756cdaef12203fe3183bcd548a9fdb2450033db0bd90f71c2d979e",
+    "data/prepared/robotics/recovery-pilot/expert-000015.npz": "721e6b9d6086ef11144f560f63945423edca51330f4794ff5c14bf38347393b8",
+    "data/prepared/robotics/recovery-pilot/expert-000016.npz": "3bd4470293cbbee14532c9eda929d859b007873afc7163d1597bc36f6d7fe74b",
+    "data/prepared/robotics/recovery-pilot/expert-000017.npz": "30a6f7243bc299401ef30f44fdcbd00ecac9a07a82c477751d52d0ce3b1eef9e",
+    "data/prepared/robotics/recovery-pilot/expert-000018.npz": "67268d3c7552ed135046173ee44d118d453cd603fc1335976417c5588fc6bb11",
+    "data/prepared/robotics/recovery-pilot/expert-000019.npz": "f614c76bdde3d7c929d9b0738f8ea594f80ad3783d747dba68ecb99d6fb036eb",
+    "data/prepared/robotics/recovery-pilot/expert-000020.npz": "5dd3ccea9223adf7d6f1397d8d377a5e1174b01e2f20c4907d5ed9312a74b9fa",
+    "data/prepared/robotics/recovery-pilot/expert-000021.npz": "1ae15c5bab100c7b2d63a61fe196e81f4f816e9d89b1a909c418cb777c6a8acc",
+    "data/prepared/robotics/recovery-pilot/expert-000022.npz": "593e655b15d972a6a0ac67685b12401615409ba770d696e677fabb47ff5977be",
+    "data/prepared/robotics/recovery-pilot/expert-000023.npz": "ff7ce0302e44660d9bc1f15c18e77d0903274d9d9eece154e7c6d4ef6fa87f00",
+    "data/prepared/robotics/recovery-pilot/expert-000024.npz": "3f0a039a80e6e3a7cb2db473641d28b16e55c344d6a206ce347a7c5843adfc67",
+    "data/prepared/robotics/recovery-pilot/expert-000025.npz": "fc9a7464623920c254e6d21a14d07ae60a058171171fd144f0c9d508d75fc867",
+    "data/prepared/robotics/recovery-pilot/expert-000026.npz": "0d90f7d172052077c4648c720ab692770a8d2e99c82d69ebc5d046c795a59aee",
+    "data/prepared/robotics/recovery-pilot/expert-000027.npz": "2cd515e4e2c355b8e39934db6936c4cd329570ab76aee1a842c5216819f2930a",
+    "data/prepared/robotics/recovery-pilot/expert-000028.npz": "42e5a197b4db687ae9ef6eb5da156e39cab508efadce202e3b400ec2957d2c43",
+    "data/prepared/robotics/recovery-pilot/expert-000029.npz": "a26e574aa04e0f2005ddf309cf0b17951e497d33876e2e3d41357da8bc3118e0",
+    "data/prepared/robotics/recovery-pilot/expert-000030.npz": "0693e62b518cbf7ff9397f27be5bd9b7ebedbef2fd6ebb84771ccdd8812e17c4",
+    "data/prepared/robotics/recovery-pilot/expert-000031.npz": "b703ea36d30a2b74d8edf099b109a6fa3153c8491fa28f0f0422c9aed9664272",
+    "data/prepared/robotics/recovery-pilot/expert-000032.npz": "86a686c9f338fb52f288040281f598da6710179cf37ccb5de5093d96a489bbec",
+    "data/prepared/robotics/recovery-pilot/expert-000033.npz": "5f44e1aaa721baacf56c9d11084884cec0934b6eb5155d784e33c75a0ee765c3",
+    "data/prepared/robotics/recovery-pilot/expert-000034.npz": "230581371aa8522e74ab92a39cbcd217a67b0f50281d41e40fa41ce867791eae",
+    "data/prepared/robotics/recovery-pilot/expert-000035.npz": "abfa283c9a6a601851d0468709f4aeeb8a37a1246fcbdc73195bc73257d68384",
+    "data/prepared/robotics/recovery-pilot/expert-000036.npz": "8d1774658a5a396344f12991516db49f691b703b9de11dd2bd55a9f5d62eec89",
+    "data/prepared/robotics/recovery-pilot/expert-000037.npz": "0b90117e9c78f6e9a2400d0013ebc3fe6b474492b8a7729e04a53056421092e6",
+    "data/prepared/robotics/recovery-pilot/expert-000038.npz": "1a08b0b0eb61b299b8bba7e4c8a683f6df4da0bab24671337b6c74a3b07bb348",
+    "data/prepared/robotics/recovery-pilot/expert-000039.npz": "45a60d6ee752b15f7490bfa9c584112352617b66626f547d4f55bd1f9ffb96d9",
+    "data/prepared/robotics/recovery-pilot/expert-000040.npz": "a49ca399b77ef8e8e76e47a7975bcb8d2eedde6b423cc05196f3bcb18008bb64",
+    "data/prepared/robotics/recovery-pilot/expert-000041.npz": "1da5bc6e2f70000a451023f4ea055adc1b5bdbd4f68f334cbb5ba010f2fa0246",
+    "data/prepared/robotics/recovery-pilot/expert-000042.npz": "f3e61fa88fa42160e6510b83625b70986aafb73e80a5b3f93bea495e85eac860",
+    "data/prepared/robotics/recovery-pilot/expert-000043.npz": "fee3fffb6bc6d377d09acd587f7d69f8e02d93283efa076d4fca999e7d1d1a1e",
+    "data/prepared/robotics/recovery-pilot/expert-000044.npz": "e6eb5e294c4fd39105753f6ee63e7a77a691574204daae1f81826a6e87832ca7",
+    "data/prepared/robotics/recovery-pilot/expert-000045.npz": "a46bc19981862246a3d4cd6f678f79c5cee02aa50f44bbe76c9641e657184484",
+    "data/prepared/robotics/recovery-pilot/expert-000046.npz": "a141f2f12645d5f85e834dbc1a160adb9cb726d1f689488bec63f32c115e1e81",
+    "data/prepared/robotics/recovery-pilot/expert-000047.npz": "6bdcc7f9b8e2be3f8b434ddf1c50a3d2b38f0e90777a5ebc2e51ebdeb6aa49cf",
+    "data/prepared/robotics/recovery-pilot/expert-000048.npz": "fb694e4f2f4483f8f9c3439d42b9dee98429546fc9c3228e803f83481e886f8f",
+    "data/prepared/robotics/recovery-pilot/expert-000049.npz": "16695375b5322b10ce93934edf1228c8ebe42fdbff51c02acf39431a18fb1190",
+    "data/prepared/robotics/recovery-pilot/expert-000050.npz": "1251045ff449703201871dba9fca15a8a7ec0840c18bfaeb62eb2b4430989b3e",
+    "data/prepared/robotics/recovery-pilot/expert-000051.npz": "1a103c5455db08cf0aebeb9a599beb6dc91ced62d109a2f05af9b81c0b6244fb",
+    "data/prepared/robotics/recovery-pilot/expert-000052.npz": "d912b755793ed3bce81b909e056c9521bc06f0487548dfb1becc0be89009fc0a",
+    "data/prepared/robotics/recovery-pilot/expert-000053.npz": "8e7c2e86769213d4fb80c1c533f0a538b5c400644dc9344f11faa5eebfa94fd7",
+    "data/prepared/robotics/recovery-pilot/expert-000054.npz": "57fd79fc66e7b7eeba859477af81417b0ff517ad99450dbe0cb9c2366caad797",
+    "data/prepared/robotics/recovery-pilot/expert-000055.npz": "ea68629c4879b6d4ae3e4a1018a2d107d30131e30f43b6cf72734cffc7c764b9",
+    "data/prepared/robotics/recovery-pilot/expert-000056.npz": "64dfe200172e11e488e16a36e5294a3db2f61ac61bfb0d14a955772dcafe0b6b",
+    "data/prepared/robotics/recovery-pilot/expert-000057.npz": "9e89d70e490340312f6b1f94eb9eada60e0b145b0048b2c07b4aa1d8dc7c649c",
+    "data/prepared/robotics/recovery-pilot/expert-000058.npz": "ab3308413d45ee8a0b9a46e68e9f938d75c21cefa71bc88347febccd67a9cac5",
+    "data/prepared/robotics/recovery-pilot/expert-000059.npz": "2bdb6b84b70d52f5b9fab0a8e1efb615572670c18fb38959a0609539122ff0ff",
+    "data/prepared/robotics/recovery-pilot/expert-000060.npz": "c2f85a0e39d251147b006041cd2ac8c490fa035b36fcff3a1e9854e86532650b",
+    "data/prepared/robotics/recovery-pilot/expert-000061.npz": "eb8f612030ddbff76acd30a26a26fbcc54852001665931ed6780b7b7687e788f",
+    "data/prepared/robotics/recovery-pilot/expert-000062.npz": "133ab28682a1f342199cda11dbd3203b9ffd3e9f1fcf293073070c2427ecaad8",
+    "data/prepared/robotics/recovery-pilot/expert-000063.npz": "c3911ff353418c36eb172bee2ae27356b7ecdb9f4695718fd79d0e3b4a4fccb7",
+    "data/prepared/robotics/recovery-pilot/expert-000064.npz": "245195d15a83cb2dee3c73ca7769a105ec0dd2ef70f5e06deb134fc2c3a75b33",
+    "data/prepared/robotics/recovery-pilot/expert-000065.npz": "e0d925516b6eb32071b054d7b9c057bf2baec0cd76157fc8de154fa3fa0370ff",
+    "data/prepared/robotics/recovery-pilot/expert-000066.npz": "fc5f79c888313e05bb011cce375570452addc689592e69fd35de7e5d58a59be6",
+    "data/prepared/robotics/recovery-pilot/expert-000067.npz": "19cfbced941b607c446cbd4590415097c1582078cfd7ea418ce8f98f765bbaa5",
+    "data/prepared/robotics/recovery-pilot/expert-000068.npz": "2ca33b785762c098c026597f0018b28e502cc17e98c82ee92eae69564ce29793",
+    "data/prepared/robotics/recovery-pilot/expert-000069.npz": "738144a84ed4f96d02835b298253d04b3ce0f715c6e6a4f72efc04dd30db2f95",
+    "data/prepared/robotics/recovery-pilot/expert-000070.npz": "41fbb76011afc9f2fac6fc9a319e3d40aedc45ffd6c2b0d85e4b5869ee632ca5",
+    "data/prepared/robotics/recovery-pilot/expert-000071.npz": "21e96ebefe6b7054e30f1fd409c86ff50577d271603bd05102906dbb8fa8a0b3",
+    "data/prepared/robotics/recovery-pilot/expert-000072.npz": "336a16e648fd06b7c811c84edcbb5c8e0f2297e54fbf391c34ac58de9e6dd3cc",
+    "data/prepared/robotics/recovery-pilot/expert-000073.npz": "f5392d2fae337873ec54bb81ce06043337f48ae4704f829556ad981489527899",
+    "data/prepared/robotics/recovery-pilot/expert-000074.npz": "86bc6c0db55ceee752e8dc31701d12ca201b9516f5819a8217d557ebb893f34f",
+    "data/prepared/robotics/recovery-pilot/expert-000075.npz": "b630a3f27ab56986ba953eca24425ce81a2579c63226d9716b06c3352534cea0",
+    "data/prepared/robotics/recovery-pilot/expert-000076.npz": "48f7d219acaa3dfbde76449cf779ab03eb30b1cc42b2f6fee3e9beed84cebe55",
+    "data/prepared/robotics/recovery-pilot/expert-000077.npz": "e25fde0b6973b2eff9b6e0a8a18adab82251b2a61dd57d9034fe6808e8d95a95",
+    "data/prepared/robotics/recovery-pilot/expert-000078.npz": "21e0e5777fc3a640f58e86e26a631ab2e14abf501f64a14d6e8af2495aca1e0a",
+    "data/prepared/robotics/recovery-pilot/expert-000079.npz": "7bb0a6c6cc22f3357a83458bf3b3e3c7952acf8f56fef18b16eb10f69d23982c",
+    "data/prepared/robotics/recovery-pilot/ordinary_control-031.npz": "f88e5954876607077b0f41234cfad44953ac0715bdbde72ab6e1f092720927f6",
+    "data/prepared/robotics/recovery-pilot/ordinary_control-032.npz": "90bf0ec87d8474f7a67c3f5a7bbcb366b5a036d02f76f3b0a7ec342f4a985360",
+    "data/prepared/robotics/recovery-pilot/ordinary_control-033.npz": "32f29999bce4d1f30b3656e713dc332da0561157b36e6b46a10b4de5fe20aa42",
+    "data/prepared/robotics/recovery-pilot/ordinary_control-034.npz": "e8371cc3051c03c9400f79a37308f6f4d8a0251b74b1000337869d9c4c34c9b3",
+    "data/prepared/robotics/recovery-pilot/ordinary_control-035.npz": "3f0f283bec95434ee3c56a9510799c41927bf97afe5c9fdb6d726744fcf46339",
+    "data/prepared/robotics/recovery-pilot/ordinary_control-036.npz": "098e08f0bcdbcb695aad4ab265a5c3e363c1ca5e6d41609d302866b43b90bd07",
+    "data/prepared/robotics/recovery-pilot/ordinary_control-037.npz": "16e63eed9d2780a70066234a653f585b0f0fba77d4f1c6cb3fbb4a252716a806",
+    "data/prepared/robotics/recovery-pilot/ordinary_control-038.npz": "0a3e6af58fb74872657c457431d25b45f22c7b835d039e7647488ae050c23b9c",
+    "data/prepared/robotics/recovery-pilot/ordinary_control-039.npz": "0ba0efeaed35dc85d8c9ab34889559291d6694d9b7b6960b7daa157192592b44",
+    "data/prepared/robotics/recovery-pilot/ordinary_control-040.npz": "eeab275eb0dee660d99eae8e28572c2b0e56c89c5a5feb60df921839354a6880",
+    "data/prepared/robotics/recovery-pilot/ordinary_control-041.npz": "9ed0f94d2ecc298270509bfe49466e5e76789b08295796c17dbcfeebee2d107d",
+    "data/prepared/robotics/recovery-pilot/ordinary_control-042.npz": "0fafa5f25132244b2840298a987c8d09e2aa578abd4d9c4bda95966cbdaaf0ec",
+    "data/prepared/robotics/recovery-pilot/ordinary_control-043.npz": "23f27e1cd6aae620ecbba6e0a36735572a19d17766e74c57d59e332d102e83de",
+    "data/prepared/robotics/recovery-pilot/ordinary_control-044.npz": "f67d1576e0f7f89516ef2fa5f415c299ddef626fe29cd84cfd8c53d829255701",
+    "data/prepared/robotics/recovery-pilot/ordinary_control-045.npz": "6e2b833f341b70b2b1b889190140ba2b794d426a505f91e1d62608002cbf4a1e",
+    "data/prepared/robotics/recovery-pilot/ordinary_control-046.npz": "3b68217c5d10b25fbdf0fc47a44313552f68e8d5f2ecad49562aff401bb2f627",
+    "data/prepared/robotics/recovery-pilot/ordinary_control-047.npz": "f2e1c1c1978d91e001e8010e33004c8572dae40736ee4e525180d4f552e730e4",
+    "data/prepared/robotics/recovery-pilot/ordinary_control-048.npz": "98341561c1effd7a517f161b02fd1fa41cb05e103b56cba27afd5aae86bc0d84",
+    "data/prepared/robotics/recovery-pilot/ordinary_control-049.npz": "b1ac9ff67e238de657a188c8eec406422f8d3d8ffff2cc06c14595ef8eb91158",
+    "data/prepared/robotics/recovery-pilot/ordinary_control-050.npz": "0bdd763d5c5c27a7bacf1ad3606cdd31940d2154f5cce8779464da476ee3c3c8",
+    "data/prepared/robotics/recovery-pilot/recovery-000.npz": "b1fb6aa26edbd1a2531ae7befd29b5ee143d1a1c14773bd8e52dd501f4a097cc",
+    "data/prepared/robotics/recovery-pilot/recovery-001.npz": "ab86c00da69b81e7223acd7410c4571459c03c7fbd3462946864252407ff41d2",
+    "data/prepared/robotics/recovery-pilot/recovery-002.npz": "704225d9a57a9990ba6d7c3da834b8d0c545d0e7561b2cc82f2ff5d4138adc1f",
+    "data/prepared/robotics/recovery-pilot/recovery-003.npz": "cb901f230d6bbf6bd7aba0042f52b4cb870866b7539d6242bf2610d748fb9b5c",
+    "data/prepared/robotics/recovery-pilot/recovery-004.npz": "324cdc08cae7edd7b896064f81868929e494051e1c2d054ecdf92afd65e2c065",
+    "data/prepared/robotics/recovery-pilot/recovery-005.npz": "9874799729e0cafe571b8b425b708113715acad86c1eeaa411086dab2f69ede5",
+    "data/prepared/robotics/recovery-pilot/recovery-006.npz": "c925795c006f5cdbb6b14812c9de44f4a139f442abf0a6ecee34661de024d646",
+    "data/prepared/robotics/recovery-pilot/recovery-007.npz": "b3f05824c9ab860bf359ca287b7a728c762c20e83dd22b2488d9e7276a56c5d4",
+    "data/prepared/robotics/recovery-pilot/recovery-008.npz": "77d78d7b2fa6bb07cf3ae656fb4de40a970f423f4db04251f400314a697db1f2",
+    "data/prepared/robotics/recovery-pilot/recovery-009.npz": "065244d7b8ddff19f9de76ec67353f74b601207a74f41bf1032b4d843eeeb139",
+    "data/prepared/robotics/recovery-pilot/recovery-010.npz": "735177fa62a8671bb54a0d4279fe86d0bd371968aa9a0d68c0fcdcb299a14190",
+    "data/prepared/robotics/recovery-pilot/recovery-011.npz": "6cdf7ccc773d04d941e42133d68064e8f2498cde80eb48c84ff81dadec37b434",
+    "data/prepared/robotics/recovery-pilot/recovery-012.npz": "53e97990fe7b84b7593acb56b2ea1376271fa985bce619af980d2029780d0ad7",
+    "data/prepared/robotics/recovery-pilot/recovery-013.npz": "cc290066942b32fbf84143dc2c4a907bcb7016302583206c754bc855d0e26135",
+    "data/prepared/robotics/recovery-pilot/recovery-014.npz": "0756c74a245847ed5e236dcfdf4d644e2b0fc8e66e1b34279ba30f05feee1a0b",
+    "data/prepared/robotics/recovery-pilot/recovery-015.npz": "8240b77f630121efa46bd7dda45ac540ac0b017db591a1d6f60fb3f3b1b0e2b2",
+    "data/prepared/robotics/recovery-pilot/recovery-016.npz": "f326c3b400592ffc01374fad23aa00a477287009ba22e4fb349e7dcc59c7863f",
+    "data/prepared/robotics/recovery-pilot/recovery-017.npz": "bceb85c12aeff5aac58fc8d7eb1da74b58200c29c0f3c4100ca3104d28d67028",
+    "data/prepared/robotics/recovery-pilot/recovery-018.npz": "c450e1e1dbdf5f6589785f21c296b01d6354b9237c9e73713dda48fe74851566",
+    "data/prepared/robotics/recovery-pilot/recovery-019.npz": "327b3a5f3c24112eded6ed051d0664bccbd0323bff69097c7bdee47278032d47",
+    "data/prepared/robotics/recovery-pilot/recovery-020.npz": "2a320548e67e9ceecd0ef4e47e858204163fa73ee814c89ee8e5af8073d40d3c",
+    "data/prepared/robotics/recovery-pilot/recovery-021.npz": "56d09137d5d7198e29349d276a48e16d72d2656bc9ff0d022a9959b9c3b5ac9a",
+    "data/prepared/robotics/recovery-pilot/recovery-022.npz": "4d5e8ce3d4b230071b2d8ed84b9220fedbf4c326e894f1ab671ebf72245e9d5f",
+    "data/prepared/robotics/recovery-pilot/recovery-023.npz": "c45dfec9a322b733919f3127a2a6883d1a39a46baf475e445c8ccde311deeefd",
+    "data/prepared/robotics/recovery-pilot/recovery-024.npz": "e571cd7b5263f8e59223760afa0a0ce6c9e64064386c9d370b69216899500138",
+    "data/prepared/robotics/recovery-pilot/recovery-025.npz": "0f338444e2abc09bf5b976d1ecf43e0a5b217f20855093f7bc927f8058b2adf1",
+    "data/prepared/robotics/recovery-pilot/recovery-026.npz": "f84235ba58219f46d58d2d013def7cbe8597f48c1f0d55f0bdd5464d1166382f",
+    "data/prepared/robotics/recovery-pilot/recovery-027.npz": "5591c101dd8ff92d5a0c9ff6f649f4ffa188964969d28352f70711837f5fa184",
+    "data/prepared/robotics/recovery-pilot/recovery-028.npz": "4e24615ee49faede924422adf9e5878e9053d3ec1ef26fb3d21ea9a433bf1f00",
+    "data/prepared/robotics/recovery-pilot/recovery-029.npz": "3a2972f7c6a5fd8882048f8adcac9b01826b51e472a970cc9472de27c127f8e1",
+    "data/prepared/robotics/recovery-pilot/recovery-030.npz": "415379e3b96db396b2c999baee39c5bf0971fe32ffa569284fb32751bb740ee2",
+    "data/prepared/robotics/recovery-pilot/training/final-tail.pt": "1d1b0b0383fd6da6cc5325929fa879bed6ceef5289688c8dae52dedd7bda7219",
+    "data/raw/robotics/diffusion_pusht/config.json": "d391a7bf488accd1c26b2043482f0060b0855b1ec236f3d7358486918472c0a5",
+    "data/raw/robotics/diffusion_pusht/model.safetensors": "995d14d35db57d95c35ad9704c3d79c8612b7bc45f3877e5c46c2cdc516856a8",
+    "experiments/robotics_adaptive_length.py": "857e33a071244d7e5855456d513c1c17ee9edb7f32f785247dc24c72a4181da9",
+    "experiments/robotics_baseline_check.py": "d8e16317ba3a53d5d7abbf19b9712454bad8850639d6f4d70585f83380e91a19",
+    "experiments/robotics_benefit_model.py": "e0691e9c833734ed34d98b73a2be5c4abb4cfd0174aa86af9449a2532cababa6",
+    "experiments/robotics_benefit_pilot.py": "132c4bb72ce59da1e2f5ee4c1f9049432ad35ca1c5dc89ed06eb03ca0f92cd53",
+    "experiments/robotics_endpoint_padding.py": "23bc904790ca575593542dddba1d4caa4c707befd30c9347b6ab1b3fd55fcefb",
+    "experiments/robotics_endpoint_padding_audit.py": "634599d45eb1dc9f6a247599584462b2cabb1d8d98a2aa6e0c79568adcafedd8",
+    "experiments/robotics_failure_investigation.py": "a741c8b51e2018c1e2d450bf39e601069e30180ab4017a660f513b9a11dbd29f",
+    "experiments/robotics_feasibility.py": "1bcc3fdcf251c91f20aab5b35527ab29cbc211c0f269df9cfadb480703a90552",
+    "experiments/robotics_generation_length.py": "6393776bba0fa1dac6f9babe8b6d91922e7d62cc2059aa4f4331a594a279d120",
+    "experiments/robotics_preservation_pilot.py": "919e76848e89a89778855479a6028a749ea569db3a312b357b5dafafdec7c77b",
+    "experiments/robotics_preservation_pilot_audit.py": "cf833c39aa0566fa3c41225ef7a5dc0d8f97827d0cf975be457b44a1518bf7ee",
+    "experiments/robotics_recovery_data_audit.py": "cc32802eb617d9eb5c4796b7d759541af81cd537625ec9fc00b35d8ea426f93b",
+    "experiments/robotics_recovery_dataset.py": "008d4dea5c8592149402b16b15634ceab5f8ac61d5b73471d43cacc5e98c08ff",
+    "experiments/robotics_recovery_evaluation.py": "6daf4f9a6c24632d6e4ce1e4034bc9aa5659b7b47df254e9349d398bec92bb7c",
+    "experiments/robotics_recovery_feasibility.py": "310ada43ba75a015d8ffe62e94e72d58bcbad38e2343bb2495fbed6befb05bcd",
+    "experiments/robotics_recovery_pilot.py": "58f0baa7495eebdeabf1e9b4bde64d82b7ee54287e91d2c801183463fe295312",
+    "experiments/robotics_recovery_training.py": "fc44b55b23af21887829f4c2a4cc2eb841897e15b37b756619269de8abe77382",
+    "experiments/robotics_retention_pilot.py": "e0b5282557ffdac68a95eafc93017dbf84845c844b41aea3828488e003e36e5e",
+    "experiments/robotics_retention_pilot_audit.py": "474bd8de4b0d6bbe8920bf62a0ed57b936e885cda3aaab8310ad8f6422623b0a",
+    "experiments/robotics_visual_monitor.py": "2c99de00434210693f9c6dc5b5cf134dcdaa55c144bea1560305ac7bea8a23f9",
+    "requirements-robotics.txt": "2d509ac01f233be9d24a16834c67d42f47266e40a61dea1b28232bb8916e309b",
+    "results/robotics-adaptive-length/prefix-smoke.json": "d9311825d65ddfe024f7ffaa3ef1f6680aa97a762ba591a9c7c2473b72bbf4dc",
+    "results/robotics-baseline-check/protocol.json": "b2a52eab070eac4b74559cbfc245ff86341a29453cec5367f25109eadd4f127e",
+    "results/robotics-baseline-check/seed-0.trace.json.gz": "f4b9f9513b21d0192ab659264eb52a40f5eda1f1b8b6706728f1561f41503ae2",
+    "results/robotics-baseline-check/seed-1.trace.json.gz": "7c850c640c76a0b885b90acc8036c1299421e4e30b55d259f8b2691512ef5b38",
+    "results/robotics-baseline-check/seed-2.trace.json.gz": "fb25a02bf0b04772bd7bbc06ab19b4dc91f9b5e2be543f542163301fb6de1088",
+    "results/robotics-baseline-check/seed-3.trace.json.gz": "33738a44b79a7e7eb2bb522c1658e500386065043ae1a4d3ed147edc3545cec6",
+    "results/robotics-baseline-check/seed-4.trace.json.gz": "48e9ba03d58ccc035fdd2d3fc73b9dc8b972ab7681cc5966e7aa369375772a39",
+    "results/robotics-baseline-check/seed-5.trace.json.gz": "80ea31a039da07c0b8f3bdf77ec56828dc328720e7c401ef12f84f17b255e9b6",
+    "results/robotics-baseline-check/summary.json": "79827f7e572c8f066c57a3d7ff5ec4669365820ac156ec43fe46670888eb2595",
+    "results/robotics-benefit-pilot/near-target-validation.json": "04855e05c6e560766ea1bc09c5f82d0dc8093548c7c014d30950b1358c768460",
+    "results/robotics-benefit-pilot/protocol.json": "7399be9e89b197251da8fca14261449fa203696469c0d072146c2b6f4224dcd8",
+    "results/robotics-benefit-pilot/visual-features.json.gz": "a2149aaef08d23d6e7d33f60eb16891571c21821592bb6fdcb61895696659f30",
+    "results/robotics-failure-patterns/analysis.json": "edfb8bcdffda29edf608212178588cf4b83194642951c254c2657d5242d33e51",
+    "results/robotics-failure-patterns/episodes/seed-10.trace.json.gz": "dc0de002f7976f3562f0b9b429697868b5f4dcaa102ddaad7a77d5fddc8e1e2b",
+    "results/robotics-failure-patterns/episodes/seed-11.trace.json.gz": "e4b846e706de73fe4e1a70aab07833263c1477d7ee789bb673a254e41a897f82",
+    "results/robotics-failure-patterns/episodes/seed-12.trace.json.gz": "42bf38af48da55043e8a65686f49856dd31e2740d83499699af8b9d9eee72c05",
+    "results/robotics-failure-patterns/episodes/seed-13.trace.json.gz": "fe8a1accc4c30307e28aa165281e16d027f675d2362e62e6e49347d2fb746a04",
+    "results/robotics-failure-patterns/episodes/seed-14.trace.json.gz": "36bbe3339a537e9cee555edc627b988ed65f22901174b093dd330a55b88f295e",
+    "results/robotics-failure-patterns/episodes/seed-15.trace.json.gz": "a1937c9f751fc0ee430750f7ae43ee4b27425847a3e461b650ed10591180c031",
+    "results/robotics-failure-patterns/episodes/seed-16.trace.json.gz": "d3453e44682fd3a26997f89a67dd3c2d1fe4a1c6f36d57e9cfe3a8f00cfed6da",
+    "results/robotics-failure-patterns/episodes/seed-17.trace.json.gz": "b966b79b0195f94f46247870cd8789cf2040d4a9edd5156e20bf79fbdced78c8",
+    "results/robotics-failure-patterns/episodes/seed-18.trace.json.gz": "85753aff08f3f6a292beaa34a36b77593150f1accc787bc84fe235a78688382d",
+    "results/robotics-failure-patterns/episodes/seed-19.trace.json.gz": "c9e5736a05a1b9b29440ca8cdcb92b5317b8d9651fbaf36157baac0d8f778b30",
+    "results/robotics-failure-patterns/episodes/seed-20.trace.json.gz": "61be40b36fbd26bc06de1ba43afd4053eab6e6be3e87c24759bfdb99e1b67da8",
+    "results/robotics-failure-patterns/episodes/seed-21.trace.json.gz": "83df90f5d5205cc2ebfbf137920aa10f7bdb4b8d7f4cfee852254cc31ffd524c",
+    "results/robotics-failure-patterns/episodes/seed-22.trace.json.gz": "29195041f76aaf76c2a0813928c2bf69db7ad566d925f6eea6ef1e3743f0b291",
+    "results/robotics-failure-patterns/episodes/seed-23.trace.json.gz": "447b1a5170883a6f7d2f5692e903e35fe7ecb32ffd02de00f2797ff2796db6f4",
+    "results/robotics-failure-patterns/episodes/seed-24.trace.json.gz": "3ef19a22c6c1c8999bd5c2b8c86444f04f9397e42c8ebd6019bc1512de49ab52",
+    "results/robotics-failure-patterns/episodes/seed-25.trace.json.gz": "924ae14479a81a9296c1a6eb1878ed458dfb1fc0df2ad1353e8745d6d9d53e9d",
+    "results/robotics-failure-patterns/episodes/seed-26.trace.json.gz": "ed99ea679a2dae183abf03176c6c815a664231749a8090ccc88bd21bf9c836f3",
+    "results/robotics-failure-patterns/episodes/seed-27.trace.json.gz": "d5f300828f61aa383c0902d93b444e9ac59f7c08f652420c402fa29a31b305c0",
+    "results/robotics-failure-patterns/episodes/seed-28.trace.json.gz": "9d35bc7ef319d05699e88eebfa8b625b0f67952a2b9e49f6705cffc61685d351",
+    "results/robotics-failure-patterns/episodes/seed-29.trace.json.gz": "8291348aade344db44d6070c7cc70d967e884ded14897dc83cd1eb55e351fdc2",
+    "results/robotics-failure-patterns/episodes/seed-6.trace.json.gz": "7c09fc4320520b806f9ae55ad708e6cb575ff7551f55c103b36aaf35182799c6",
+    "results/robotics-failure-patterns/episodes/seed-7.trace.json.gz": "5f2d666c3bc91c9dcc8817e3a8ef6c1670f6090902e25201de9f43645d0a7039",
+    "results/robotics-failure-patterns/episodes/seed-8.trace.json.gz": "7eb2d850f0bd1345534b0902983f625564ba2825458eafde43bf8753a68f7f09",
+    "results/robotics-failure-patterns/episodes/seed-9.trace.json.gz": "e0568c668e709bfeffedfd7bbce88f359c67b5a07626ec789fdc6d3ff00f56a6",
+    "results/robotics-failure-patterns/protocol.json": "155dc7333f5d34b62d58c5eed469883cc14b0de2ccb4486cdce34158c5106690",
+    "results/robotics-failure-patterns/recovery.json": "01b96f9fff6e30cdce312b9d8a4a156dc8580dc04cc682ffe05c4279bd8d929a",
+    "results/robotics-failure-patterns/summary.json": "f748d6b7e8d3b4a3b79531f71129292972cadefadb17b585fedc466fd546effe",
+    "results/robotics-recovery-feasibility/data-audit.json": "6831de2f731b6733dfacf26c20d934518aae131ad21089719ae0f140f21f51df",
+    "results/robotics-recovery-pilot/dataset.json": "9650153226439d9a19559824d7a0946e6bc8c63a173a523b7f2f700a768bdea2",
+    "results/robotics-recovery-pilot/protocol.json": "e1978eb27d33aba1eff7dc41af35d9cc5bc486cd2590023f95c5ae26a282d835",
+    "results\\robotics-preservation-pilot\\artifact-audit.json": "7b039154a052e2b119213c6ba350ab140f22151dab12c51770acdbf9793feadd",
+    "results\\robotics-preservation-pilot\\protocol.json": "e20f8f3ab0e04b922369e1dcd55498974ef9a5078483be5b61e87d10523e72e3",
+    "results\\robotics-preservation-pilot\\summary.json": "daa029995ffae6d5e695ec7a7d39e00b5718c79930e0a674fb4a40ba3214baa5",
+    "results\\robotics-preservation-pilot\\training.json": "2cb98b179ae5290f591a86ddada2571e66fe2b0551dc49c914d3d074e4ace4d6",
+    "results\\robotics-recovery-pilot\\training.json": "34c9ee9e60b979d2299f385f0a46730f1419a0fee4fe003e0065197120510fef",
+    "results\\robotics-retention-pilot\\artifact-audit.json": "08e72a26616444f4add57a34e8c26478207d5873dbfb1f7553bc8ea794525391",
+    "results\\robotics-retention-pilot\\eval-bindings.json": "88ad48f4fee25b2b8bdc279123e515c6c47369dd743852719756877b25ce2287",
+    "results\\robotics-retention-pilot\\evaluation.json": "04ece99b3b1e4566eda44032934fb8d8720f82b00f0126a11c23b74b946352dd",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\model-binding.json": "d80f7f1537442a734215ae99457edf90af843599aba322a23a326155f8eeb5c0",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-1-draw-91000-adaptive12.json": "c8665ebf6bc8d3f3ff28cd3c98e79e1a99d6f6041f90b58fe3f110bbd80967e6",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-1-draw-91000-adaptive12.trace.json.gz": "5d7c08b22e0eefc2ecc00ecc9629ad947f5aee6cabf30be030e1fbb8280fa409",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-1-draw-92000-adaptive12.json": "bb082464fd4e44d43ec6bfab88b4bba694992fc3d82e114ff050e6eda4e51aa0",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-1-draw-92000-adaptive12.trace.json.gz": "04ea88fa2738d0460b7ca5c196e2bb61c76a5d93c2ab44ea46e62d8f35f579a0",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-10-draw-91000-adaptive12.json": "1422ddc96c93e8284ecfa33443d14985be59dad3d3111aaf46608260b114a4f9",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-10-draw-91000-adaptive12.trace.json.gz": "b69fe4d893e689c0d36c0a4b002aa5381d4a277ecc8d85fd3e03a17681ce1805",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-10-draw-92000-adaptive12.json": "bcb7a67c106d1e77a6411b34964c78b57b6b4bd7a2273d0f8fc00d3486734602",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-10-draw-92000-adaptive12.trace.json.gz": "666b3d05922a3829342a95eccfc940d2632d5c9fa00e60b963d7a974a482829b",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-15-draw-91000-adaptive12.json": "335457c5797ac79575076bfe46e58a110a1a0100d8c1fb115a1e227db62ecbff",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-15-draw-91000-adaptive12.trace.json.gz": "4bd92e0cb75d1c3c2de6fc2f09f76306d9847476215bbf8ec4b97c0ce377a792",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-15-draw-92000-adaptive12.json": "afa441e17eaa85fc2f3b90bb2ef6ecc5321666fcbcd69c0a6f24fd3c065270b2",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-15-draw-92000-adaptive12.trace.json.gz": "bd8e7322850048ed0b1b6c4a1c1d403d173951e999241aba03fccfd076ffd4f4",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-16-draw-91000-adaptive12.json": "1318c3caea53fada5a2266471c89a5f0b055baf1697f3a4637c6538518a73234",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-16-draw-91000-adaptive12.trace.json.gz": "99572f289615c9c79aba0f6686455c3befe7bd848ba0695929a6826d4bc63b7d",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-16-draw-92000-adaptive12.json": "a224fb6f12ff42fdd802f80e8d93c1765887dbce4cab738e87e30f7071c296fe",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-16-draw-92000-adaptive12.trace.json.gz": "b9170df9e34141ea808a8ff0ac79b2a562190dbbc6dcf1df2d6ce6d0a681cc2b",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-18-draw-91000-adaptive12.json": "13d84a0fd405767c172c808e670b965879f3ba503a7787d25f8c988b11b2bb6a",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-18-draw-91000-adaptive12.trace.json.gz": "b55cdd6bc9f9a5b3c7329ed1dabae03ddd0cda57b8da2c27ff110aa9ff272db1",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-18-draw-92000-adaptive12.json": "da5db1e09d11ad337a4ab7e9d7901919c59034fb32a32d0e220a9d04080b59a3",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-18-draw-92000-adaptive12.trace.json.gz": "ba6ae37b1f436c9d19e362bf5a572c0ce4db3e7698c02993fe6b12866a84f058",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-23-draw-91000-adaptive12.json": "e84a9a6c3b6c878187b1f641177c6c29df3b2f9c7231749d7610f4c793c4d4e9",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-23-draw-91000-adaptive12.trace.json.gz": "458affdb81de8b1367a21f55a5e821ef67cc5e363cb27e8c59305d099ac04d05",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-23-draw-92000-adaptive12.json": "87ba3de3a599701391ae0812da6e1267a7db35342b334719fab6ba5830872ab7",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-23-draw-92000-adaptive12.trace.json.gz": "19bb737fa78980f0aa8d7b2df58b1ffd141b9beea87b8ce1a2b28d3b7d9443b4",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-5-draw-91000-adaptive12.json": "a23838500387a7d877dc5494a423f5880d9840c223968480819d78640e76598f",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-5-draw-91000-adaptive12.trace.json.gz": "ad949dd4183793f881894b227d962922215b94bad79b8990bd644309ec36d790",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-5-draw-92000-adaptive12.json": "786f6ba4bd84d115a1421af056ccb5eb18b519643b8bef470d1e5f5333762b38",
+    "results\\robotics-retention-pilot\\evaluation\\current12\\scene-5-draw-92000-adaptive12.trace.json.gz": "92c0d4b75bafa2ee7e44c6b2ec48c8efc852fe174dfd2161434abffbe2ba7ea9",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\model-binding.json": "9d766d33012d99b4379f0192ef7255e2fe5b0491857696f075c2e509492ade28",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-1-draw-91000-fixed8.json": "37017ac1ea9d5bcf853c86ed942c09f212d82481ad84bde9e7262684e480f81f",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-1-draw-91000-fixed8.trace.json.gz": "4a014a3e03b9070a328cc9d2966c459e6b368174e78b6de1a7bd1bdb9b5ca933",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-1-draw-92000-fixed8.json": "faa3059c54ae55f1e79787a78353a3bf409d62cf8b73c1c3adb13df7eddd0eb2",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-1-draw-92000-fixed8.trace.json.gz": "7509e16e706bc4be3baf5f022ffb21148cf8835cbbb473282015205de1e68eaf",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-10-draw-91000-fixed8.json": "1ba1a6468719702c4ba0c715335b6651565ae15760fe5740aab9b7dca6b23986",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-10-draw-91000-fixed8.trace.json.gz": "6082e16aae01630baf257f8f3dba0805f0ad115a84f08427027fe8943fdfacc2",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-10-draw-92000-fixed8.json": "eb866937fa105db662d08b569d22e2ba2eb431681854db08df7efb1243f0ccff",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-10-draw-92000-fixed8.trace.json.gz": "30bfa13fb30a47f546406c254fa37acb9f8c746ce1976cb85e6a9320a34db596",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-15-draw-91000-fixed8.json": "8948638267533770316bf8358ca45ddd4c8c12a2e7853db196e98f7000d47c2e",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-15-draw-91000-fixed8.trace.json.gz": "6c90a61e0b51258e353f625446f9d339d986b1db500cf83725dce0f4c628b58a",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-15-draw-92000-fixed8.json": "04845e922c9d73d8094a0cb6d0e2772abbc420f90b6935dd8ffd76476f4fbc3e",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-15-draw-92000-fixed8.trace.json.gz": "bf7e5870e72bc1cf45bdc50b4bffcb41e867280b1bf894b39e90b6c32c18a5e6",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-16-draw-91000-fixed8.json": "2e231c8546f0eabba0c494dcd0a9949d66d9315ce59ca011e97307f247b60080",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-16-draw-91000-fixed8.trace.json.gz": "50b34bbb769534dd89751ebd1d8c31abff75c09ba18c967bc57fba2cb9a8d350",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-16-draw-92000-fixed8.json": "e089864d351c26ffc0d924134d137e02b4b1abdf51ce4f338c267ea5014fa061",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-16-draw-92000-fixed8.trace.json.gz": "78978df3addc9317ae7a18d1775d66f34520c0eecee09f606a09cca346209582",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-18-draw-91000-fixed8.json": "a8ab85718f2bf1d6c395e667dc886925e80b345a8e4c620334290f62a751857c",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-18-draw-91000-fixed8.trace.json.gz": "895dc5f25c6f53c6040cc2d857e8160c2b48f7625d8ffab40ffbabce03c453f8",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-18-draw-92000-fixed8.json": "6d31751d021d19354dcfda295d6649f48e9e95526ae48d90b6e3fcd45cb7c593",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-18-draw-92000-fixed8.trace.json.gz": "1a1fa3ed8179a4307221e7cdffca45a55d0aa2f02f36d92a46a8acb201fce8b5",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-23-draw-91000-fixed8.json": "660343952511d0f35210b9872ed58edb544767eeb3bb8ce2be60603aeaa07077",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-23-draw-91000-fixed8.trace.json.gz": "f5e88ab4ede54a83ce09e81b968836eb3ae3eab9b8d3d6ed6645a63630b34f7f",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-23-draw-92000-fixed8.json": "8bcbf4a13a6399d784bbf63bb0f6b0201a3191ff6cf00e9f423d40450adcaddc",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-23-draw-92000-fixed8.trace.json.gz": "808be37ee4bef4477475a3b0a712b264a589a442192599ddd6bd952c418f098e",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-5-draw-91000-fixed8.json": "9812364492cfe74c3c0617187140be17ed87061b528355671ed20383963a36df",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-5-draw-91000-fixed8.trace.json.gz": "ad2a7df245485a58214fedc88c39bb0038b5225d4e85409ce726cf594c998a85",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-5-draw-92000-fixed8.json": "7139a514d9bc7468e9114feef3fb3b65af381a049bd9e9f7ca2892c58788912f",
+    "results\\robotics-retention-pilot\\evaluation\\fixed8\\scene-5-draw-92000-fixed8.trace.json.gz": "deae7f4433898b139cbc7c070d7f503d87872502e91d1a0c1e2cfeb0fbea31a2",
+    "results\\robotics-retention-pilot\\protocol.json": "8688e48b42718bc9bfdb004e22b33f5835c90088092b653980520b530ef5fdec",
+    "results\\robotics-retention-pilot\\smoke.json": "153e23337a16d308fb5e59c65802f4124d8a5f53de5d6aa8b9ab89fb28deb3db",
+    "results\\robotics-retention-pilot\\smoke\\before\\model-binding.json": "9d766d33012d99b4379f0192ef7255e2fe5b0491857696f075c2e509492ade28",
+    "results\\robotics-retention-pilot\\smoke\\before\\scene-0-draw-1234-fixed8.json": "e3453eb7cb3533029c9389048aaa4943a805dd5df0ac22e8bc12d7960bfc47a8",
+    "results\\robotics-retention-pilot\\smoke\\before\\scene-0-draw-1234-fixed8.trace.json.gz": "c3309b72e37f1eadfc2a9b133f12b82914c6952756e972eecffdd92cffb24604",
+    "results\\robotics-retention-pilot\\smoke\\candidate\\model-binding.json": "78204c0e74639fdd02b607bd7ff3efd149cb0a80883091a22e71e929fe195eb9",
+    "results\\robotics-retention-pilot\\smoke\\candidate\\scene-0-draw-1234-adaptive12.json": "e1d203ff3df7c9ca713892e11f8ce57b973bec46f1f713a1bb36d880f53c1af3",
+    "results\\robotics-retention-pilot\\smoke\\candidate\\scene-0-draw-1234-adaptive12.trace.json.gz": "2001dd86ef670df4e351780d658a620c93fb010b5be21b1ac093cd701fb86527",
+    "results\\robotics-retention-pilot\\smoke\\current\\model-binding.json": "d80f7f1537442a734215ae99457edf90af843599aba322a23a326155f8eeb5c0",
+    "results\\robotics-retention-pilot\\smoke\\current\\scene-0-draw-1234-adaptive12.json": "ff2f81d824b15a558025c803ccea406cbaa6bd488fc29a121cd2096faeab5333",
+    "results\\robotics-retention-pilot\\smoke\\current\\scene-0-draw-1234-adaptive12.trace.json.gz": "f60bf56d5ffb4718435b7155698ab463ee64ff01b6cefe2cf1122c9b2cbece85",
+    "results\\robotics-retention-pilot\\smoke\\restored\\model-binding.json": "9d766d33012d99b4379f0192ef7255e2fe5b0491857696f075c2e509492ade28",
+    "results\\robotics-retention-pilot\\smoke\\restored\\scene-0-draw-1234-fixed8.json": "3fb742ce5abbed079223f73fe42bc6a39770b5138e916180630bf3c6338ec3b8",
+    "results\\robotics-retention-pilot\\smoke\\restored\\scene-0-draw-1234-fixed8.trace.json.gz": "467b4d1756cb6511f5ed3c68032f0dd9dfb45b20009561a58f1b82b8247f24e3",
+    "results\\robotics-retention-pilot\\summary.json": "6a0325e9653b5a9d6f7c2c37925cf9ade973e7b4b040bcb2a87b610207f62c49",
+    "results\\robotics-retention-preflight\\baseline-supplement.json": "44e69404ee74b6fdf2a3c71b55143faf1c3ccaca622118c2ccf0499fbbfc55e6",
+    "results\\robotics-retention-preflight\\data-audit.json": "10b14cfe71737a37816d21bada40b6025cf8c9175323ee40fe9d9c4ec06c63dd",
+    "results\\robotics-retention-preflight\\plan.json": "c098dd8bded005dae29d56a91d2e4fe3ace84b9b31a926bb44eab4f14e162b0a",
+    "tests/test_robotics_endpoint_padding.py": "ef5c2cd578a5d5ce53b098b19b46d609c56722edf376f3a90ff0101251a7e56b",
+    "tests/test_robotics_preservation_pilot.py": "608186db1c697c7fabf18d10dceea7a52de532f30fd1c07799daf33faace1f07",
+    "tests/test_robotics_retention_pilot.py": "3b858920f999c328da53c446b7f68992f85e781fdfa2b7ba50859bb3c9deb197"
+  },
+  "limitations": [
+    "Previously inspected development scenes and one training seed.",
+    "Window/episode sampling frequencies change when endpoint samples become available.",
+    "Repeated endpoint targets are padding conventions, not observed post-terminal actions.",
+    "Native fixed8 prefix has eight real future targets; adaptive execution may use later predicted slots.",
+    "Original public expert terminal handling is unchanged; no success-based filtering.",
+    "All confirmation scenes170-209 excluded from training/selection; timing descriptive across sessions."
+  ]
+}
