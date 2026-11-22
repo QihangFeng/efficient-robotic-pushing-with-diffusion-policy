@@ -1,43 +1,72 @@
-# Effective Prediction Utilization
+# Adaptive Execution and Self-Imitation-Based Fine-Tuning for Robotic Pushing
 
-**Adaptive Execution and Self-Imitation-Based Fine-Tuning for Robotic Pushing**
+This project asks whether a robot can complete more PushT attempts while calling its pretrained Diffusion Policy less often. It combines adaptive execution with fine-tuning on successful retries of failed pushes.
 
-An ECE 730 course project on computation and AI for cyber-physical systems.
+## Table of contents
 
-**Status: Work in progress.**
-
-This project explores how to make more effective use of a pretrained robot model's predictions. The goal is to improve pushing success while reducing model predictions and runtime through two complementary methods: adaptive action execution and learning from successful self-generated trajectories.
+- [Task and feedback loop](#task-and-feedback-loop)
+- [Methods](#methods)
+  - [Workflow](#workflow)
+  - [Adaptive execution controller](#adaptive-execution-controller)
+  - [Recovery fine-tuning](#recovery-fine-tuning)
+- [Evaluation and results](#evaluation-and-results)
+  - [What the comparison shows](#what-the-comparison-shows)
+- [Getting started](#getting-started)
+- [Repository structure](#repository-structure)
+- [References and reused components](#references-and-reused-components)
 
 ## Task and feedback loop
 
-In **PushT**, a simulated pusher moves a T-shaped block onto a target. A pretrained **Diffusion Policy** predicts movement sequences from camera images and the pusher's position. The simulator applies the movements and returns updated observations.
+In **PushT**, a simulated pusher moves a T-shaped block onto the green target. The feedback loop has three steps.
 
-The software chooses actions using feedback from the simulated physical system. The adaptive controller also monitors camera feedback between new policy predictions, forming a cyber-physical control loop.
+1. **Observe.** Read the camera images and pusher positions.
+2. **Predict.** Use Diffusion Policy to generate a sequence of pusher targets.
+3. **Execute.** Send each target to PushT's PD position controller. Each movement changes the scene and produces updated observations for the next plan.
+
+![Recorded PushT attempt showing the pusher moving the T-block toward the green target](course-deliverables/assets/pusht-recorded-push.gif)
+
+*Recorded PushT attempt from scene seed 0.*
 
 ## Methods
 
-### Adaptive action execution
+### Workflow
 
-The original baseline executes eight predicted movements before requesting a new prediction. Our lightweight controller decides whether to replan at that point or continue using up to four additional movements from the existing prediction.
+One model call generates 16 positions internally. Aligning them with the latest observation leaves **15 usable pusher targets**, each an `(x, y)` position. The fixed-eight baseline sends targets **1–8** to the PD position controller one at a time, then requests a fresh plan.
 
-It considers camera-estimated target alignment, recent decline and recovery, and the smoothness of the remaining movement path. Confirmed deterioration can trigger a bounded early interruption. A temporary alignment drop alone does not establish failure, because repositioning may be useful.
+Our controller makes **one extension decision after movement 8**. If both the camera and path checks pass, it sends targets **9–12** from the same plan to the PD controller. Otherwise, it replans from fresh observations. Targets 13–15 go unused. The controller also monitors camera feedback after each movement. A separate early-interruption rule can discard pending targets and replan after a confirmed drop in alignment.
 
-The model's prediction length and inference settings stay fixed. The controller changes how much of each prediction is executed.
+The orange nodes mark the Diffusion Policy output block updated during recovery fine-tuning.
 
-![Fixed-eight execution discards remaining predictions; adaptive eight/twelve execution can reuse them](course-deliverables/assets/action-reuse-with-discard.png)
+![PushT methodology workflow with camera feedback, adaptive target reuse, and the trainable Diffusion Policy output block](course-deliverables/assets/methodology-workflow.png)
 
-### Self-imitation-based fine-tuning
+### Adaptive execution controller
 
-The model's own successful movements provide additional training examples:
+The camera check uses recent images to estimate how much of the target the block covers. The controller allows an extension only when enough valid readings show that the block is still away from the goal and alignment has stayed reasonably steady.
 
-1. Select saved intermediate states from failed baseline attempts.
-2. Sample multiple continuations using the original model.
-3. Retain trajectories that eventually complete the task.
-4. Mix these recovery trajectories with expert demonstrations and fine-tune only the final convolution block.
+| Camera signal | Meaning | Pass condition |
+|---|---|---|
+| `Q` | Quality of the camera-based fit | Valid estimate |
+| `h` | Consecutive movements with valid coverage readings | ≥ 8 movements |
+| `c` | Current camera-estimated target coverage | < 75% |
+| `W` | Number of drops larger than 1.5 percentage points in the last five changes | 0 drops |
+| `D` | Drop from the highest coverage in the last eight readings | ≤ 1.5 percentage points |
+| `R` | Net coverage change over the last three movements | ≥ −1 percentage point |
 
-All other model parameters remain frozen. Training takes place before evaluation; the saved model then runs with fixed weights under either fixed-eight or adaptive execution.
+The path check looks at the last four executed targets together with the next four queued targets. This lets the controller check how smoothly the two parts connect before reusing the queued targets.
 
-![Self-imitation-based fine-tuning with expert and successful recovery trajectories](course-deliverables/assets/policy-refinement.png)
+| Path check | Where it applies | Pass condition |
+|---|---|---|
+| Target coordinates | All 12 scheduled targets | Each `(x, y)` coordinate is finite |
+| Step length | Between consecutive targets 5–12, including 8 to 9 | ≥ 2 workspace units |
+| Turn angle | Between consecutive steps along targets 5–12 | ≤ 60° |
+
+### Recovery fine-tuning
+
+The recovery data come from the original policy's own successful retries. We return to saved intermediate states from failed pushes, sample several continuations, and keep the trajectories that reach the goal.
+
+We mix those recovery trajectories with expert demonstrations and run **600 updates** on the policy's **final convolution block**. The rest of the model stays frozen. During evaluation, the saved fine-tuned policy runs with either fixed-eight or adaptive execution.
+
+![Recovery fine-tuning diagram combining expert demonstrations and successful retries to train the final convolution block](course-deliverables/assets/policy-refinement.png)
 
 ## Evaluation and results
 
@@ -54,10 +83,10 @@ All four configurations were evaluated on the same **40 scenes**, with **two pre
 
 | Method | Successful pushes | Mean final alignment | Mean predictions | Mean runtime |
 |---|---:|---:|---:|---:|
-| Original model with fixed-eight execution | 46/80 (57.5%) | 90.96% | 29.03 | 143.26 s |
-| Original model with adaptive 8/12 execution | 48/80 (60.0%) | 91.59% | 25.34 | 135.95 s |
-| Fine-tuned model with fixed-eight execution | 56/80 (70.0%) | 92.01% | 27.66 | 136.07 s |
-| Fine-tuned model with adaptive 8/12 execution | **60/80 (75.0%)** | 91.88% | **22.51** | **120.92 s** |
+| Original fixed 8 | 46/80 (57.5%) | 90.96% | 29.03 | 143.26 s |
+| Adaptive Execution | 48/80 (60.0%) | 91.59% | 25.34 | 135.95 s |
+| Recovery Fine-tuning | 56/80 (70.0%) | 92.01% | 27.66 | 136.07 s |
+| Adaptive + Fine-tuning | **60/80 (75.0%)** | 91.88% | **22.51** | **120.92 s** |
 
 ### What the comparison shows
 
@@ -108,15 +137,6 @@ Prepared training data and fine-tuned weights stay local and are Git-ignored. Fu
 | [course-deliverables/](course-deliverables/) | Proposal, slides and presentation script |
 
 The main implementation entry points are [adaptive execution](experiments/robotics_adaptive_length.py), [visual monitoring](experiments/robotics_visual_monitor.py), [fine-tuning](experiments/robotics_recovery_training.py) and [evaluation](experiments/robotics_recovery_evaluation.py).
-
-## Project documents
-
-- [Project proposal](course-deliverables/project-proposal.pdf)
-- [Proposal presentation](course-deliverables/proposal-presentation.pdf)
-- [Presentation speaking script](course-deliverables/proposal_script.pdf)
-- [Installation and hardware feasibility](reports/2026-10-10-robotics-laptop-feasibility.md)
-
-The proposal and slides present the research plan; completed experimental evidence is documented in the reports.
 
 ## References and reused components
 
