@@ -6,7 +6,7 @@ This project asks whether a robot can complete more PushT attempts while calling
 
 - [Task and feedback loop](#task-and-feedback-loop)
 - [Methods](#methods)
-  - [Workflow](#workflow)
+  - [General Workflow](#general-workflow)
   - [Adaptive execution controller](#adaptive-execution-controller)
   - [Recovery fine-tuning](#recovery-fine-tuning)
 - [Evaluation and results](#evaluation-and-results)
@@ -29,7 +29,7 @@ In **PushT**, a simulated pusher moves a T-shaped block onto the green target. T
 
 ## Methods
 
-### Workflow
+### General workflow
 
 One model call generates 16 positions internally. Aligning them with the latest observation leaves **15 usable pusher targets**, each an `(x, y)` position. The fixed-eight baseline sends targets **1–8** to the PD position controller one at a time, then requests a fresh plan.
 
