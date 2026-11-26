@@ -66,7 +66,7 @@ The recovery data come from the original policy's own successful retries. We ret
 
 We mix those recovery trajectories with expert demonstrations and run **600 updates** on the policy's **final convolution block**. The rest of the model stays frozen. During evaluation, the saved fine-tuned policy runs with either fixed-eight or adaptive execution.
 
-![Recovery fine-tuning diagram combining expert demonstrations and successful retries to train the final convolution block](course-deliverables/assets/policy-refinement.png)
+![Recovery fine-tuning diagram combining expert demonstrations and successful retries to train the final convolution block](course-deliverables/assets/recovery-fine-tuning-workflow.png)
 
 ## Evaluation and results
 
