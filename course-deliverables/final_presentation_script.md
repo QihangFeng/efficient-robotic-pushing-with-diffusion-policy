@@ -38,53 +38,66 @@ This is the workflow of the original baseline. One model call generates one pred
 
 ## Slide 7 · Adaptive execution and recovery fine-tuning
 
-Here’s what I changed. The brown box is our adaptive execution controller. When a plan reaches movement eight, it makes one decision. If the camera check and path check both pass, it will keep movements nine through twelve from the same prediction. Then the same PD controller executes them one by one. Otherwise, the it will just replan like the baseline.
+Here’s what I changed. The brown box is our adaptive execution controller. When a plan reaches movement eight, it makes one decision based on the results of camera check and path check. If both checks pass, then it will keep movements nine through twelve from the same prediction. The same PD controller executes them one by one. Otherwise, the it will just replan like the baseline.
 
-Addtionally,  in the originall baseline, the PD controller does not check the camera feedback during executing the prediction of the plan. It just executes the fixed eight movements anyway and then the workflow will ask for a new prediction. Our adaptive controller will check the camera feedback after each movement to determine whether an early interruption should be triggerd.
+Addtionally,  in the originall baseline, the PD controller does not check the camera feedback during executing the prediction of the plan. It just executes the fixed eight movements anyway and then the workflow will ask for a new prediction. While, our adaptive controller will check the camera feedback after each movement to determine whether an early interruption should be triggerd.
 
 ## Slide 8 · Camera and path checks
 
-The camera check asks how the push is going. We estimate how much of the goal the block covers and look at recent changes. We extend only with valid history, below 75 percent coverage, and within the drop limits on the left. Near the goal, we keep replanning after eight movements.
+~1min 44s
 
-The path check asks whether the next four targets connect smoothly to the last four. It includes the step from target eight to nine. The checked steps must be at least two workspace units, and turns can be at most 60 degrees. The simulator geometry is used to score the outcome.
+So, exactly how do the camera and path checks work?
+
+Well, the camera check asks how the push is going. As shown in the table, it checks six signals and all six must pass. 
+The signal `Q` represents the current T-block location quality, it tells us whether we can locate the block reliably. 
+Based on the signal `Q` result for each movement, the signal `h` counts how many consecutive valid movements we’ve had so far.
+So, Together, Q and h help our adaptive controller decide whether it can trust the current coverage estimate.
+
+The signal c measures how much of the target area is covered by the T-block. We set the threshold at 75%. When the coverage reach or exceed this threshold, our adaptive controller will just stop following the current plan and then replan, because, you konw, when the block is near the target position, we typically need more frequent adjustments and timely feedback.
+
+As for the remianing three signals, `W`, `D`, and `R`, I designed them to help tell whether coverage is slipping or just changing a little as the block moves. W counts drops larger than 1.5 percentage points over the last five movements. We want zero. D tells us how far coverage has fallen from its best reading in the last eight. The limit is 1.5 percentage points. R measures the net change over the last three movements. We allow a drop of at most one percentage point.
+
+Additionally, the path check asks whether the next four movements connect smoothly to the last four. So, it will inspect movements five to twelve, each step must be at least two units of step length and each turn angle should be less than 60 degrees.
 
 ## Slide 9 · Recovery fine-tuning
 
-The orange nodes represent our second change. Recovery fine-tuning updates the policy’s final convolution block. I’ll explain how we train it after the controller checks.
+Our second approach is recovery fine-tuning, which updates the policy’s final convolution block, as shown in the orange nodes.
 
-I start from a saved state in an attempt that failed. I let the original policy try several continuations and keep the ones that complete the push. Those successful retries become our recovery examples. We mix them with the existing expert demonstrations.
+So, we start from a saved state in an failed attempt, then let the original baseline try several continuations and keep the ones that complete the push. Those successful retries become our recovery examples. We mix them with the existing expert demonstrations for fine-tuning.
 
-We train for 600 updates, using two expert and two recovery examples per update. Only the orange final convolution block receives updates. The rest of the model stays frozen. We then use the saved checkpoint for evaluation on separate starting scenes.
+We train for 600 updates. Only the final convolution block receives updates. The rest of the model stays frozen.
 
-## Slide 10 · Four matched configurations
+## Slide 10 · Ablation experiment
 
-This table shows what each change contributed. All four configurations use the same 40 starting scenes. Each scene is run twice with different prediction randomness, so there are 80 attempts per row. A push succeeds when coverage exceeds 95 percent within 300 movements.
+The ablation experiment shows what each component  contributes. All four configurations use the same 40 starting scenes. Each scene is run twice with with a different random seed each time, so there are 80 attempts for each configuration. We consider a push successful when the coverage exceeds 95 percent within 300 movements.
 
-Start with the first and last rows. The original policy completed 46 pushes, and the combined method completed 60. That takes observed success from 57.5 to 75 percent, with 22.4 percent fewer prediction calls.
+Let's look at the first row and last row.
+So, compared with the original baseline, our combined method raised the success rate from 57.5 to 75 percent, with fewer prediction calls and a shorter runtime. And the average alignment also improved a little.
 
-Fine-tuning alone reaches 70 percent success. Now compare the last two rows, which use the same fine-tuned weights. Adding adaptive execution saves 18.6 percent of prediction calls. It gives four more successes, with an uncertainty interval that includes zero. Fewer calls are the clearest benefit of adding the controller. Recorded runtime also fell, with measurements collected across different sessions.
+Now let's look at the last two rows. Fine-tuning alone reaches 70 percent success. Adding adaptive controller saves 18.6 percent of prediction calls, and brings higher success rate. Fewer calls are the clearest benefit of adding the adaptive controller. Recorded runtime also decreased.
 
 ## Slide 11 · Standard RL comparison with visual SAC
 
-I also ran visual SAC, or Soft Actor-Critic, as a standard reinforcement learning baseline. I trained it online for 100,000 interactions with one training seed. The comparison uses the same 40 starting scenes, camera and position inputs, and movement commands.
-
-SAC runs once per scene with a deterministic policy. Diffusion Policy runs twice with different prediction randomness. Our SAC checkpoint completed zero of 40 pushes. This is the result for that checkpoint and training budget. The original Diffusion Policy starts from a model pretrained on expert demonstrations.
+I also ran a quick comparison with SAC, which is a standard reinforcement learning method. After 100,000 training interactions, it completed zero of the 40 attempts. The PushT-Vision study also reported zero percent success for SAC in its own setup. So my takeaway is that visual PushT was challenging for SAC in both experiments.
 
 ## Slide 12 · A saved improvement
 
-Here’s a run where the change helped. Both methods start from the same scene and initial prediction seed. The original ends at 92 percent coverage after 300 movements. The combined method reaches 97 percent in 173 movements, with 20 prediction calls compared with 38 for the original.
+Here’s an example where our method helped. Starting from the same scene and initial prediction seed, the original baseline ends at 92 percent coverage after 300 movements. Our method reaches 97 percent in 173 movements, with fewer prediction calls.
 
 ## Slide 13 · Limitation of negative flips
 
-Sometimes the opposite happens. Here the original policy succeeds at about 98 percent coverage. The combined method ends at about 82 percent after 300 movements. We call this a negative flip because a push that succeeded under the baseline fails under the new method. The reason for this failure is still unresolved.
+While, sometimes the opposite happens. In this example, the original baseline performed very good, but our method failed.
+So our methods actually lose some original successful trajectories. This is called negtive flips, which are a well-known issue that can occur when we fine-tune a model.
 
 ## Slide 14 · Gained and lost baseline successes
 
-To see how often this happens, I paired each run with the original policy on the same scene and prediction draw. A gain is a baseline failure that the new method completes. A loss is a push that only the baseline completes. The combined method gains 23 successes and loses nine. That’s a net gain of 14, which takes us from 46 to 60 successes.
+Okay, then, let’s check how often negative flips happen. This table shows how many successes each of the three configurations gained and lost compared with the original baseline.
+
+Let’s look at the net gain column. All three net gains are positive, and the combined method has the largest gain. So, overall, our method gained more successes than it lost and improved the success rate in this experiment.
 
 ## Slide 15 · Conclusions
 
-The combined method raised observed success from 57.5 to 75 percent in PushT. Adding adaptive execution to the fine-tuned policy saved 18.6 percent of prediction calls. We still lost nine baseline successes, so preserving those pushes is the next step. Thank you for listening.
+In conclusion, our method achieved a higher success rate with fewer prediction calls.While negative flips are still a limitation. That’s all. Thank you!
 
 ## Slide 16 · RL performance and planning costs · Q&A backup
 
