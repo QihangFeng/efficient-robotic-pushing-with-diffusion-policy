@@ -55,7 +55,7 @@ So, Together, Q and h help our adaptive controller decide whether it can trust t
 
 The signal c measures how much of the target area is covered by the T-block. We set the threshold at 75%. When the coverage reach or exceed this threshold, our adaptive controller will just stop following the current plan and then replan, because, you konw, when the block is near the target position, we typically need more frequent adjustments and timely feedback.
 
-As for the remianing three signals, `W`, `D`, and `R`, I designed them to help tell whether coverage is slipping or just changing a little as the block moves. W counts drops larger than 1.5 percentage points over the last five movements. We want zero. D tells us how far coverage has fallen from its best reading in the last eight. The limit is 1.5 percentage points. R measures the net change over the last three movements. We allow a drop of at most one percentage point.
+As for the remianing three signals, `W`, `D`, and `R`, I designed them to help tell whether coverage is decreasing or just changing a little as the block moves. W counts drops larger than 1.5 percentage points over the last five movements. We want zero. D tells us how far coverage has fallen from its best reading in the last eight. The limit is 1.5 percentage points. R measures the net change over the last three movements. We allow a drop of at most one percentage point.
 
 Additionally, the path check asks whether the next four movements connect smoothly to the last four. So, it will inspect movements five to twelve, each step must be at least two units of step length and each turn angle should be less than 60 degrees.
 
@@ -97,7 +97,7 @@ Let’s look at the net gain column. All three net gains are positive, and the c
 
 ## Slide 15 · Conclusions
 
-In conclusion, our method achieved a higher success rate with fewer prediction calls.While negative flips are still a limitation. That’s all. Thank you!
+In conclusion, our main contribution is combining adaptive execution with recovery fine-tuningour, and this method achieved a higher success rate with fewer prediction calls.While negative flips are still a limitation. That’s all. Thank you!
 
 ## Slide 16 · RL performance and planning costs · Q&A backup
 
