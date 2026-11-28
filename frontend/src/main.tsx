@@ -1,6 +1,7 @@
 import { StrictMode, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 
+import { EvaluationResults } from './EvaluationResults'
 import { Replay } from './Replay'
 import { replayData } from './replay-data'
 import './styles.css'
@@ -33,6 +34,7 @@ function App() {
       </div>
 
       <Replay key={replay.scene} arena={replayData.arena} replay={replay} />
+      <EvaluationResults />
     </main>
   )
 }

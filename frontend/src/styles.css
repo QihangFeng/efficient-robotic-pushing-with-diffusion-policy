@@ -24,7 +24,7 @@
 body { margin: 0; }
 button, input { font: inherit; }
 
-button:focus-visible, input:focus-visible {
+button:focus-visible, input:focus-visible, a:focus-visible, .evaluation-table-wrap:focus-visible {
   outline: 2px solid var(--pusher);
   outline-offset: 4px;
 }
@@ -290,6 +290,63 @@ h1 {
 .interrupt-swatch { border-color: var(--interrupt); border-left-width: 3px; }
 .threshold-swatch { width: .8rem; border-top: 1px dashed var(--goal); }
 
+.evaluation {
+  margin-top: clamp(2rem, 5vw, 3.5rem);
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--line);
+}
+
+.evaluation-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .7rem 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.evaluation h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); letter-spacing: -.025em; }
+.evaluation p { color: var(--text-muted); line-height: 1.55; }
+.evaluation-header p { margin-top: .35rem; }
+.evaluation-header a { color: var(--adaptive); text-underline-offset: .2em; }
+
+.evaluation-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: .55rem;
+  background: var(--surface);
+}
+
+.evaluation-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.evaluation-table th, .evaluation-table td {
+  padding: .85rem 1rem;
+  border-bottom: 1px solid var(--line);
+  text-align: right;
+}
+
+.evaluation-table tr > :first-child { text-align: left; }
+.evaluation-table tbody tr:last-child > * { border-bottom: 0; }
+.evaluation-table thead { color: var(--text-muted); background: var(--inset); font-size: .875rem; }
+.evaluation-table td { white-space: nowrap; }
+.evaluation-table span { display: block; margin-top: .15rem; color: var(--text-muted); font-size: .875rem; font-weight: 400; }
+.evaluation-table .combined { background: #17302f; }
+.evaluation-table .combined strong { color: var(--adaptive); }
+.evaluation-note { margin-top: .75rem; font-size: .875rem; }
+
+.method-notes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.method-notes h3 { margin: 0 0 .3rem; font-size: 1rem; }
+
 @media (min-width: 64rem) {
   .intro { grid-template-columns: minmax(0, 1fr) auto; align-items: end; }
 }
@@ -317,6 +374,8 @@ h1 {
   .run-panel { padding-inline: .7rem; }
   .run-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .run-movement { display: none; }
+  .evaluation-table th, .evaluation-table td { padding: .65rem .5rem; }
+  .method-notes { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 32rem) {
@@ -327,4 +386,10 @@ h1 {
   .run-header h2 { gap: .35rem; font-size: .95rem; }
   .case-picker button { flex: 1; padding-inline: .6rem; }
   .timeline { padding: .8rem .65rem; }
+  .evaluation-table { font-size: .875rem; }
+  .evaluation-table th, .evaluation-table td { padding-inline: .35rem; }
+}
+
+@media (max-width: 24rem) {
+  .evaluation-table th, .evaluation-table td { padding-inline: .16rem; }
 }
