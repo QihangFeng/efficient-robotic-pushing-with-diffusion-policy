@@ -2,6 +2,8 @@
 
 This project asks whether a robot can complete more PushT attempts while calling its pretrained Diffusion Policy less often. It combines adaptive execution with fine-tuning on successful retries of failed pushes.
 
+**[Open the interactive PushT demo](https://qihangfeng.github.io/efficient-robotic-pushing-with-diffusion-policy/)**
+
 ## Table of contents
 
 - [Task and feedback loop](#task-and-feedback-loop)
